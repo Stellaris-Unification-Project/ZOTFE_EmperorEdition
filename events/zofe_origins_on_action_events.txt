@@ -1,0 +1,16 @@
+namespace = zofe_action
+
+#Mod Activation Check
+event = {
+	id = zofe_action.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = zofe_origins_activated }
+	}
+	
+	immediate = {
+		set_global_flag = zofe_origins_activated
+	}
+}

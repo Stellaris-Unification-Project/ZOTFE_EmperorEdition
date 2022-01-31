@@ -1,0 +1,61 @@
+namespace = utopian_paradise
+
+#Utopian Paradise Complete (Gaia)
+planet_event = {
+	id = utopian_paradise.100
+	title = utopian_paradise.100.name
+	desc = utopian_paradise.100.desc
+	picture = GFX_evt_gaia
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_utopian_gaia
+	}
+
+	option = {
+		name = utopian_paradise.100.a
+	}
+}
+
+#Utopian Paradise Complete (City)
+planet_event = {
+	id = utopian_paradise.200
+	title = utopian_paradise.200.name
+	desc = utopian_paradise.200.desc
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_utopian_city
+	}
+
+	option = {
+		name = utopian_paradise.200.a
+	}
+}
+
+#Utopian Paradise Complete (Ringworld)
+planet_event = {
+	id = utopian_paradise.300
+	title = utopian_paradise.300.name
+	desc = utopian_paradise.300.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_cityscape
+	location = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_utopian_ringworld
+	}
+
+	option = {
+		name = utopian_paradise.300.a
+	}
+}

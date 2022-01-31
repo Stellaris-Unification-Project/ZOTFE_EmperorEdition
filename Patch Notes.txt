@@ -1,0 +1,25 @@
+[h1]Patch 3.5.5[/h1]
+
+[list]
+
+[*]AE Capital colony type now has proper icon.
+
+[*]Fixed AI not using Dark Matter Reactors/Thrusters for FE ship types, which leads to terrible designs.
+
+[*]Added a new tier of weapons, Dark Matter weapons, researchable (but rare) normally as an Ascended Empire, intended to bridge the gap before getting Lost Technologies.
+
+[*]Updated Original Weapon localisations. Light of Salvation is now Ray of Deliverance, and Deliverer Strike Craft is now Saviour Drones - as they are unmanned.
+
+[*]Updated to 2.8
+
+[*]You can now only make your habitat districts automated on Habitat Worlds, in line with other automated buildings.
+
+[*]The Prescripted Empire's homeworld is renamed to Arya.
+
+[*]Fixed Utopian District buffs from Overclock Automated Buildings and having APCC
+
+[*]
+
+[*]
+
+[/list]

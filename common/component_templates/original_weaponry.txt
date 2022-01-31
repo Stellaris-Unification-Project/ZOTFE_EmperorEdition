@@ -1,0 +1,1196 @@
+##########################
+## Original Empire Weapons
+##########################
+
+#Divine Judgement
+weapon_component_template = {
+	key = "DIVINE_JUDGEMENT"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	
+	icon = "GFX_ship_part_divine_judgement"
+	icon_frame = 1
+	
+	firing_arc = 10.0
+	min_range = 30.0
+	use_ship_kill_target = no
+	
+	damage = { min = 40000 max = 80000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 300.0
+	accuracy = 1.0
+	hull_damage = 4.0
+	shield_damage = 0.75
+	armor_damage = 4.0
+	tracking = 0
+	power = -2000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 4768
+			rare_crystals = 70.4
+			sr_dark_matter = 47.68
+			sr_living_metal = 9.536
+		}		
+		upkeep = {
+			energy = 47.68
+			alloys = 9.536
+		}
+	}
+
+	component_set = "DIVINE_JUDGEMENT"
+	projectile_gfx = "divine_judgement"
+	size_restriction = { fe_titan fe_goliath }
+	prerequisites = { "tech_divine_judgement" }
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	
+	ai_weight = {
+		weight = 100  #
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no
+		}
+	}
+}
+
+#Light of Salvation
+
+weapon_component_template = {
+	key = "LIGHT_OF_SALVATION"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	
+	icon = "GFX_ship_part_light_of_salvation"
+	icon_frame = 1
+
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+
+	damage = { min = 4948 max = 12123 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 70
+	range = 240.0
+	accuracy = 1.0
+	hull_damage = 2.0
+	shield_damage = 0.75
+	armor_damage = 2.0
+	tracking = 0
+	power = -1000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2372
+			rare_crystals = 35.16
+			sr_dark_matter = 23.72
+			sr_living_metal = 4.744
+		}		
+		upkeep = {
+			energy = 23.72
+			alloys = 4.744
+		}
+	}
+	
+	prerequisites = { "tech_light_of_salvation" }
+	component_set = "LIGHT_OF_SALVATION"
+	projectile_gfx = "light_of_salvation"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+
+	ai_weight = {
+		weight = 100  #
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no
+		}
+	}
+}
+
+
+# ## Light of Arya
+
+weapon_component_template = {
+	key = "LIGHT_OF_ARYA"
+	size = large
+	prio_projectile = yes
+
+	type = instant
+	
+	icon = "GFX_ship_part_light_of_arya"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 10.0
+
+	damage = { min = 2560 max = 6400 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 60
+	range = 180.0
+	accuracy = 1.0
+	shield_damage = 0.5
+	armor_damage = 2
+	hull_damage = 2
+	tracking = 0
+	power = -500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1192
+			rare_crystals = 17.6
+			sr_dark_matter = 11.92
+			sr_living_metal = 2.384
+		}		
+		upkeep = {
+			energy = 11.92
+			alloys = 2.384
+		}
+	}
+	
+	prerequisites = { "tech_light_of_arya" }
+	component_set = "LIGHT_OF_ARYA"
+	projectile_gfx = "light_of_arya"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	
+	ai_weight = {
+		weight = 100  #Omni Weapons are GOOOOOOD
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+#Blessed Sling
+
+weapon_component_template = {
+	key = "BLESSED_SLING"
+	size = medium
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	
+	icon = "GFX_ship_part_blessed_sling"
+	icon_frame = 1
+	
+	damage = { min = 631 max = 973 }
+	windup = { min = 2 max = 19 }
+	total_fire_time = 30
+	range = 120.0
+	accuracy = 1.0
+	shield_damage = 0.5
+	armor_damage = 2
+	hull_damage = 3
+	tracking = 0.1
+	power = -250
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 298
+			rare_crystals = 4.4
+			sr_dark_matter = 2.98
+			sr_living_metal = 0.596
+		}		
+		upkeep = {
+			energy = 2.98
+			alloys = 0.596
+		}
+	}
+	
+	prerequisites = { "tech_blessed_sling" }
+	component_set = "BLESSED_SLING"
+	projectile_gfx = "blessed_sling"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+
+	ai_weight = {
+		weight = 100  #Omni Weapons are GOOOOOOD
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "BLESSED_SLING_S"
+	size = small
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_blessed_sling"
+	icon_frame = 1
+	
+	damage = { min = 252 max = 390 }
+	windup = { min = 2 max = 19 }
+	total_fire_time = 30
+	range = 60.0
+	accuracy = 1.0
+	shield_damage = 0.5
+	armor_damage = 2
+	hull_damage = 3
+	tracking = 0.1
+	power = -125
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 149
+			rare_crystals = 2.2
+			sr_dark_matter = 1.49
+			sr_living_metal = 0.298
+		}		
+		upkeep = {
+			energy = 1.49
+			alloys = 0.298
+		}
+	}
+	
+	prerequisites = { "tech_blessed_sling" }
+	component_set = "BLESSED_SLING"
+	projectile_gfx = "blessed_sling"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+
+	ai_weight = {
+		weight = 100  #Omni Weapons are GOOOOOOD
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+
+#Deliverer Strike Craft
+strike_craft_component_template = {
+	key = "DELIVERER_STRIKE_CRAFT"
+	size = LARGE
+	entity = "bomber_entity"
+	
+	weapon_type = point_defence
+	projectile_gfx = "deliverer_strike_craft_laser"
+	
+	power = -250
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 704
+			sr_dark_matter = 4
+		}		
+		upkeep = {
+			energy = 7.04
+			alloys = 1.568
+		}
+	}
+		
+	count = 12
+	regeneration_per_day = 1.5
+	launch_time = 2.0
+	
+	damage = { min = 48 max = 136 }
+	cooldown = 2.0
+	range = 10
+	engagement_range = 120
+	accuracy = 1.0
+	tracking = 1.0
+	
+	health = 360
+	armor = 0
+	shield = 240
+	evasion = 0.9
+	
+	speed = 770
+	rotation_speed = 0.8
+	acceleration = 1
+	
+	shield_penetration = 1
+	armor_damage = 1.5
+	
+	ship_behavior = "fighters_behavior"
+	
+	icon = "GFX_ship_part_deliverer_strike_craft"
+	icon_frame = 1
+	component_set = "DELIVERER_STRIKE_CRAFT"
+	prerequisites = { "tech_deliverer_strike_craft" }
+	tags = { weapon_type_strike_craft }
+	
+	ai_weight = {
+		weight = 100  #Omni Weapons are GOOOOOOD
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+
+#Holy Thunder
+weapon_component_template = {
+	key = "HOLY_THUNDER"
+	size = point_defence
+
+	type = point_defence
+	
+	icon = "GFX_ship_part_holy_thunder"
+	icon_frame = 1
+
+	damage = { min = 1 max = 888 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 60
+	range = 90.0
+	hull_damage = 1
+	shield_damage = 1
+	shield_penetration = 1
+	armor_damage = 1
+	armor_penetration = 1
+	tracking = 0.7
+	power = -125
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 298
+			rare_crystals = 4.4
+			sr_dark_matter = 2.98
+			sr_living_metal = 0.596
+		}		
+		upkeep = {
+			energy = 2.98
+			alloys = 0.596
+		}
+	}
+	
+	prerequisites = { "tech_holy_thunder" }
+	component_set = "HOLY_THUNDER"
+	projectile_gfx = "holy_thunder"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_hull }
+	
+	ai_weight = {
+		weight = 100  #Omni Weapons are GOOOOOOD
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+#Original Empire Missile
+
+weapon_component_template = {
+	key = "ORIGINAL_EMPIRE_MISSILE"
+	size = torpedo
+	entity = "invisible_turret_entity"
+	type = missile
+	prio_projectile = yes
+	
+	icon = "GFX_ship_part_original_empire_missile"
+	icon_frame = 1
+	
+	damage = { min = 2800 max = 3600 }
+	windup = { min = 40 max = 60 }
+	total_fire_time = 60
+	range = 180.0
+	accuracy = 1.0
+	shield_penetration = 1.0
+	armor_damage = 2
+	hull_damage = 2
+	tracking = 0.05
+	power = -250
+	
+	missile_speed = 40
+	missile_health = 2000
+	missile_evasion = 0.4
+	missile_shield = 0
+	missile_retarget_range = 150
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 298
+			rare_crystals = 4.4
+			sr_dark_matter = 2.98
+			sr_living_metal = 0.596
+		}		
+		upkeep = {
+			energy = 2.98
+			alloys = 0.596
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_missile" }
+	component_set = "ORIGINAL_EMPIRE_MISSILE"
+	projectile_gfx = "stellarite_missile"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+
+	ai_weight = {
+		weight = 100  #Omni Weapons are GOOOOOOD
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+
+####Reactors
+
+##Utilities
+
+utility_component_template = {
+	key = "FE_ESCORT_ORIGINAL_EMPIRE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_original_empire_power_core"
+	icon_frame = 1
+	power = 7500
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 296
+			sr_dark_matter = 8
+		}
+		upkeep = {
+			energy = 2.96
+			alloys = 0.296
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_power_core" }
+	component_set = "power_core"
+	size_restriction = { fe_escort }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_BATTLECRUISER_ORIGINAL_EMPIRE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_original_empire_power_core"
+	icon_frame = 1
+	power = 15000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1184
+			sr_dark_matter = 32
+		}
+		upkeep = {
+			energy = 11.92
+			alloys = 1.192
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_power_core" }
+	component_set = "power_core"
+	size_restriction = { fe_battlecruiser }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_TITAN_ORIGINAL_EMPIRE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_original_empire_power_core"
+	icon_frame = 1
+	power = 30000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2368
+			sr_dark_matter = 64
+		}
+		upkeep = {
+			energy = 23.72
+			alloys = 2.372
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_power_core" }
+	component_set = "power_core"
+	size_restriction = { fe_titan }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_GOLIATH_ORIGINAL_EMPIRE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_original_empire_power_core"
+	icon_frame = 1
+	power = 60000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 4736
+			sr_dark_matter = 128
+		}
+		upkeep = {
+			energy = 47.44
+			alloys = 4.744
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_power_core" }
+	component_set = "power_core"
+	size_restriction = { 
+		fe_goliath
+		colossus
+		star_eater
+		juggernaut
+		starbase_outpost
+		starbase_starport
+		starbase_starhold
+		starbase_starfortress
+		starbase_citadel
+	}
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_STATIONS_ORIGINAL_EMPIRE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_original_empire_power_core"
+	icon_frame = 1
+	power = 20000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 296
+			sr_dark_matter = 16
+		}
+		upkeep = {
+			energy = 2.96
+			alloys = 0.296
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_power_core" }
+	component_set = "power_core"
+	size_restriction = { fe_small_station ion_cannon }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_LARGE_STATIONS_ORIGINAL_EMPIRE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_original_empire_power_core"
+	icon_frame = 1
+	power = 40000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1192
+			sr_dark_matter = 32
+		}
+		upkeep = {
+			energy = 11.92
+			alloys = 1.192
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_power_core" }
+	component_set = "power_core"
+	size_restriction = { fe_large_station }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+# ####################
+#  Shields
+# ####################
+
+
+utility_component_template = {
+	key = "MEDIUM_ORIGINAL_EMPIRE_SHIELD"
+	size = medium
+	icon = "GFX_ship_part_original_empire_shield"
+	icon_frame = 1
+	power = -440
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 232
+			sr_dark_matter = 4
+		}
+		upkeep = {
+			energy = 2.32
+			alloys = 0.464
+		}
+	}
+	modifier = {
+		ship_shield_add = 3720
+		ship_shield_regen_add_static = 37.2 #Regeneration per day
+	}
+	prerequisites = { "tech_original_empire_shield" }
+	component_set = "ORIGINAL_EMPIRE_SHIELD"
+}
+
+utility_component_template = {
+	key = "LARGE_ORIGINAL_EMPIRE_SHIELD"
+	size = large
+	icon = "GFX_ship_part_original_empire_shield"
+	icon_frame = 1
+	power = -880
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 456
+			sr_dark_matter = 8
+		}
+		upkeep = {
+			energy = 9.12
+			alloys = 1.664
+		}
+	}
+	modifier = {
+		ship_shield_add = 8880
+		ship_shield_regen_add_static = 88.8 
+	}
+	prerequisites = { "tech_original_empire_shield" }
+	component_set = "ORIGINAL_EMPIRE_SHIELD"
+}
+
+####################
+# Shield Recharger #
+####################
+
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_CHALICE"
+	size = aux
+	icon = "GFX_ship_part_original_empire_chalice"
+	icon_frame = 1
+	power = -200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 40
+			sr_dark_matter = 4
+		}
+	}
+	
+	prerequisites = { "tech_original_empire_chalice" }
+	component_set = "ORIGINAL_EMPIRE_CHALICE"
+	
+	modifier = {
+		ship_shield_mult = 0.5
+		weapon_type_point_defense_weapon_damage_mult = 0.5
+		weapon_type_point_defense_weapon_fire_rate_mult = 0.5
+	}
+	
+	ai_weight = {
+		weight = 20
+	}
+}
+
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_CRUCIBLE"
+	size = aux
+	icon = "GFX_ship_part_original_empire_crucible"
+	icon_frame = 1
+	power = -200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 200
+			sr_dark_matter = 4
+		}
+	}
+	
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.5
+		weapon_type_strike_craft_weapon_damage_mult = 0.5
+		weapon_type_strike_craft_speed_mult = 0.5
+	}
+	
+	
+	prerequisites = { "tech_original_empire_crucible" }
+	component_set = "ORIGINAL_EMPIRE_CRUCIBLE"
+
+	ai_weight = {
+		weight = 20
+	}
+}
+
+# ####################
+#  Armor
+# ####################
+
+utility_component_template = {
+	key = "MEDIUM_CELESTIAL_ARMOR"
+	size = medium
+	icon = "GFX_ship_part_celestial_armor"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 352
+			sr_living_metal = 4
+		}		
+		upkeep = {
+			energy = 3.52
+			alloys = 0.704
+		}
+	}
+	
+	prerequisites = { "tech_celestial_armor" }
+	component_set = "CELESTIAL_ARMOR"
+	
+	modifier = {
+		ship_armor_add = 3720
+		ship_armor_regen_add_static = 37.20
+	}	
+}
+
+utility_component_template = {
+	key = "LARGE_CELESTIAL_ARMOR"
+	size = large
+	icon = "GFX_ship_part_celestial_armor"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 704
+			sr_living_metal = 8
+		}		
+		upkeep = {
+			energy = 7.04
+			alloys = 1.408
+		}
+	}
+	
+	prerequisites = { "tech_celestial_armor" }
+	component_set = "CELESTIAL_ARMOR"
+	
+	modifier = {
+		ship_armor_add = 8880
+		ship_armor_regen_add_static = 88.8
+	}	
+}
+
+utility_component_template = {
+	key = "MEDIUM_CELESTIAL_PLATING"
+	size = medium
+	icon = "GFX_ship_part_celestial_plating"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 352
+			sr_living_metal = 4
+		}		
+		upkeep = {
+			energy = 3.52
+			alloys = 0.704
+		}
+	}
+	
+	prerequisites = { "tech_celestial_plating" }
+	component_set = "CELESTIAL_PLATING"
+	
+	modifier = {
+		ship_hull_add = 3720
+		ship_hull_regen_add_static = 37.20
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_CELESTIAL_PLATING"
+	size = large
+	icon = "GFX_ship_part_celestial_plating"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 704
+			sr_living_metal = 8
+		}		
+		upkeep = {
+			energy = 7.04
+			alloys = 1.408
+		}
+	}
+	
+	prerequisites = { "tech_celestial_plating" }
+	component_set = "CELESTIAL_PLATING"
+	
+	modifier = {
+		ship_hull_add = 8880
+		ship_hull_regen_add_static = 88.8
+	}
+}
+
+### Jump drives
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_JUMP_DRIVE"
+	size = small
+	icon = "GFX_ship_part_original_empire_jump_drive"
+	icon_frame = 1
+	power = -120
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+		}
+	}
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_windup_mult = -2.5
+		ship_ftl_jumpdrive_range_mult = 1.50
+	}
+	
+	ai_weight = {
+		weight = 4
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { "tech_original_empire_jump_drive" }
+	component_set = "ftl_components"
+
+}
+
+
+##Thrusters
+utility_component_template = {
+	key = "FE_ESCORT_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_original_empire_thruster"
+	icon_frame = 1
+	power = -240
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 57.6
+			sr_dark_matter = 4.4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.75
+		ship_evasion_add = 24
+	}
+
+	prerequisites = { "tech_original_empire_thruster" }
+	component_set = "thruster_components"
+	size_restriction = { fe_escort }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_BATTLECRUISER_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_original_empire_thruster"
+	icon_frame = 1
+	power = -960
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 230.4
+			sr_dark_matter = 20
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.75
+		ship_evasion_add = 12
+	}
+
+	prerequisites = { "tech_original_empire_thruster" }
+	component_set = "thruster_components"
+	size_restriction = { fe_battlecruiser }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_TITAN_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_original_empire_thruster"
+	icon_frame = 1
+	power = -1920
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 460
+			sr_dark_matter = 40
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.75
+		ship_evasion_add = 6
+	}
+
+	prerequisites = { "tech_original_empire_thruster" }
+	component_set = "thruster_components"
+	size_restriction = { fe_titan }
+	
+	ai_weight = {
+		weight = 100
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_GOLIATH_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_original_empire_thruster"
+	icon_frame = 1
+	power = -2400
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 720
+			sr_dark_matter = 76
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.75
+		ship_evasion_add = 2
+	}
+
+	prerequisites = { "tech_original_empire_thruster" }
+	component_set = "thruster_components"
+	size_restriction = { fe_goliath }
+	
+	ai_weight = {
+		weight = 100
+
+#		modifier = {
+#			factor = 0.0
+#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+#		}
+	}
+}
+
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_SENSORS"
+	size = medium
+	icon = "GFX_ship_part_original_empire_sensors"
+	icon_frame = 1
+	power = -80
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 32
+		}
+	}
+	sensor_range = 10
+	hyperlane_range = 15
+
+	ship_modifier = {
+		ship_tracking_add = 60
+	}
+
+	prerequisites = { "tech_original_empire_sensors" }
+	component_set = "sensor_components"
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+
+
+
+##################
+####Auras
+##################
+
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_SHIELD_DISABLER"
+	size = medium
+	icon = "GFX_ship_part_original_empire_shield_disabler"
+	icon_frame = 1
+	power = 0
+	
+	size_restriction = { fe_goliath }
+	component_set = "ship_aura_components"
+	
+	prerequisites = { "tech_original_empire_shield_disabler" }
+	
+	hostile_aura = {
+		name = "aura_shield_dampener"
+		radius = 300
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_shield_disabler
+			priority = 1
+		}
+		
+		modifier = {
+			ship_shield_reduction = 1.0
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			is_ai = yes
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
+}
+
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_CONTROLS_JAMMER"
+	size = medium
+	icon = "GFX_ship_part_original_empire_controls_jammer"
+	icon_frame = 1
+	power = 0
+	
+	size_restriction = { fe_titan }
+	component_set = "ship_aura_components"
+	
+	prerequisites = { "tech_original_empire_controls_jammer" }
+	
+	hostile_aura = {
+		name = "aura_quantum_destabilizer"
+		radius = 300
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_controls_jammer
+			priority = 1
+		}
+		
+		modifier = {
+			ship_speed_reduction = 1
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity" 
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+utility_component_template = {
+	key = "ORIGINAL_EMPIRE_SUBSPACE_SNARE"
+	size = medium
+	icon = "GFX_ship_part_original_empire_subspace_snare"
+	icon_frame = 1
+	power = 0
+	
+	size_restriction = { fe_titan }
+	component_set = "ship_aura_components"
+	
+	prerequisites = { "tech_original_empire_subspace_snare" }
+	
+	hostile_aura = {
+		name = "aura_ship_subspace_snare"
+		radius = 300
+		apply_on = fleets
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_snare_aura
+			priority = 1
+		}
+		
+		modifier = {
+			ship_emergency_ftl_min_days_mult = 5
+			ship_disengage_chance_mult = -5
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"   
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}

@@ -1,0 +1,1284 @@
+namespace = distar
+
+#################################
+#
+# Anomaly Events
+# by Dee Majek
+#
+#################################
+
+# root = ship scope
+# from = planet scope
+
+###### EAT OR BE EATEN ######
+ship_event = {
+	id = distar.1050
+	title = "distar.1050.name"
+	picture = GFX_evt_space_debris
+	show_sound = event_alien_nature
+	location = FROM
+
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { owner = { is_lithoid_empire = no } }
+		text = distar.1050.desc
+	}
+	desc = {
+		trigger = { owner = { is_lithoid_empire = yes } }
+		text = distar.1050.desc_lithoid
+	}
+
+	trigger = {
+		any_country = {
+			is_zofe_compatible = yes
+			NOT = {
+				is_same_empire = root.owner
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			country_event = { id = story.5 days = 30 }
+			set_country_flag = eat_or_be_eaten
+		}
+		random_playable_country = {
+			limit = {
+				NOR = {
+					is_same_empire = root.owner
+					has_country_flag = lost_colony_parent
+					has_authority = auth_machine_intelligence
+					is_synthetic_empire = yes
+					owner_species = {
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+						has_trait = trait_lithoid
+					}
+				}
+			}
+			weights = {
+				base = 1
+				modifier = {
+					factor = 10
+					has_communications = root.owner
+				}
+			}
+			establish_communications = root.owner
+			save_event_target_as = delicious_aliens
+			root.owner = { set_country_flag = establishing_delicious_comms }
+		}
+	}
+
+	option = {
+		name = distar.1050.a
+		hidden_effect = {
+			if = {
+				limit = {
+					root.owner = { has_country_flag = establishing_delicious_comms }
+				}
+				custom_tooltip = distar.1050.a.tooltip
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+# They are freed
+country_event = {
+	id = distar.2033
+	title = "distar.2033.name"
+	desc = "distar.2033.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_mystic_reveal
+	location = event_target:time_loop_world
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:time_loop_world = {
+			change_pc = pc_desert
+			set_name = "NAME_Gish"
+			clear_planet_modifiers = yes
+			if = {
+				limit = {
+					root = { NOT = { species_portrait = rep16 } }
+				}
+				log = "limit passed"
+				create_species = {
+					name = "NAME_Prikki"
+					plural = "NAME_Prikki"
+					class = REP
+					portrait = rep16
+					namelist = REP4
+					traits = {
+						ideal_planet_class = pc_desert
+						trait = trait_industrious
+						trait = trait_solitary
+						trait = trait_decadent
+					}
+					homeworld = this
+					effect = {
+						save_event_target_as = prikki_species
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					root = { species_portrait = rep16 }
+				}
+				create_species = {
+					name = "NAME_Prikki"
+					plural = "NAME_Prikki"
+					class = REP
+					portrait = rep12
+					namelist = REP4
+					traits = {
+						ideal_planet_class = pc_desert
+						trait = trait_industrious
+						trait = trait_solitary
+						trait = trait_decadent
+					}
+					homeworld = this
+					effect = {
+						save_event_target_as = prikki_species
+					}
+				}
+			}
+			create_country = {
+				name = "NAME_Prikkiki-Ti"
+				adjective = "NAME_Prikki"
+				authority = random
+				civics = {
+					civic = civic_fanatic_purifiers
+					civic = civic_cutthroat_politics
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_militarist
+				}
+				flag = {
+					icon = {
+						category = "domination"
+						file = "domination_1.dds"
+					}
+					background= {
+						category = backgrounds
+						file = "v.dds"
+					}
+					colors = {
+						"teal"
+						"orange"
+						"null"
+						"null"
+					}
+				}
+				type = default
+				effect = {
+					save_global_event_target_as = time_loop_country
+					species = {
+						save_global_event_target_as = time_loop_species
+					}
+					establish_communications_no_message = root
+
+					##Copy technology
+					IF = {
+						LIMIT = {
+							any_neighbor_country = {
+								exists = this
+								is_zofe_compatible = yes
+							}
+						}
+						random_neighbor_country = {
+							limit = { is_zofe_compatible = yes }
+							save_event_target_as = tech_country
+						}
+						copy_techs_from = {
+							target = event_target:tech_country
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+					}
+					ELSE_IF = {
+						LIMIT = {
+							any_playable_country = {
+								is_ai = no
+							}
+						}
+						random_playable_country = {
+							limit = { is_ai = no }
+							save_event_target_as = tech_country
+						}
+						copy_techs_from = {
+							target = event_target:tech_country
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+					}
+					ELSE = {
+						random_country = {
+							limit = { is_zofe_compatible = yes	}
+							save_event_target_as = tech_country
+						}
+						copy_techs_from = {
+							target = event_target:tech_country
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+					}
+					##Add some new technologies
+					inverted_switch = {
+						trigger = has_technology
+						tech_starbase_2 = { give_technology = { tech = tech_starbase_2 } }
+						tech_starbase_3 = { give_technology = { tech = tech_starbase_3 } }
+						tech_starbase_4 = { give_technology = { tech = tech_starbase_4 } }
+						tech_starbase_5 = { give_technology = { tech = tech_starbase_5 } }
+						tech_power_plant_4 = { give_technology = { tech = tech_power_plant_4 } }
+						tech_mining_3 = { give_technology = { tech = tech_mining_3 } }
+						tech_power_hub_1 = { give_technology = { tech = tech_power_hub_1 } }
+					}
+
+					##Add resources
+					add_resource = { minerals = 10000 }
+					add_resource = { energy = 10000 }
+					add_resource = { food = 3000 }
+					add_resource = { consumer_goods = 3000 }
+					add_resource = { alloys = 7000 }
+					add_resource = { influence = 1000 }
+					add_resource = { unity = 27000 }
+
+					##Create fleets
+					if = {
+						limit = {
+							has_technology = tech_destroyers
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:time_loop_country
+								while = {
+									count = 8
+									create_ship = {
+										name = random
+										random_existing_design = destroyer
+										graphical_culture = "reptilian_01"
+									}
+								}
+								set_location = {
+									target = event_target:time_loop_world
+									distance = 10
+									angle = random
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_technology = tech_cruisers
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:time_loop_country
+								while = {
+									count = 6
+									create_ship = {
+										name = random
+										random_existing_design = cruiser
+										graphical_culture = "reptilian_01"
+									}
+								}
+								set_location = {
+									target = event_target:time_loop_world
+									distance = 10
+									angle = random
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_technology = tech_battleships
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:time_loop_country
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										random_existing_design = battleship
+										graphical_culture = "reptilian_01"
+									}
+								}
+								set_location = {
+									target = event_target:time_loop_world
+									distance = 10
+									angle = random
+								}
+							}
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:time_loop_country
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									random_existing_design = corvette
+									graphical_culture = "reptilian_01"
+								}
+							}
+						}
+					}
+				}
+			}
+			set_owner = event_target:time_loop_country
+			set_capital = yes
+			while = {
+				count = 52
+				create_pop = {
+					species = event_target:time_loop_species
+				}
+			}
+			while = {
+				count = 3
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+			}
+			while = {
+				count = 4
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_industrial
+				}
+			}
+			while = {
+				count = 4
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+			}
+			while = {
+				count = 4
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+			}
+			while = {
+				count = 5
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			add_building = building_system_capital
+			add_building = building_research_lab_1
+			add_building = building_foundry_1
+			add_building = building_food_processing_facility
+			add_building = building_energy_grid
+			add_building = building_mineral_purification_plant
+			add_building = building_bureaucratic_1
+			add_building = building_bureaucratic_1
+
+			while = {
+				count = 10
+				create_army = {
+					name = random
+					owner = event_target:time_loop_country
+					species = event_target:time_loop_species
+					type = defense_army
+				}
+			}
+			solar_system = {
+				create_starbase = {
+					size = starbase_citadel
+					module = shipyard
+					owner = event_target:time_loop_country
+				}
+			}
+		}
+		establish_communications_no_message = last_created_country
+	}
+
+	option = {
+		name = distar.2033.a
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+
+	option = {
+		name = distar.2033.b
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+}
+
+#### If shielded planet is left alone
+
+# Lizards break free
+country_event = {
+	id = distar.2038
+	title = "distar.2038.name"
+	desc = "distar.2038.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_mystic_reveal
+	location = event_target:time_loop_world
+
+	is_triggered_only = yes
+
+	trigger = {
+		event_target:time_loop_world = {
+			solar_system = {
+				NOT = { exists = space_owner }
+			}
+		}
+	}
+
+	immediate = {
+		event_target:time_loop_world = {
+			change_pc = pc_desert
+			set_name = "NAME_Gish"
+			clear_planet_modifiers = yes
+			create_species = {
+				name = "NAME_Prikki"
+				plural = "NAME_Prikki"
+				class = REP
+				portrait = rep16
+				namelist = REP4
+				traits = {
+					ideal_planet_class = pc_desert
+					trait = trait_industrious
+					trait = trait_solitary
+					trait = trait_decadent
+				}
+				homeworld = this
+			}
+			create_country = {
+				name = "NAME_Prikkiki-Ti"
+				authority = random
+				civics = {
+					civic = civic_fanatic_purifiers
+					civic = civic_cutthroat_politics
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_militarist
+				}
+				flag = {
+					icon = {
+						category = "domination"
+						file = "domination_1.dds"
+					}
+					background= {
+						category = backgrounds
+						file = "v.dds"
+					}
+					colors = {
+						"teal"
+						"orange"
+						"null"
+						"null"
+					}
+				}
+				type = default
+				exclude_day_zero_contact = root #will not establish contact with this country or its federation allies
+				effect = {
+					establish_communications_no_message = root
+					save_global_event_target_as = time_loop_country
+					species = {
+						save_global_event_target_as = time_loop_species
+					}
+					root = {
+						every_federation_ally = {
+							establish_communications = event_target:time_loop_country
+						}
+					}
+					##Copy technology
+					IF = {
+						LIMIT = {
+							any_neighbor_country = {
+								exists = this
+								is_zofe_compatible = yes
+							}
+						}
+						random_neighbor_country = {
+							limit = { is_zofe_compatible = yes }
+							save_event_target_as = tech_country
+						}
+						copy_techs_from = {
+							target = event_target:tech_country
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+					}
+					ELSE_IF = {
+						LIMIT = {
+							any_playable_country = {
+								is_ai = no
+							}
+						}
+						random_playable_country = {
+							limit = { is_ai = no }
+							save_event_target_as = tech_country
+						}
+						copy_techs_from = {
+							target = event_target:tech_country
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+					}
+					ELSE = {
+						random_country = {
+							limit = { is_zofe_compatible = yes	}
+							save_event_target_as = tech_country
+						}
+						copy_techs_from = {
+							target = event_target:tech_country
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+					}
+					##Add some new technologies
+					inverted_switch = {
+						trigger = has_technology
+						tech_starbase_2 = { give_technology = { tech = tech_starbase_2 } }
+						tech_starbase_3 = { give_technology = { tech = tech_starbase_3 } }
+						tech_starbase_4 = { give_technology = { tech = tech_starbase_4 } }
+						tech_starbase_5 = { give_technology = { tech = tech_starbase_5 } }
+						tech_power_plant_4 = { give_technology = { tech = tech_power_plant_4 } }
+						tech_mining_3 = { give_technology = { tech = tech_mining_3 } }
+						tech_power_hub_1 = { give_technology = { tech = tech_power_hub_1 } }
+					}
+
+					##Add resources
+					add_resource = { minerals = 10000 }
+					add_resource = { energy = 10000 }
+					add_resource = { food = 3000 }
+					add_resource = { consumer_goods = 3000 }
+					add_resource = { alloys = 7000 }
+					add_resource = { influence = 1000 }
+					add_resource = { unity = 27000 }
+
+					##Create fleets
+					if = {
+						limit = {
+							has_technology = tech_destroyers
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:time_loop_country
+								while = {
+									count = 8
+									create_ship = {
+										name = random
+										random_existing_design = destroyer
+										graphical_culture = "reptilian_01"
+									}
+								}
+								set_location = {
+									target = event_target:time_loop_world
+									distance = 10
+									angle = random
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_technology = tech_cruisers
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:time_loop_country
+								while = {
+									count = 6
+									create_ship = {
+										name = random
+										random_existing_design = cruiser
+										graphical_culture = "reptilian_01"
+									}
+								}
+								set_location = {
+									target = event_target:time_loop_world
+									distance = 10
+									angle = random
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_technology = tech_battleships
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:time_loop_country
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										random_existing_design = battleship
+										graphical_culture = "reptilian_01"
+									}
+								}
+								set_location = {
+									target = event_target:time_loop_world
+									distance = 10
+									angle = random
+								}
+							}
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:time_loop_country
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									random_existing_design = corvette
+									graphical_culture = "reptilian_01"
+								}
+							}
+						}
+					}
+				}
+			}
+
+			set_owner = event_target:time_loop_country
+			set_capital = yes
+			while = {
+				count = 52
+				create_pop = {
+					species = event_target:time_loop_species
+				}
+			}
+
+			while = {
+				count = 3
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+			}
+			while = {
+				count = 5
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_industrial
+				}
+			}
+			while = {
+				count = 4
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+			}
+			while = {
+				count = 4
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+			}
+			while = {
+				count = 6
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			add_building = building_system_capital
+			add_building = building_research_lab_1
+			add_building = building_foundry_1
+			add_building = building_food_processing_facility
+			add_building = building_energy_grid
+			add_building = building_mineral_purification_plant
+			add_building = building_bureaucratic_1
+			add_building = building_bureaucratic_1
+
+			while = {
+				count = 10
+				create_army = {
+					name = random
+					owner = event_target:time_loop_country
+					species = event_target:time_loop_species
+					type = defense_army
+				}
+			}
+			solar_system = {
+				create_starbase = {
+					size = starbase_citadel
+					module = shipyard
+					owner = event_target:time_loop_country
+				}
+			}
+		}
+	}
+
+	option = {
+		name = distar.2038.a
+	}
+}
+
+planet_event = {
+	id = distar.20501
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Finding a target planet to scan and spawning enigmatic cache system
+		if = {
+			limit = {
+				any_system = {
+					exists = owner
+					owner = {
+						is_zofe_compatible = yes
+						is_at_war = no
+					}
+					any_system_planet = {
+						exists = owner
+						NOT = { has_planet_flag = has_been_scanned }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_system = {
+						exists = owner
+						owner = {
+							is_ai = no
+							is_zofe_compatible = yes
+							is_at_war = no
+						}
+						any_system_planet = {
+							exists = owner
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+					}
+				}
+				closest_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_zofe_compatible = yes
+							is_at_war = no
+							is_ai = no
+						}
+						any_system_planet = {
+							exists = owner
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+					}
+					random_system_planet = {
+						limit = {
+							exists = owner
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+						#set_planet_flag = has_been_scanned
+						save_event_target_as = new_location
+						solar_system = { set_star_flag = enigmatic_cache_system }
+					}
+				}
+			}
+			else = {
+				closest_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_zofe_compatible = yes
+							is_at_war = no
+						}
+						any_system_planet = {
+							exists = owner
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+					}
+					random_system_planet = {
+						limit = {
+							exists = owner
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+						#set_planet_flag = has_been_scanned
+						save_event_target_as = new_location
+						solar_system = { set_star_flag = enigmatic_cache_system }
+					}
+				}
+			}
+		}
+		else = {
+			closest_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_zofe_compatible = yes
+					}
+					any_system_planet = {
+						exists = owner
+					}
+				}
+				random_system_planet = {
+					limit = { exists = owner }
+					#set_planet_flag = has_been_scanned
+					save_event_target_as = new_location
+					solar_system = { set_star_flag = enigmatic_cache_system }
+				}
+			}
+		}
+		create_country = {
+			name = "NAME_enigmatic_cache"
+			type = enigmatic_cache
+			flag = {
+				icon = {
+					category = spherical
+					file = flag_spherical_4.dds
+				}
+				background = {
+					category = backgrounds
+					file = "00_solid.dds"
+				}
+				colors = {
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = enigmatic_cache_country
+			}
+		}
+		event_target:enigmatic_cache_country = {
+			set_graphical_culture = guardian_01
+			create_enigmatic_cache_fleet = yes
+		}
+		every_country = {
+			establish_communications_no_message = event_target:enigmatic_cache_country
+		}
+	}
+}
+
+# Enigmatic Cache moves if it can find a new location
+country_event = {
+	id = distar.5052
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = cache_returned
+			any_owned_ship = {
+				has_ship_flag = enigmatic_cache_ship
+				exists = orbit
+				exists = orbit.owner
+				orbit.owner = {
+					is_researching_special_project = ENIGMATIC_CACHE_PROJECT
+				}
+			}
+		}
+	}
+
+	immediate = {
+	# Runs check to remove enigmatic_cache_in_orbit modifier
+		random_owned_ship = {
+			limit = {
+				has_ship_flag = enigmatic_cache_ship
+				exists = orbit
+			}
+			orbit = {
+				planet_event = { id = distar.5056 days = 2 }
+				save_event_target_as = cache_present_location
+				if = {
+					limit = {
+						exists = owner
+					}
+					owner = { save_event_target_as = enigmatic_cache_present_host }
+				}
+				# sets 'scanned' planet flag on present location
+				if = {
+					limit = {
+						NOT = {
+							has_planet_flag = has_been_scanned
+						}
+					}
+					set_planet_flag = has_been_scanned
+				}
+			}
+		}
+		# Cache searches for new location:
+		# Tries to find a player controlled country
+		if = {
+			limit = {
+				any_playable_country = {
+					is_ai = no
+					is_at_war = no
+					NOR = {
+						is_hostile = root
+						root = { is_hostile = prev }
+					}
+					any_owned_planet = {
+						NOT = { has_planet_flag = has_been_scanned }
+					}
+				}
+			}
+			random_owned_ship = {
+				limit = {
+					has_ship_flag = enigmatic_cache_ship
+				}
+				solar_system = {
+					closest_system = {
+						limit = {
+							exists = owner
+							owner = {
+								is_ai = no
+								is_zofe_compatible = yes
+								is_at_war = no
+								NOR = {
+									is_hostile = root
+									root = { is_hostile = prev }
+								}
+							}
+							NOT = {
+								any_fleet_in_system = {
+									exists = owner
+									owner = {
+										is_hostile = root
+									}
+								}
+							}
+							any_system_planet = {
+								is_colony = yes
+								NOT = { has_planet_flag = has_been_scanned }
+							}
+						}
+						random_system_planet = {
+							limit = {
+								is_colony = yes
+								NOT = { has_planet_flag = has_been_scanned }
+							}
+							save_event_target_as = new_location
+						}
+					}
+				}
+				auto_move_to_planet = {
+					target = event_target:new_location
+					clear_auto_move_on_arrival = no	# distar. sets a new auto move target
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				any_playable_country = {
+					is_at_war = no
+					NOR = {
+						is_hostile = root
+						root = { is_hostile = prev }
+					}
+					any_owned_planet = {
+						NOT = { has_planet_flag = has_been_scanned }
+					}
+				}
+			}
+			random_owned_ship = {
+				limit = {
+					has_ship_flag = enigmatic_cache_ship
+				}
+				solar_system = {
+					closest_system = {
+						limit = {
+							exists = owner
+							owner = {
+								is_zofe_compatible = yes
+								is_at_war = no
+								NOR = {
+									is_hostile = root
+									root = { is_hostile = prev }
+								}
+							}
+							any_system_planet = {
+								is_colony = yes
+								NOT = { has_planet_flag = has_been_scanned }
+							}
+						}
+						random_system_planet = {
+							limit = {
+								is_colony = yes
+								NOT = { has_planet_flag = has_been_scanned }
+							}
+							#set_planet_flag = has_been_scanned
+							save_event_target_as = new_location
+						}
+					}
+				}
+				auto_move_to_planet = {
+					target = event_target:new_location
+					clear_auto_move_on_arrival = no	# istar. sets a new auto move target
+				}
+			}
+		}
+
+		# Attempts to move again later if no suitable location
+		else = {
+			country_event = { id = distar.5052 days = 100 }
+		}
+		# Set flag if cache is moving to planet within same country
+		if = {
+			limit = {
+				exists = event_target:new_location
+				exists = event_target:enigmatic_cache_present_host
+				event_target:new_location = { is_owned_by = event_target:enigmatic_cache_present_host }
+				NOT = {
+					has_country_flag = enigmatic_cache_host_country
+				}
+			}
+			event_target:enigmatic_cache_present_host = {
+				set_country_flag = enigmatic_cache_host_country
+			}
+		}
+		# remove flag if cache is moving to planet in different country
+		else_if = {
+			limit = {
+				OR = {
+					NOT = { exists = event_target:new_location }
+					NOT = {
+						event_target:new_location = {
+							owner = {
+								exists = event_target:enigmatic_cache_present_host
+								is_same_value = event_target:enigmatic_cache_present_host
+							}
+						}
+					}
+				}
+				has_country_flag = enigmatic_cache_host_country
+			}
+			event_target:enigmatic_cache_present_host = {
+				remove_country_flag = enigmatic_cache_host_country
+			}
+		}
+	}
+}
+
+#### THE ENIGMATIC CACHE RETURNS ####
+
+event = {
+	id = distar.5060
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+	### There are no other player empires that are eligible for scanning
+		exists = event_target:enigmatic_cache_country
+		NOR = {
+			has_global_flag = cache_returned
+			any_playable_country = {
+				NOT = {
+					any_owned_planet = {
+						is_colony = yes
+						has_planet_flag = has_been_scanned
+					}
+				}
+				NOR = {
+					is_hostile = event_target:enigmatic_cache_country
+					event_target:enigmatic_cache_country = { is_hostile = prev }
+				}
+				is_at_war = no
+			}
+		}
+		### There is a player empire that has already been scanned
+		any_playable_country = {
+			any_owned_pop = {
+				is_same_species = owner_species
+				is_robot_pop = no
+				is_sapient = yes
+				NOT = { has_trait = trait_machine_unit }
+			}
+			any_owned_planet = {
+				is_colony = yes
+				has_planet_flag = has_been_scanned
+			}
+			NOR = {
+				is_hostile = event_target:enigmatic_cache_country
+				event_target:enigmatic_cache_country = { is_hostile = prev }
+			}
+			is_at_war = no
+			is_ai = no
+		}
+	}
+	immediate = {
+	# Attempts to find a player empire with no other technologically inferior empires
+		if = {
+			limit = {
+				any_playable_country = {
+					any_owned_pop = {
+						is_same_species = owner_species
+						is_robot_pop = no
+						is_sapient = yes
+						NOT = { has_trait = trait_machine_unit }
+					}
+					NOT = {
+						any_country = {
+							is_zofe_compatible = yes
+							relative_power = {
+								who = prev
+								category = technology
+								value <= inferior
+							}
+						}
+					}
+					any_owned_planet = {
+						is_colony = yes
+						has_planet_flag = has_been_scanned
+					}
+					NOR = {
+						is_hostile = event_target:enigmatic_cache_country
+						event_target:enigmatic_cache_country = { is_hostile = prev }
+					}
+					is_at_war = no
+					is_ai = no
+				}
+			}
+			random_playable_country = {
+				limit = {
+					any_owned_pop = {
+						is_same_species = owner_species
+						is_robot_pop = no
+						is_sapient = yes
+						NOT = { has_trait = trait_machine_unit }
+					}
+					NOT = {
+						any_country = {
+							is_zofe_compatible = yes
+							relative_power = {
+								who = prev
+								category = technology
+								value <= inferior
+							}
+						}
+					}
+					any_owned_planet = {
+						is_colony = yes
+						has_planet_flag = has_been_scanned
+					}
+					NOR = {
+						is_hostile = event_target:enigmatic_cache_country
+						event_target:enigmatic_cache_country = { is_hostile = prev }
+					}
+					is_at_war = no
+					is_ai = no
+				}
+				save_global_event_target_as = enigmatic_caches_choice
+				set_country_flag = enigmatic_caches_choice
+				random_owned_planet = {
+					limit = {
+						is_homeworld = yes
+					}
+					save_event_target_as = new_location
+				}
+			}
+			set_global_flag = cache_returned
+			event_target:enigmatic_cache_fleet = {
+				set_fleet_flag = cache_returning
+				auto_move_to_planet = {
+					target = event_target:new_location
+					clear_auto_move_on_arrival = no
+				}
+			}
+		}
+		# Attempts to find a player empire regardless of technology level
+		else_if = {
+			limit = {
+				any_playable_country = {
+					any_owned_pop = {
+						is_same_species = owner_species
+						is_robot_pop = no
+						is_sapient = yes
+						NOT = { has_trait = trait_machine_unit }
+					}
+					any_owned_planet = {
+						is_colony = yes
+						has_planet_flag = has_been_scanned
+					}
+					NOR = {
+						is_hostile = event_target:enigmatic_cache_country
+						event_target:enigmatic_cache_country = { is_hostile = prev }
+					}
+					is_at_war = no
+					is_ai = no
+				}
+			}
+			random_playable_country = {
+				limit = {
+					any_owned_pop = {
+						is_same_species = owner_species
+						is_robot_pop = no
+						is_sapient = yes
+						NOT = { has_trait = trait_machine_unit }
+					}
+					any_owned_planet = {
+						is_colony = yes
+						has_planet_flag = has_been_scanned
+					}
+					NOR = {
+						is_hostile = event_target:enigmatic_cache_country
+						event_target:enigmatic_cache_country = { is_hostile = prev }
+					}
+					is_at_war = no
+					is_ai = no
+				}
+				save_global_event_target_as = enigmatic_caches_choice
+				set_country_flag = enigmatic_caches_choice
+				random_owned_planet = {
+					limit = {
+						is_homeworld = yes
+					}
+					save_event_target_as = new_location
+				}
+			}
+			set_global_flag = cache_returned
+			event_target:enigmatic_cache_fleet = {
+				set_fleet_flag = cache_returning
+				auto_move_to_planet = { # Triggers distar.5061 from on_action
+					target = event_target:new_location
+					clear_auto_move_on_arrival = no
+				}
+			}
+		}
+	}
+}

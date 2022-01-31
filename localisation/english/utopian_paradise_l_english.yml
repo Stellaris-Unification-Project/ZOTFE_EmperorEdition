@@ -1,0 +1,136 @@
+﻿l_english:
+
+ col_ae_capital_utopian:0 "Utopian Capital"
+ col_ae_capital_utopian_desc:0 "The Utopian Capital of an Ascended Empire."
+ col_ae_colony_utopian:0 "Utopian World"
+ col_ae_colony_utopian_desc:0 "A Utopian World of an Ascended Empire."
+
+ district_utopian_housing:0 "Utopian Housing District"
+ district_utopian_housing_desc:0 "Utopian Housing Districts provide spacious homes spread along vast plains. Its structures and shared spaces allow food to be grown and freely plucked for consumption."
+ district_utopian_housing_plural:0 "Utopian Housing Districts"
+ district_idyllic_spaces:0 "Idyllic Spaces"
+ district_idyllic_spaces_desc:0 "Idyllic Spaces attract locals and visitors alike to admire the planet's perfect landscape and provide scenic locations for citizens to spend quality time."
+ district_idyllic_spaces_plural:0 "Idyllic Spaces"
+ district_utopian_production:0 "Utopian Production District"
+ district_utopian_production_desc:0 "Utopian Production Districts are masterpieces of engineering, integrating singularity power generators with dimensional harvestors into one district."
+ district_utopian_production_plural:0 "Utopian Production Districts"
+ district_utopian_manufacture:0 "Utopian Manufacturing District"
+ district_utopian_manufacture_desc:0 "The Utopian Manufacturing Districts provide the ideal infrastructures for empires that utilize the latest technologies in automated industries."
+ district_utopian_manufacture_plural:0 "Utopian Manufacturing Districts"
+ district_utopian_science:0 "Utopian Science District"
+ district_utopian_science_desc:0 "The Utopian Science Districts form ideal centers for technological innovation, with an abundance of facilities to conduct research and scientific experiments - even for an average citizen looking to have some fun!"
+ district_utopian_science_plural:0 "Utopian Science Districts"
+ 
+ district_utopian_city:0 "Utopian Residential Arcology"
+ district_utopian_city_desc:0 "The Residential Arcologies of a Utopian City World are built and engineered to perfection. Housing units inside the spiral towers are designed to be self-sufficient, allowing food to be freely plucked from its structures for consumption."
+ district_utopian_city_plural:0 "Utopian Residential Arcologies"
+ district_utopian_leisure:0 "Utopian Leisure Arcology"
+ district_utopian_leisure_desc:0 "The Leisure Arcologies of a Utopian City World keep its visitors enteretained and live out the rest of their lives in total bliss, untroubled by worries from the outside world."
+ district_utopian_leisure_plural:0 "Utopian Leisure Arcologies"
+ district_utopian_financial:0 "Utopian Financial Arcology"
+ district_utopian_financial_desc:0 "The Financial Arcologies of a Utopian City World store massive amounts of the empire's wealth beneath the surface in their security vaults. Much of it is invested and its returns are then used to fund the state and its citizens' lavish lifestyles."
+ district_utopian_financial_plural:0 "Utopian Financial Arcologies"
+ district_utopian_foundry:0 "Utopian Foundry Arcology"
+ district_utopian_foundry_desc:0 "The Foundry Arcologies of a Utopian City World use the latest technologies to automate alloy production with maximum efficiency, while also providing side facilities for highly-specialized productions of strategic resources."
+ district_utopian_foundry_plural:0 "Utopian Foundry Acologies"
+ district_utopian_science_city:0 "Utopian Science Arcology"
+ district_utopian_science_city_desc:0 "The Utopian Science Arcologies serve as technological hubs of the city, with awesome spires filled to the brim with fancy inventions, putting into full view the technological supremacy of the empire."
+ district_utopian_science_city_plural:0 "Utopian Science Arcologies"
+ 
+ district_utopian_city_rw:0 "Utopian City Segment"
+ district_utopian_city_rw_desc:0 "A Utopian City Segment on a Ring World makes maximum use of the unique geography to provide housing that is both compact and spacious. Food is grown in the communal areas and may be freely plucked for consumption."
+ district_utopian_city_rw_plural:0 "Utopian City Segments"
+ district_utopian_leisure_rw:0 "Utopian Leisure Segment"
+ district_utopian_leisure_rw_desc:0 "A Utopian Leisure Segment on a Ring World hosts the greatest collection of entertainment in the galaxy. Every form of entertainment imaginable may be found within. Once inside, visitors often fail to find the exit."
+ district_utopian_leisure_rw_plural:0 "Utopian Leisure Segments"
+ district_utopian_production_rw:0 "Utopian Production Segment"
+ district_utopian_production_rw_desc:0 "A Utopian Production Segment on a Ring World is a complex, interconnected piece of infrastructure that combines advanced singularities with dimensional harvestors, producing both energy and minerals in massive quantities."
+ district_utopian_production_rw_plural:0 "Utopian Production Segments"
+ district_utopian_foundry_rw:0 "Utopian Foundry Segment"
+ district_utopian_foundry_rw_desc:0 "A Utopian Foundry Segment on a Ring World is a masterpiece of engineering that produces a large amount of alloys by utilizing the latest automated technologies."
+ district_utopian_foundry_rw_plural:0 "Utopian Foundry Segments"
+ district_utopian_science_rw:0 "Utopian Science Segment"
+ district_utopian_science_rw_desc:0 "A Utopian Science Segment on a Ring World hosts the highest concentration of researchers and science enthusiasts in the galaxy, where many top facilities are open at all times for observation and learning."
+ district_utopian_science_rw_plural:0 "Utopian Science Segments"
+ 
+
+ 
+ mod_pc_utopian_city_habitability:0 "Utopian City Habitability"
+ mod_pc_utopian_gaia_habitability:0 "Utopian World Habitability"
+ mod_pc_utopian_ringworld_habitability:0 "Utopian Ringworld Habitability"
+ 
+ pc_utopian_city:0 "$pc_city$"
+ pc_utopian_city_desc:0 "$pc_city_desc$"
+ pc_utopian_gaia:0 "$pc_gaia$"
+ pc_utopian_gaia_desc:0 "$pc_gaia_desc$"
+ pc_utopian_ringworld:0 "$pc_ringworld_habitable$"
+ pc_utopian_ringworld_desc:0 "$pc_ringworld_habitable$"
+ 
+ 
+ decision_paradise_creation_no_districts:0 "£trigger_no£ The planet must have full districts development."
+ 
+ decision_paradise_creation_effects:0 "Turns the planet into a beautiful §YUtopian World§!, becoming a true wonder of the universe. Unlocks special districts that support automated industries while allowing pops to live out the rest of their lives in self-deterministic ways.\n\n"
+ 
+
+ decision_paradise_creation:0 "Paradise Creation"
+ decision_paradise_creation_desc:0 "When nature is engineered to perfection, its unparalleled beauty among the known universe would be a fitting a legacy to leave for our young. Utopian Paradise Worlds are created from §Y$pc_gaia$§!, §Y$pc_city$§! or §Y$pc_ringworld_habitable$§!."
+ 
+ decision_paradise_creation_city:0 "$decision_paradise_creation$"
+ decision_paradise_creation_city_desc:0 "$decision_paradise_creation_desc$"
+ 
+ decision_paradise_creation_rw:0 "$decision_paradise_creation$"
+ decision_paradise_creation_rw_desc:0 "$decision_paradise_creation_desc$"
+ 
+ 
+ 
+ tech_paradise_creation:0 "Utopian Worlds"
+ tech_paradise_creation_desc:0 "Combining our mastery in terraforming, landscaping and engineering, we can create a true wonder in the universe and a Utopian World for our citizens to live." 
+ 
+ edict_paradise_creation:0 "Paradise Creation"
+ edict_paradise_creation_desc:0 "When nature is engineered to perfection, its unparalleled beauty among the known universe would be a fitting a legacy to leave for our young. Utopian Paradise Worlds are created from §Y$pc_gaia$§!,  §Y$pc_city$§! or §Y$pc_ringworld_habitable$§!."
+ 
+ pm_Living_Metal_Architecture:0 "Living Metal Architecture"
+ pm_Living_Metal_Architecture_desc:0 "The unique infrastructure of a Utopian World allows the use of advanced techniques that give shape and form to the esoteric Living Metal, which lends itself well to repurposing quickly."
+ 
+ pm_New_Utopian_World:0 "New Utopian World"
+ pm_New_Utopian_World_desc:0 "The living metal wreath on this new Utopian World is still in its infancy, making it more malleable and permissive for construction. Temporary housing and facilities are constantly being made and destroyed on an on-need basis."
+ 
+ 
+ 
+ utopian_paradise.100.name:0 "A New §HUtopian World§!: [Root.GetName]"
+ utopian_paradise.100.desc:0 "Upon stripping the planet of imperfections and the aged infrastructure we had built previously, our §HUtopian World§! is at last complete.\n\nOur engineers had created the perfect paradise, where lush mountains form the backdrop to sophisticated housing districts, created using Living Metal which can be shaped and repurposed as the population expands. Downtown districts are designed to support our growing automated industries and latest technologies.\n\nFrom this day forth, [Root.GetName] shall be known as a wonder of the universe."
+ utopian_paradise.100.a:0 "It is...beautiful."
+ 
+ utopian_paradise.200.name:0 "A New §HUtopian Ecumenopolis§!: [Root.GetName]"
+ utopian_paradise.200.desc:0 "Upon stripping the planet of imperfections and the aged arcologies we had built previously, our §HUtopian Ecumenopolis§! is at last complete.\n\nOur engineers had created the perfect paradise, where golden spires form the backdrop to utopian city districts, created using Living Metal which can be shaped and repurposed as the population expands. Downtown, financial arcologies store and invest massive amount of the empire's and the citizens' wealth, with the returns from these investments fueling the lifestyle of this utopian city.\n\nFrom this day forth, [Root.GetName] shall be known as a wonder of the universe."
+ utopian_paradise.200.a:0 "Our Utopian City is finished!"
+ 
+ utopian_paradise.300.name:0 "A New §HUtopian Ringworld Segment§!: [Root.GetName]"
+ utopian_paradise.300.desc:0 "Upon stripping the planet of imperfections and the aged segments we had built previously, our §HUtopian Ringworld Segment§! is at last complete.\n\nOur engineers had created the perfect paradise, where scenic landscapes form the backdrop to utopian city segments, created using Living Metal which can be shaped and repurposed as the population expands. Downtown, leisure segments form the greatest concentration of entertainment the galaxy had ever seen, while the science segments are always open to eager citizens wanting to dabble in strange experiments.\n\nFrom this day forth, [Root.GetName] shall be known as a wonder of the universe."
+ utopian_paradise.300.a:0 "It is a wonderous paradise."
+ 
+ 
+ 
+ d_singing_towers:0 "Singing Towers"
+ d_singing_towers_desc:0 "It was said that the wind passing through the cave systems would harmonise with the cave's crystal layers, creating interweaving melodies that seem to sing across the valley. The endless, beautiful music often attract visitors who choose to stay at the luxurious hotels nearby."
+ 
+ d_golden_fields:0 "Golden Fields"
+ d_golden_fields_desc:0 "A rare type of golden grass is grown here that is comfortable to sit on, and these fields are perfect for a family day out."
+ 
+ d_golden_spire:0 "Golden Spires"
+ d_golden_spire_desc:0 "The Golden Spires stretch towards the atmosphere beyond the eyes can see, yet provide quality housing and entertainment for the rich and famous."
+ 
+ d_ornate_streets:0 "Ornate Streets"
+ d_ornate_streets_desc:0 "The Ornate Streets have walkways paved with gold, and its lavish opulence constantly remind the citizens the financial might of the empire."
+ 
+ d_magnificent_waterfalls:0 "Majestic Falls"
+ d_magnificent_waterfalls_desc:0 "The Majestic Falls is possibly only with the unique geography of a ringworld, allowing massive rivers to fall to the segment below. An awesome, memorable sight for all who visit, many will choose to stay at the luxurious hotels nearby."
+ 
+ d_endless_fields:0 "Forever Green Hills"
+ d_endless_fields_desc:0 "The endless stretches of green hills on these segments are forever green, and beautiful."
+ 
+ 
+ 
+ 
+ 
+ 

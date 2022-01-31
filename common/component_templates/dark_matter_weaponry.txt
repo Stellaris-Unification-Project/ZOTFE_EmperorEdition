@@ -1,0 +1,546 @@
+##########################
+## Dark Matter Weapons
+##########################
+
+
+weapon_component_template = {
+	key = "DARK_MATTER_BLAST"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	
+	icon = "GFX_ship_part_dark_matter_blast"
+	icon_frame = 1
+	
+	firing_arc = 10.0
+	min_range = 30.0
+	use_ship_kill_target = no
+	
+	damage = { min = 10000 max = 20000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 250.0
+	accuracy = 0.85
+	hull_damage = 1.25
+	shield_damage = 0.75
+	armor_damage = 1.5
+	tracking = 0
+	power = -750
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1140
+			rare_crystals = 16.9
+		}		
+		upkeep = {
+			energy = 11.4
+			alloys = 2.28
+		}
+	}
+	upgrades_to = "OMNI_TITAN_LANCE"
+	component_set = "DARK_MATTER_BLAST"
+	projectile_gfx = "dark_matter_blast"
+	size_restriction = { fe_titan fe_goliath }
+	prerequisites = { "tech_dark_matter_blast" }
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no
+		}
+	}
+}
+
+#Dark Matter Lance
+weapon_component_template = {
+	key = "DARK_MATTER_LANCE"
+	size = extra_large
+	type = instant
+	prio_projectile = yes
+	
+	icon = "GFX_ship_part_dark_matter_lance"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+
+	damage = { min = 1600 max = 4000 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 70
+	range = 150.0
+	accuracy = 0.85
+	shield_damage = 0.5
+	armor_damage = 2
+	hull_damage = 1.5
+	tracking = 0
+	power = -375
+
+	upgrades_to = "OMNI_LANCE"
+	prerequisites = { "tech_dark_matter_lance" }
+	component_set = "DARK_MATTER_LANCE"
+	projectile_gfx = "dark_matter_lance"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 572.5
+			rare_crystals = 8.45
+		}		
+		upkeep = {
+			energy = 5.725
+			alloys = 1.145
+		}
+	}
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+# ## Dark Matter Emitter
+weapon_component_template = {
+	key = "DARK_MATTER_EMITTER"
+	size = extra_large
+	type = instant
+
+	icon = "GFX_ship_part_dark_matter_emitter"
+	icon_frame = 1
+
+	firing_arc = 35.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	
+	damage = { min = 1 max = 3400 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 71
+	range = 150.0
+	accuracy = 1.0
+	shield_damage = 1.0
+	shield_penetration = 1.0
+	armor_damage = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.0
+	tracking = 0
+	power = -375
+
+	upgrades_to = "OMNI_EMITTER"
+	prerequisites = { "tech_dark_matter_emitter" }
+	component_set = "DARK_MATTER_EMITTER"
+	projectile_gfx = "dark_matter_emitter"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 572.5
+			rare_crystals = 8.45
+		}		
+		upkeep = {
+			energy = 5.725
+			alloys = 1.145
+		}
+	}
+
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+# ## Tera Cannon
+weapon_component_template = {
+	key = "TERA_CANNON"
+	size = extra_large
+	type = instant
+
+	icon = "GFX_ship_part_tera_cannon"
+	icon_frame = 1
+
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	
+	damage = { min = 1800 max = 5200 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 80
+	range = 150.0
+	accuracy = 0.75
+	shield_damage = 1.5
+	armor_damage = 0.75
+	hull_damage = 1.25
+	tracking = 0
+	power = -375
+
+	upgrades_to = "OMNI_CANNON"
+	prerequisites = { "tech_tera_cannon" }
+	component_set = "TERA_CANNON"
+	projectile_gfx = "adv_kinetic_artillery"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 572.5
+			volatile_motes = 8.45
+		}		
+		upkeep = {
+			energy = 5.725
+			alloys = 1.145
+		}
+	}
+
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+# Dark Cannon
+
+weapon_component_template = {
+	type = instant
+	
+	key = "DARK_CANNON_L"
+	size = large
+	
+	icon = "GFX_ship_part_dark_cannon"
+	icon_frame = 1
+	
+	damage = { min = 168 max = 552 }
+	windup = { min = 1 max = 18 }
+	total_fire_time = 25
+	range = 100.0
+	accuracy = 0.75
+	hull_damage = 1
+	shield_damage = 1.5
+	armor_damage = 0.5
+	tracking = 0.05
+	power = -89
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 220
+			volatile_motes = 3.25
+		}		
+		upkeep = {
+			energy = 2.2
+			alloys = 0.49
+		}
+	}
+	upgrades_to = "COMPACT_OMNI_CANNON"
+	prerequisites = { "tech_dark_cannon" }
+	component_set = "DARK_CANNON"
+	projectile_gfx = "advanced_railgun_l"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield }
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+	
+	key = "DARK_CANNON_M"
+	size = medium
+	
+	icon = "GFX_ship_part_dark_cannon"
+	icon_frame = 1
+	
+	damage = { min = 70 max = 230 }
+	windup = { min = 1 max = 18 }
+	total_fire_time = 25
+	range = 75.0
+	accuracy = 0.75
+	hull_damage = 1
+	shield_damage = 1.5
+	armor_damage = 0.5
+	tracking = 0.3
+	power = -45
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 110
+			volatile_motes = 1.625
+		}		
+		upkeep = {
+			energy = 1.1
+			alloys = 0.22
+		}
+	}
+	upgrades_to = "COMPACT_OMNI_CANNON_M"
+	prerequisites = { "tech_dark_cannon" }
+	component_set = "DARK_CANNON"
+	projectile_gfx = "advanced_railgun_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield }
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+	
+	key = "DARK_CANNON_S"
+	size = small
+	
+	icon = "GFX_ship_part_dark_cannon"
+	icon_frame = 1
+	
+	damage = { min = 28 max = 92 }
+	windup = { min = 1 max = 18 }
+	total_fire_time = 25
+	range = 50.0
+	accuracy = 0.75
+	hull_damage = 1
+	shield_damage = 1.5
+	armor_damage = 0.5
+	tracking = 0.5
+	power = -26
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 55
+			volatile_motes = 0.825
+		}		
+		upkeep = {
+			energy = 0.55
+			alloys = 0.11
+		}
+	}
+	upgrades_to = "COMPACT_OMNI_CANNON_S"
+	prerequisites = { "tech_dark_cannon" }
+	component_set = "DARK_CANNON"
+	projectile_gfx = "advanced_railgun_s"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield }
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+# Dark Laser
+
+weapon_component_template = {
+	type = instant
+	
+	key = "DARK_LASER_L"
+	size = large
+	
+	icon = "GFX_ship_part_dark_laser"
+	icon_frame = 1
+	
+	damage = { min = 204 max = 552 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 35
+	range = 80.0
+	accuracy = 0.9
+	hull_damage = 1
+	shield_damage = 0.5
+	armor_damage = 1.5
+	tracking = 0.05
+	power = -89
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 220
+			rare_crystals = 3.25
+		}		
+		upkeep = {
+			energy = 2.2
+			alloys = 0.49
+		}
+	}
+	upgrades_to = "COMPACT_OMNI_LANCE"
+	prerequisites = { "tech_dark_laser" }
+	component_set = "DARK_LASER"
+	projectile_gfx = "xray_laser_l"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+	
+	key = "DARK_LASER_M"
+	size = medium
+	
+	icon = "GFX_ship_part_dark_laser"
+	icon_frame = 1
+	
+	damage = { min = 86 max = 230 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 35
+	range = 60.0
+	accuracy = 0.9
+	hull_damage = 1
+	shield_damage = 0.5
+	armor_damage = 1.5
+	tracking = 0.3
+	power = -45
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 110
+			rare_crystals = 1.625
+		}		
+		upkeep = {
+			energy = 1.1
+			alloys = 0.22
+		}
+	}
+	upgrades_to = "COMPACT_OMNI_LANCE_M"
+	prerequisites = { "tech_dark_laser" }
+	component_set = "DARK_LASER"
+	projectile_gfx = "xray_laser_m"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+	
+	key = "DARK_LASER_S"
+	size = small
+	
+	icon = "GFX_ship_part_dark_laser"
+	icon_frame = 1
+	
+	damage = { min = 34 max = 92 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 35
+	range = 40.0
+	accuracy = 0.9
+	hull_damage = 1
+	shield_damage = 0.5
+	armor_damage = 1.5
+	tracking = 0.5
+	power = -26
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 55
+			rare_crystals = 0.825
+		}		
+		upkeep = {
+			energy = 0.55
+			alloys = 0.11
+		}
+	}
+	upgrades_to = "COMPACT_OMNI_LANCE_S"
+	prerequisites = { "tech_dark_laser" }
+	component_set = "DARK_LASER"
+	projectile_gfx = "xray_laser_s"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+
+# Sentinel Missile
+weapon_component_template = {
+	key = "SENTINEL_MISSILE"
+	size = torpedo
+	
+	icon = "GFX_ship_part_sentinel_missile"
+	icon_frame = 1
+	type = missile
+	
+	damage = { min = 172 max = 228 }
+	windup = { min = 1 max = 15 }
+	total_fire_time = 60
+	range = 100.0
+	accuracy = 1
+	hull_damage = 1.25
+	shield_damage = 1.0
+	shield_penetration = 1.0
+	armor_damage = 1.0
+	armor_penetration = 0
+	tracking = 0.25
+	power = -39
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 176
+			volatile_motes = 2
+		}		
+		upkeep = {
+			energy = 1.76
+			alloys = 0.352
+		}
+	}
+	missile_speed = 12
+	missile_health = 10
+	missile_evasion = 0.4
+	missile_armor = 0
+	missile_shield = 0
+	missile_retarget_range = 100
+
+	prerequisites = { "tech_sentinel_missile" }
+	component_set = "SENTINEL_MISSILE"
+	projectile_gfx = "small_missile"
+	tags = { weapon_type_explosive }
+	ai_tags = { weapon_role_artillery }
+	ai_weight = {
+		weight = 50  
+		modifier = {
+			factor = 0.0
+			is_zofe_country = no		
+		}
+	}
+}
+

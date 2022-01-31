@@ -1,0 +1,279 @@
+#Fallen Weaponry
+fallen_spiritualist_digsite_1 = {
+	desc = fallen_spiritualist_digsite_1_desc
+	picture = GFX_evt_underground_city
+	stages = 5
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+#		hidden_trigger = {
+#			owner = {
+#				has_country_flag = fallen_spiritualist_weapons_chain
+#			}
+#		}
+	}
+	visible = {
+#		has_country_flag = fallen_spiritualist_weapons_chain
+		default_site_visible_trigger = yes
+#		owner = {
+#			has_country_flag = fallen_spiritualist_weapons_chain
+#		}
+	}
+	
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_A1
+		event = fallen_weaponry.101
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_A2
+		event = fallen_weaponry.102
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_A3
+		event = fallen_weaponry.103
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_A4
+		event = fallen_weaponry.104
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_A5
+		event = fallen_weaponry.105
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#Fallen Weaponry
+fallen_materialist_digsite_1 = {
+	desc = fallen_materialist_digsite_1_desc
+	picture = GFX_evt_ancient_databank
+	stages = 5
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+#		hidden_trigger = {
+#			owner = {
+#				has_country_flag = fallen_materialist_weapons_chain
+#			}
+#		}
+	}
+	visible = {
+#		has_country_flag = fallen_materialist_weapons_chain
+		default_site_visible_trigger = yes
+#		owner = {
+#			has_country_flag = fallen_materialist_weapons_chain
+#		}
+	}
+	
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_B1
+		event = fallen_weaponry.201
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_B2
+		event = fallen_weaponry.202
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_B3
+		event = fallen_weaponry.203
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_B4
+		event = fallen_weaponry.204
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_B5
+		event = fallen_weaponry.205
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#Fallen Weaponry
+fallen_xenophile_digsite_1 = {
+	desc = fallen_xenophile_digsite_1_desc
+	picture = GFX_evt_alien_ruins
+	stages = 5
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+#		hidden_trigger = {
+#			owner = {
+#				has_country_flag = fallen_xenophile_weapons_chain
+#			}
+#		}
+	}
+	visible = {
+#		has_country_flag = fallen_xenophile_weapons_chain
+		default_site_visible_trigger = yes
+#		owner = {
+#			has_country_flag = fallen_xenophile_weapons_chain
+#		}
+	}
+	
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_C1
+		event = fallen_weaponry.301
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_C2
+		event = fallen_weaponry.302
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_C3
+		event = fallen_weaponry.303
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_C4
+		event = fallen_weaponry.304
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_C5
+		event = fallen_weaponry.305
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#Fallen Weaponry
+fallen_xenophobe_digsite_1 = {
+	desc = fallen_xenophobe_digsite_1_desc
+	picture = GFX_evt_ancient_alien_temple
+	stages = 5
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+#		hidden_trigger = {
+#			owner = {
+#				has_country_flag = fallen_xenophobe_weapons_chain
+#			}
+#		}
+	}
+	visible = {
+#		has_country_flag = fallen_xenophobe_weapons_chain
+		default_site_visible_trigger = yes
+#		owner = {
+#			has_country_flag = fallen_xenophobe_weapons_chain
+#		}
+	}
+	
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_D1
+		event = fallen_weaponry.401
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_D2
+		event = fallen_weaponry.402
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_D3
+		event = fallen_weaponry.403
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_D4
+		event = fallen_weaponry.404
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_D5
+		event = fallen_weaponry.405
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}
+
+#Fallen Weaponry
+fallen_machine_digsite_1 = {
+	desc = fallen_machine_digsite_1_desc
+	picture = GFX_evt_fallen_empire
+	stages = 5
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+#		hidden_trigger = {
+#			owner = {
+#				has_country_flag = fallen_machine_weapons_chain
+#			}
+#		}
+	}
+	visible = {
+#		has_country_flag = fallen_machine_weapons_chain
+		default_site_visible_trigger = yes
+#		owner = {
+#			has_country_flag = fallen_machine_weapons_chain
+#		}
+	}
+	
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_E1
+		event = fallen_weaponry.501
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_E2
+		event = fallen_weaponry.502
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_E3
+		event = fallen_weaponry.503
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E4
+		event = fallen_weaponry.504
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_E5
+		event = fallen_weaponry.505
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

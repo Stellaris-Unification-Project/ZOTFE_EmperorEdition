@@ -1,0 +1,164 @@
+#Ascended Empire Ambitions
+
+@ambitionDuration = 3600
+
+#Infrastructure Projects
+infrastructure_projects = {
+	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+	
+	is_ambition = yes 		# Costs Unity scaled to tradition cost
+	
+	resources = {
+		category = edicts
+	}
+	
+	potential = {
+		OR = {
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
+	}
+	
+	modifier = {
+		country_alloys_produces_mult = 0.2
+	}	
+	
+	prerequisites = {
+		"tech_fallen_technologies_5"		
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+#Economic Stimulus
+economic_stimulus = {
+	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+	
+	is_ambition = yes 		# Costs Unity scaled to tradition cost
+	
+	resources = {
+		category = edicts
+	}
+	
+	potential = {
+		OR = {
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
+	}
+	
+	modifier = {
+		trade_value_mult = 0.50
+	}	
+	
+	prerequisites = {
+		"tech_fallen_technologies_5"		
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+
+
+
+
+
+#Might of an Ascendancy
+ascendancy_might = {
+	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+	
+	is_ambition = yes 		# Costs Unity scaled to tradition cost
+	
+	resources = {
+		category = edicts
+	}
+	
+	potential = {
+		OR = {
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
+	}
+	
+	modifier = {
+		ship_weapon_damage = 0.25
+		ship_fire_rate_mult = 0.25
+	}	
+	
+	prerequisites = {
+		"tech_galactic_ambitions_2"		
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+#Virtual Wargames
+virtual_wargames = {
+	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+	
+	is_ambition = yes 		# Costs Unity scaled to tradition cost
+	
+	resources = {
+		category = edicts
+	}
+	
+	potential = {
+		OR = {
+			is_country_type = ascended_empire
+			is_country_type = lost_empire
+		}
+	}
+	
+	modifier = {
+		ship_starting_experience_add = 200
+		army_starting_experience_add = 200
+	}	
+	
+	prerequisites = {
+		"tech_galactic_ambitions_2"			
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+
+#Master of the Galaxy
+master_of_the_galaxy = {
+	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+	
+	is_ambition = yes 		# Costs Unity scaled to tradition cost
+	
+	resources = {
+		category = edicts
+	}
+	
+	potential = {
+		is_country_type = ascended_empire
+	}
+	
+	modifier = {
+		damage_vs_country_type_fallen_empire_mult = 0.5
+		damage_vs_country_type_awakened_fallen_empire_mult = 0.5
+	}	
+	
+	prerequisites = {
+		"tech_galactic_ambitions_2"		
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}

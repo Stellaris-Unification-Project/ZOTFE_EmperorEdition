@@ -1,0 +1,22 @@
+###Original People Effects
+
+create_original_escort = {
+	create_fleet = {
+		name = "NAME_ANCIENT_WARSHIP"
+		settings = {
+			spawn_debris = no
+			can_upgrade = no 
+			can_disband = yes
+		}
+		effect = {
+			set_owner = ROOT.owner
+			create_ship = {
+				name = random
+				design = "NAME_ORIGINAL_EMPIRE_ESCORT"
+				graphical_culture = original_empire_01
+				upgradable = no
+			}
+			set_location = ROOT
+		}
+	}
+}

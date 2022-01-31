@@ -1,0 +1,219 @@
+# Paradise Creation (Gaia)
+decision_paradise_creation = {
+	owned_planets_only = yes
+	
+	enactment_time = 7200
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			sr_living_metal = 10000
+		}
+	}
+	
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+			has_modifier = pm_Utopian_Paradise
+		}
+		is_planet_class = pc_gaia
+		exists = owner
+		owner = { 
+			is_zofe_country = yes
+			is_gestalt = no
+		}
+	}
+	
+	allow = {
+#		custom_tooltip = {
+#			fail_text = decision_paradise_creation_no_districts
+#			free_district_slots < 1
+#		}
+		num_uncleared_blockers < 1
+	}
+	
+	
+	prerequisites = {
+		"tech_paradise_creation"
+	}
+
+	
+	effect = {
+		custom_tooltip = decision_paradise_creation_effects
+		add_modifier = {
+			modifier = pm_Utopian_Paradise
+			days = -1
+		}
+		add_modifier = {
+			modifier = pm_Living_Metal_Architecture
+			days = -1
+		}			
+		hidden_effect = {
+			clear_deposits = yes
+			validate_planet_buildings_and_districts = yes
+			change_pc = pc_utopian_gaia
+			planet_event = { id = utopian_paradise.100 }
+			add_deposit = d_singing_towers
+			add_deposit = d_golden_fields
+			add_modifier = {
+				modifier = pm_New_Utopian_World
+				days = 360
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Paradise Creation (City)
+decision_paradise_creation_city = {
+	owned_planets_only = yes
+	icon = decision_paradise_creation
+	
+	enactment_time = 7200
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			sr_living_metal = 20000
+		}
+	}
+	
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+			has_modifier = pm_Utopian_Paradise
+		}
+		is_planet_class = pc_city
+		exists = owner
+		owner = { 
+			is_zofe_country = yes
+			is_gestalt = no
+		}
+	}
+	
+	allow = {
+#		custom_tooltip = {
+#			fail_text = decision_paradise_creation_no_districts
+#			free_district_slots < 1
+#		}
+		num_uncleared_blockers < 1
+	}
+	
+	
+	prerequisites = {
+		"tech_paradise_creation"
+	}
+
+	
+	effect = {
+		custom_tooltip = decision_paradise_creation_effects
+		add_modifier = {
+			modifier = pm_Utopian_Paradise
+			days = -1
+		}
+		add_modifier = {
+			modifier = pm_Living_Metal_Architecture
+			days = -1
+		}			
+		hidden_effect = {
+			clear_deposits = yes
+			validate_planet_buildings_and_districts = yes
+			change_pc = pc_utopian_city
+			planet_event = { id = utopian_paradise.200 }
+			add_deposit = d_golden_spire
+			add_deposit = d_ornate_streets
+			add_modifier = {
+				modifier = pm_New_Utopian_World
+				days = 360
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+# Paradise Creation (Ringworld)
+decision_paradise_creation_rw = {
+	owned_planets_only = yes
+	icon = decision_paradise_creation
+	
+	enactment_time = 7200
+	resources = {
+		category = decisions
+		cost = {
+			influence = 500
+			sr_living_metal = 50000
+		}
+	}
+	
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+			has_modifier = pm_Utopian_Paradise
+		}
+		is_planet_class = pc_ringworld_habitable
+		exists = owner
+		owner = { 
+			is_zofe_country = yes
+			is_gestalt = no
+		}
+	}
+	
+	allow = {
+#		custom_tooltip = {
+#			fail_text = decision_paradise_creation_no_districts
+#			free_district_slots < 1
+#		}
+		num_uncleared_blockers < 1
+	}
+	
+	
+	prerequisites = {
+		"tech_paradise_creation"
+	}
+
+	
+	effect = {
+		custom_tooltip = decision_paradise_creation_effects
+		add_modifier = {
+			modifier = pm_Utopian_Paradise
+			days = -1
+		}
+		add_modifier = {
+			modifier = pm_Living_Metal_Architecture
+			days = -1
+		}			
+		hidden_effect = {
+			clear_deposits = yes
+			validate_planet_buildings_and_districts = yes
+			change_pc = pc_utopian_ringworld
+			planet_event = { id = utopian_paradise.300 }
+			add_deposit = d_magnificent_waterfalls
+			add_deposit = d_endless_fields
+			add_modifier = {
+				modifier = pm_New_Utopian_World
+				days = 360
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+

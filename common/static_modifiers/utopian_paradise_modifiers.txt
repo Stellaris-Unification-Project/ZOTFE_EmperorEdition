@@ -1,0 +1,16 @@
+pm_Living_Metal_Architecture = {
+	planet_building_build_speed_mult = 1.0
+	planet_building_refund_mult = 1.0
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 1
+}
+
+pm_New_Utopian_World = {
+	planet_building_build_speed_mult = 3.0
+	pop_housing_usage_mult = -1.0
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_carbon_world.dds"
+	icon_frame = 1
+}
+	

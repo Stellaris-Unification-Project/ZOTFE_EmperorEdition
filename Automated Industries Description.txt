@@ -1,0 +1,60 @@
+[i]Using an advanced form of Dark Matter manipulation, the precursors' technological mastery enabled entire industries to run autonomously, freeing their population to live out the rest of their lives in self-determined and hedonistic ways. However, what if the technologies for a fully efficient economy has since been lost? Can an Ascended Empire rediscover this technology once more?[/i]
+
+The Zenith of Fallen Empires: Automated Industries submod expands upon the first project of the Base Mod, 'Automated Industries', by introducing a new tier of technologies, 'Lost Technologies', with new mechanics to acquire them. This submod provides 5 upgraded versions of the Automated Buildings provided in the Base Mod.
+
+
+
+[h1]Add-on Features:[/h1]
+
+[list]
+
+[*][b]A new mechanic: Lost Technologies[/b]
+
+[*][b]5 Lost Technologies[/b]
+
+[*]Upgraded Versions of Automated Buildings found in Base Mod.
+
+
+[/list]
+
+Full List of Features [url=https://steamcommunity.com/workshop/filedetails/discussion/2044599287/2146469724194588012/]here[/url].
+
+
+
+[h1]Other Add-ons:[/h1]
+
+[list]
+
+[*][b]The Zenith of Fallen Empires: Ambitions of Power[/b]
+
+[/list]
+
+
+
+[h1]Limitations and FAQ:[/h1]
+
+Please click [url=https://steamcommunity.com/workshop/filedetails/discussion/2044599287/2146469724194602500][b]here[/b][/url] for Limitations and FAQ.
+
+
+
+[h1]Compatibility:[/h1]
+
+Please run this with Game Update 2.6.*
+
+Requires a NEW SAVE to access features of this submod.
+
+Do NOT run this mod with ZoFE 2.0 Base Mod
+
+
+
+Click [url=https://steamcommunity.com/workshop/filedetails/discussion/2044599287/2146469724194601151][b]here[/b][/url] for more information on Mod Compatibility.
+
+
+
+[h1]Localisations:[/h1]
+
+English original by Kolyn.
+
+
+
+[h1]If you enjoy this mod, don’t forget to rate and subscribe :)[/h1]

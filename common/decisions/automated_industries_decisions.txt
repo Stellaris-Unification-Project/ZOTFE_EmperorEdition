@@ -1,0 +1,58 @@
+# Automated Districts
+decision_automated_districts = {
+	owned_planets_only = yes
+	
+	enactment_time = 720
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			sr_living_metal = 1000
+		}
+	}
+	
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+			has_modifier = pm_Utopian_Paradise
+		}
+		exists = owner
+		owner = { 
+			is_zofe_country = yes
+			has_country_flag = automated_districts_enabled
+		}
+		NOT = {
+			has_planet_flag = automated_districts_online
+		}
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			has_planet_flag = advanced_habitat_2
+		}
+	}
+	
+	allow = {
+#		custom_tooltip = {
+#			fail_text = decision_paradise_creation_no_districts
+#			free_district_slots < 1
+#		}
+		num_uncleared_blockers < 1
+	}
+	
+	
+	prerequisites = {
+#		"tech_paradise_creation"
+	}
+
+	
+	effect = {
+		custom_tooltip = decision_automated_districts_effects
+		set_planet_flag = automated_districts_online
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}

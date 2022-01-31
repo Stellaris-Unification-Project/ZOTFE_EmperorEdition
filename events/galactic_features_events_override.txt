@@ -1,0 +1,593 @@
+#########################################
+#
+# Galactic Features Events
+#
+# Written by Henrik Thyrwall
+#
+#########################################
+
+namespace = galactic_features
+
+# Void Cloud reproduction notification event
+country_event = {
+	id = galactic_features.361
+	title = galactic_features.361.name
+	desc = galactic_features.361.desc
+	picture = GFX_evt_wormhole
+	location = fromfromfrom
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		is_zofe_compatible = yes
+		has_communications = from
+	}
+
+	option = {
+		name = galactic_features.361.a
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_pacifist
+				NOR = {
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_fanatic_materialist
+					has_authority = auth_machine_intelligence
+				}
+			}
+		}
+	}
+
+	option = {
+		name = galactic_features.361.a.milit
+		trigger = {	has_ethic = ethic_fanatic_militarist }
+	}
+
+	option = {
+		name = galactic_features.361.a.phobe
+		trigger = { OR = { has_ethic = ethic_fanatic_xenophobe has_civic = civic_machine_terminator } }
+	}
+
+	option = {
+		name = galactic_features.361.a.phile
+		trigger = { has_ethic = ethic_fanatic_xenophile }
+	}
+
+	option = {
+		name = galactic_features.361.a.spiri
+		trigger = { has_ethic = ethic_fanatic_spiritualist }
+	}
+
+	option = {
+		name = galactic_features.361.a.mater
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_materialist
+				AND = {
+					has_authority = auth_machine_intelligence
+					NOT = { has_civic = civic_machine_terminator }
+				}
+			}
+		}
+	}
+}
+
+# Tiyanki Home System Destroyed - Informed
+country_event = {
+	id = galactic_features.367
+	title = "galactic_features.367.name"
+	desc = {
+		trigger = {
+			any_country = {
+				is_country_type = tiyanki
+				num_fleets > 0
+			}
+		}
+		text = "galactic_features.367.a.desc"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = tiyanki_extinct
+		}
+		text = "galactic_features.367.b.desc"
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				any_country = {
+					is_country_type = tiyanki
+					num_fleets > 0
+				}
+			}
+			any_system = { has_star_flag = elderly_tiyanki_system }
+			exists = event_target:elderly_tiyanki_fleet
+			exists = event_target:elderly_tiyanki_country
+		}
+		text = "galactic_features.367.c.desc"
+	}
+	picture = GFX_evt_binary_stars
+	show_sound = event_space_cloud
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						is_country_type = tiyanki
+						num_fleets > 0
+					}
+				}
+				NOR = {
+					any_system = { has_star_flag = elderly_tiyanki_system }
+					exists = event_target:elderly_tiyanki_fleet
+					exists = event_target:elderly_tiyanki_country
+				}
+			}
+			set_global_flag = tiyanki_extinct
+			if = {
+				limit = {
+					event_target:tiyanki_killer = { is_zofe_compatible = yes }
+					any_country = {
+						
+							is_fallen_empire = yes
+						has_country_flag = fallen_empire_3
+					}
+				}
+				random_country = {
+					limit = {
+						
+							is_fallen_empire = yes
+						has_country_flag = fallen_empire_3
+					}
+					save_event_target_as = upset_elders
+					event_target:tiyanki_killer = {
+						country_event = { id = galactic_features.371 days = 20 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { is_active_resolution = "resolution_tiyanki_pest_control" }
+				}
+				every_country = {
+					limit = {
+						is_zofe_compatible = yes
+						has_communications = root
+						has_ethic = "ethic_xenophile"
+					}
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_killed_all_tiyanki_1
+					}
+				}
+				every_country = {
+					limit = {
+						is_zofe_compatible = yes
+						has_communications = root
+						has_ethic = "ethic_fanatic_xenophile"
+					}
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_killed_all_tiyanki_2
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = galactic_features.367.a
+		trigger = {
+			is_same_value = event_target:tiyanki_killer
+		}
+	}
+	option = {
+		name = galactic_features.367.b
+		trigger = {
+			NOT = { is_same_value = event_target:tiyanki_killer }
+			is_xenophile = yes
+		}
+	}
+	option = {
+		name = galactic_features.367.c
+		trigger = {
+			NOT = { is_same_value = event_target:tiyanki_killer }
+			is_xenophobe = yes
+		}
+	}
+	option = {
+		name = UNFORTUNATE
+		trigger = {
+			NOT = { is_same_value = event_target:tiyanki_killer }
+			is_xenophobe = no
+			is_xenophile = no
+		}
+	}
+}
+
+# Tiyanki Extinct - Informed
+country_event = {
+	id = galactic_features.370
+	title = "galactic_features.370.name"
+	desc = {
+		trigger = {
+			NOR = {
+				any_system = { has_star_flag = elderly_tiyanki_system }
+				exists = event_target:elderly_tiyanki_fleet
+				exists = event_target:elderly_tiyanki_country
+			}
+		}
+		text = "galactic_features.370.a.desc"
+	}
+	desc = {
+		trigger = {
+			any_system = { has_star_flag = elderly_tiyanki_system }
+			exists = event_target:elderly_tiyanki_fleet
+			exists = event_target:elderly_tiyanki_country
+		}
+		text = "galactic_features.370.b.desc"
+	}
+	picture = GFX_evt_binary_stars
+	show_sound = event_space_cloud
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				event_target:tiyanki_killer = { is_zofe_compatible = yes }
+				any_country = {
+					
+						is_fallen_empire = yes
+					has_country_flag = fallen_empire_3
+				}
+			}
+			random_country = {
+				limit = {
+					
+						is_fallen_empire = yes
+					has_country_flag = fallen_empire_3
+				}
+				save_event_target_as = upset_elders
+				event_target:tiyanki_killer = {
+					country_event = { id = galactic_features.371 days = 20 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { is_active_resolution = "resolution_tiyanki_pest_control" }
+			}
+			every_country = {
+				limit = {
+					is_zofe_compatible = yes
+					has_communications = root
+					has_ethic = "ethic_xenophile"
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_killed_all_tiyanki_1
+				}
+			}
+			every_country = {
+				limit = {
+					is_zofe_compatible = yes
+					has_communications = root
+					has_ethic = "ethic_fanatic_xenophile"
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_killed_all_tiyanki_2
+				}
+			}
+		}
+	}
+
+	option = {
+		name = galactic_features.367.a
+		trigger = {
+			is_same_value = event_target:tiyanki_killer
+		}
+	}
+	option = {
+		name = galactic_features.367.b
+		trigger = {
+			NOT = { is_same_value = event_target:tiyanki_killer }
+			is_xenophile = yes
+		}
+	}
+	option = {
+		name = galactic_features.367.c
+		trigger = {
+			NOT = { is_same_value = event_target:tiyanki_killer }
+			is_xenophobe = yes
+		}
+	}
+	option = {
+		name = UNFORTUNATE
+		trigger = {
+			NOT = { is_same_value = event_target:tiyanki_killer }
+			is_xenophobe = no
+			is_xenophile = no
+		}
+	}
+}
+
+# Killed Tiyanki - COUNTER
+country_event = {
+	id = galactic_features.380
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_zofe_compatible = yes
+		from = {
+			is_tiyanki_country_type = yes
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				fromfromfrom = { is_ship_size = space_whale_1 }
+			}
+			change_variable = {
+				which = tiyanki_cow_kills
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				fromfromfrom = { is_ship_size = space_whale_2 }
+			}
+			change_variable = {
+				which = tiyanki_bull_kills
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				fromfromfrom = { is_ship_size = space_whale_3 }
+			}
+			change_variable = {
+				which = tiyanki_hatchling_kills
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				fromfromfrom = { is_ship_size = space_whale_4 }
+			}
+			change_variable = {
+				which = tiyanki_calf_kills
+				value = 1
+			}
+		}
+	}
+}
+
+# Killed Tiyanki - Tally Kills
+country_event = {
+	id = galactic_features.381
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_zofe_compatible = yes
+		from = {
+			is_tiyanki_country_type = yes
+		}
+		NOT = {
+			fromfrom = {
+				any_combatant_fleet = {
+					NOT = { is_same_value = fromfromfrom }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		fromfrom = {
+			solar_system = { save_event_target_as = tiyanki_kill_system }
+		}
+		if = {
+			limit = {
+				is_galactic_community_formed = yes
+				is_galactic_community_member = yes
+				is_active_resolution = "resolution_tiyanki_conservation_act"
+			}
+			country_event = { id = galcom.107 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_active_event = { galactic_features.385 } }
+			}
+			country_event = { id = galactic_features.385 days = 1 }
+		}
+	}
+}
+
+# Killed Tiyanki
+country_event = {
+	id = galactic_features.385
+	title = "galactic_features.385"
+	desc = "galactic_features.385.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_energy_field
+	location = event_target:tiyanki_kill_system
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { is_active_resolution = "resolution_tiyanki_pest_control" }
+			}
+			every_country = {
+				limit = {
+					is_zofe_compatible = yes
+					has_communications = root
+					has_ethic = "ethic_xenophile"
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_killed_tiyanki_fleet_1
+				}
+			}
+			every_country = {
+				limit = {
+					is_zofe_compatible = yes
+					has_communications = root
+					has_ethic = "ethic_fanatic_xenophile"
+				}
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_killed_tiyanki_fleet_2
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			clear_variable = tiyanki_cow_kills
+			clear_variable = tiyanki_bull_kills
+			clear_variable = tiyanki_calf_kills
+			clear_variable = tiyanki_hatchling_kills
+			 # Return to neutral so other Tiyanki aren't hostile
+			set_faction_hostility = {
+				target = event_target:tiyanki_country
+				set_hostile = no
+				set_neutral = yes
+				set_friendly = no
+			}
+		}
+	}
+
+	option = {
+		name = galactic_features.385.a
+		custom_tooltip = harvested_tiyanki
+		if = {
+			limit = {
+				check_variable = { which = tiyanki_cow_kills value > 0 }
+			}
+			custom_tooltip = harvested_cows
+			add_resource = {
+				energy = 500
+				exotic_gases = 50
+				mult = tiyanki_cow_kills
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = tiyanki_bull_kills value > 0 }
+			}
+			custom_tooltip = harvested_bulls
+			add_resource = {
+				energy = 500
+				exotic_gases = 50
+				mult = tiyanki_bull_kills
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = tiyanki_calf_kills value > 0 }
+			}
+			custom_tooltip = harvested_calves
+			add_resource = {
+				energy = 250
+				exotic_gases = 25
+				mult = tiyanki_calf_kills
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = tiyanki_hatchling_kills value > 0 }
+			}
+			custom_tooltip = harvested_hatchlings
+			add_resource = {
+				energy = 150
+				exotic_gases = 15
+				mult = tiyanki_hatchling_kills
+			}
+		}
+	}
+}
+
+# VLUUR - Destroyed - HIDDEN
+country_event = {
+	id = galactic_features.422
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = vluur
+	}
+
+	immediate = {
+		fromfrom = {
+			solar_system = {
+				save_event_target_as = vluur_system
+				remove_star_flag = vluur_system
+				if = {
+					limit = {
+						NOT = { has_star_flag = storm_system }
+					}
+					random_system_ambient_object = {
+						limit = { has_ambient_object_flag = space_storm_object }
+						destroy_ambient_object = this
+					}
+					remove_modifier = vluur_storm
+				}
+				while = {
+					limit = {
+						any_system_planet = {
+							is_star = no
+							NOR = {
+								has_deposit_for = shipclass_research_station
+								has_deposit_for = shipclass_mining_station
+							}
+						}
+					}
+					count = 4
+					random_system_planet = {
+						limit = {
+							is_star = no
+							NOR = {
+								has_deposit_for = shipclass_research_station
+								has_deposit_for = shipclass_mining_station
+							}
+						}
+						random_list = {
+							10 = { add_deposit = d_dark_matter_deposit_1 }
+							10 = { add_deposit = d_dark_matter_deposit_2 }
+							10 = { add_deposit = d_dark_matter_deposit_3 }
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				from = {
+					OR = {
+						is_zofe_compatible = yes
+						is_fallen_empire = yes
+					}
+				}
+			}
+			from = {
+				country_event = { id = galactic_features.423 }
+			}
+		}
+	}
+}

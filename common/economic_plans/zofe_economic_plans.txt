@@ -1,0 +1,266 @@
+##Ascended Empire Economic Plans
+
+
+early_ascended_empire_plan = {
+	
+	income = {
+		energy = 1000
+		minerals = 1000
+		alloys = 500
+		unity = 500
+
+		physics_research = 500
+		society_research = 500
+		engineering_research = 500
+
+		exotic_gases = 10
+		volatile_motes = 10
+		rare_crystals = 10
+		sr_living_metal = 10
+		sr_zro = 10
+		sr_dark_matter = 10
+	}
+
+	focus = {
+		energy = 100
+		minerals = 50
+		alloys = 0
+	}
+	
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = yes
+		}
+
+		income = {
+			food = 50
+			consumer_goods = 200
+		}
+
+		focus = {
+			food = 50
+			consumer_goods = 100
+		}
+	}
+
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = no
+		}
+
+		income = {
+			consumer_goods = 200
+		}
+
+		focus = {
+			consumer_goods = 100
+		}
+	}
+
+	# increased food goals for hiveminds
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = no
+			country_uses_food = yes
+		}
+
+		income = {
+			food  = 100
+		}
+
+		focus = {
+			food = 100
+		}
+	}
+
+	pops = 1000
+	empire_size = 1.1
+
+	potential = {
+		is_country_type = ascended_empire
+		country_uses_consumer_goods = yes
+		country_uses_food = yes
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+middle_ascended_empire_plan = {
+
+	income = {
+		energy = 5000
+		minerals = 5000
+		alloys = 2500
+		unity = 2500
+
+		physics_research = 500
+		society_research = 500
+		engineering_research = 500
+
+		exotic_gases = 20
+		volatile_motes = 20
+		rare_crystals = 20
+		sr_living_metal = 20
+		sr_zro = 20
+		sr_dark_matter = 20
+	}
+
+	focus = {
+		energy = 500
+		minerals = 150
+		alloys = 250
+	}
+	
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = yes
+		}
+
+		income = {
+			food = 50
+			consumer_goods = 200
+		}
+
+		focus = {
+			food = 50
+			consumer_goods = 100
+		}
+	}
+
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = no
+		}
+
+		income = {
+			consumer_goods = 200
+		}
+
+		focus = {
+			consumer_goods = 100
+		}
+	}
+
+	# increased food goals for hiveminds
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = no
+			country_uses_food = yes
+		}
+
+		income = {
+			food  = 100
+		}
+
+		focus = {
+			food = 100
+		}
+	}
+
+	pops = 2000
+	empire_size = 1
+
+	potential = {
+		is_country_type = ascended_empire
+		country_uses_consumer_goods = yes
+		country_uses_food = yes
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+end_ascended_empire_plan = {
+
+	income = {
+		energy = 10000
+		minerals = 10000
+		alloys = 5000
+		unity = 2500
+
+		physics_research = 500
+		society_research = 500
+		engineering_research = 500
+
+		exotic_gases = 20
+		volatile_motes = 20
+		rare_crystals = 20
+		sr_living_metal = 20
+		sr_zro = 20
+		sr_dark_matter = 20
+	}
+
+	focus = {
+		energy = 500
+		minerals = 150
+		alloys = 250
+	}
+	
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = yes
+		}
+
+		income = {
+			food = 50
+			consumer_goods = 200
+		}
+
+		focus = {
+			food = 50
+			consumer_goods = 100
+		}
+	}
+
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = no
+		}
+
+		income = {
+			consumer_goods = 200
+		}
+
+		focus = {
+			consumer_goods = 100
+		}
+	}
+
+	# increased food goals for hiveminds
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = no
+			country_uses_food = yes
+		}
+
+		income = {
+			food  = 100
+		}
+
+		focus = {
+			food = 100
+		}
+	}
+
+	pops = 5000
+	empire_size = 1
+
+	potential = {
+		is_country_type = ascended_empire
+		country_uses_consumer_goods = yes
+		country_uses_food = yes
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}

@@ -1,0 +1,31 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ship_part_dark_matter_blast"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_matter_blast.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dark_matter_lance"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_matter_lance.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dark_matter_emitter"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_matter_emitter.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_tera_cannon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_tera_cannon.dds"		
+	}
+	spriteType = {
+		name = "GFX_ship_part_dark_cannon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_cannon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dark_laser"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_laser.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_sentinel_missile"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_sentinel_missile.dds"
+	}
+}

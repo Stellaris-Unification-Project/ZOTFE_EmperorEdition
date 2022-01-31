@@ -1,0 +1,672 @@
+@base_cost = 300
+@city_cost = 500
+
+#Opulent Plaza
+district_industrial = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+
+	prerequisites = {
+		tech_basic_industry
+	}
+
+	show_on_uncolonized = {
+		exists = from
+		uses_district_industrial = yes
+	}
+
+	potential = {
+		exists = owner
+		uses_district_industrial = yes
+	}
+
+	allow = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_arcology_arms_industry
+		district_rw_industrial
+	}
+
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = @city_cost
+		}
+		cost = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+				}	
+			}
+			minerals = 800
+			sr_living_metal = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = industrial_maintenance
+				}
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					NOR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+						has_designation = col_foundry
+					}
+				}	
+			}
+			sr_dark_matter = 2
+			minerals = 40
+			energy = 10
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					OR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+					}
+				}	
+			}
+			sr_dark_matter = 2
+			minerals = 30
+			energy = 10
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					has_designation = col_foundry
+				}	
+			}
+			sr_dark_matter = 2
+			minerals = 50
+			energy = 10
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					NOR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+						has_designation = col_foundry
+					}
+				}	
+			}
+			consumer_goods = 50
+			alloys = 25
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					OR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+					}
+				}	
+			}
+			consumer_goods = 100
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					has_designation = col_foundry
+				}	
+			}
+			alloys = 50
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+					has_edict = planet_fe_buildings_boost
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					NOR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+						has_designation = col_foundry
+					}
+				}	
+			}
+			consumer_goods = 10
+			alloys = 5
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+					has_edict = planet_fe_buildings_boost
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					OR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+					}
+				}	
+			}
+			consumer_goods = 20
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+					has_edict = planet_fe_buildings_boost
+				}
+				planet = {
+					has_planet_flag = automated_districts_online
+					has_designation = col_foundry
+				}	
+			}
+			alloys = 10
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_active_building = building_fe_automated_production
+					has_planet_flag = automated_districts_online
+					NOR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+						has_designation = col_foundry
+					}
+				}	
+			}
+			consumer_goods = 15
+			alloys = 7.5
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_active_building = building_fe_automated_production
+					has_planet_flag = automated_districts_online
+					OR = {
+						has_designation = col_factory
+						has_designation = col_mac_factory
+					}
+				}	
+			}
+			consumer_goods = 30
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = automated_districts_enabled
+					has_technology = tech_fe_opulent_plaza
+					has_technology = tech_fe_nano_forge_2
+				}
+				planet = {
+					has_active_building = building_fe_automated_production
+					has_planet_flag = automated_districts_online
+					has_designation = col_foundry
+				}	
+			}
+			alloys = 15
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			owner = {
+				has_country_flag = automated_districts_enabled
+				has_technology = tech_fe_opulent_plaza
+				has_technology = tech_fe_nano_forge_2
+			}
+			planet = {
+				has_planet_flag = automated_districts_online
+			}
+		}
+		text = fe_automated_industrial_district_desc
+	}
+
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_crafter_empire = yes }
+		}
+		modifier = {
+			planet_max_buildings_add = 0.34
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_crafter_empire = yes }
+		}
+		modifier = {
+			job_artificer_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_technician_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_fabricator_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = 2
+		}
+	}
+
+	# Designation Job Changes
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+			}
+		}
+		modifier = {
+			job_artificer_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_technician_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+			}
+		}
+		modifier = {
+			job_artificer_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_foundry_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_technician_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_designation = col_factory
+				has_designation = col_mac_factory
+			}
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+			job_fabricator_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_designation = col_factory
+				has_designation = col_mac_factory
+			}
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+			job_catalytic_drone_add = -1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+			}
+		}
+		text = job_artisan_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+			}
+		}
+		text = job_artificer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+			}
+		}
+		text = job_artisan_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_alloy_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+
+	ai_resource_production = {
+		alloys = 1
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		consumer_goods = 1
+		trigger = {
+			owner = {
+				country_uses_consumer_goods = yes
+			}
+		}
+	}
+}

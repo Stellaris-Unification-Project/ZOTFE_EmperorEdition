@@ -1,0 +1,35 @@
+tech_galactic_ambitions_1 = {
+
+	area = society
+	cost = 20000
+	tier = 3
+	category = { statecraft }
+	
+	weight = 40
+	
+	potential = {
+		is_country_type = ascended_empire
+	}
+	
+	prerequisites = { "tech_fallen_technologies_5" }
+
+	ai_weight = {
+		factor = 20		#Ascension is good
+	}
+}
+
+tech_galactic_ambitions_2 = {
+
+	area = society
+	cost = 30000
+	tier = 4
+	category = { statecraft }
+	
+	weight = 30
+	
+	prerequisites = { "tech_galactic_ambitions_1" }
+
+	ai_weight = {
+		factor = 20		#Ascension is good
+	}
+}

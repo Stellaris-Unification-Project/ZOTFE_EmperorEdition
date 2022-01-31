@@ -1,0 +1,28 @@
+################################################
+#      ZoFE Engineering Perfection Technologies
+#	    		  By Kolyn
+################################################
+
+tech_paradise_creation = {
+	area = society
+	cost = 200000
+	tier = 7
+	category = { statecraft }
+	prerequisites = { "tech_fallen_technologies_6" "tech_resort_colonies" }
+	weight = 100
+	is_rare = yes
+	
+	potential = {
+		has_global_flag = zofe_utopian_paradise_activated
+		is_zofe_country = yes
+		is_gestalt = no
+	}
+	
+	modifier = {
+		
+	}
+
+	ai_weight = {
+		factor = 6		#Ascension is good
+	}
+}

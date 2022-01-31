@@ -1,0 +1,2223 @@
+##############################
+#### 	   	ZoFE Weaponry
+####			By Kolyn
+##############################
+
+
+namespace = fallen_weaponry
+
+event = {
+	id = fallen_weaponry.1000
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+	
+		every_country = {
+			limit = { 
+				is_country_type = fallen_empire
+				has_ethic = ethic_fanatic_spiritualist
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = fallen_spiritualist_capital }
+					is_capital = yes
+				}
+				set_planet_flag = fallen_spiritualist_capital
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				is_country_type = fallen_empire
+				has_ethic = ethic_fanatic_materialist
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = fallen_materialist_capital }
+					is_capital = yes
+				}
+				set_planet_flag = fallen_materialist_capital
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				is_country_type = fallen_empire
+				has_ethic = ethic_fanatic_xenophile
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = fallen_xenophile_capital }
+					is_capital = yes
+				}
+				set_planet_flag = fallen_xenophile_capital
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				is_country_type = fallen_empire
+				has_ethic = ethic_fanatic_xenophobe
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = fallen_xenophobe_capital }
+					is_capital = yes
+				}
+				set_planet_flag = fallen_xenophobe_capital
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				is_country_type = fallen_empire
+				has_ethic = ethic_gestalt_consciousness
+			}
+			every_owned_planet = {
+				limit = {
+					NOT = { has_planet_flag = fallen_machine_capital }
+					is_capital = yes
+				}
+				set_planet_flag = fallen_machine_capital
+			}
+		}	
+	}
+}
+
+#Fallen Spiritualist
+
+#Hidden Shrine (Spiritualist)
+country_event = {
+	id = fallen_weaponry.100
+	title = fallen_weaponry.100.name
+	desc = fallen_weaponry.100.desc
+	picture = GFX_evt_underground_city
+	location = from
+	show_sound = event_mystic_reveal
+
+	fire_only_once = yes
+
+	trigger = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+#		end_game_years_passed >= 0
+#		
+		
+		is_country_type = ascended_empire
+#		is_ai = no #For Testing
+		has_technology = tech_fallen_technologies_4
+		has_technology = tech_fallen_technologies_6
+
+		any_owned_planet = {
+			has_planet_flag = fallen_spiritualist_capital
+#			is_capital = yes
+		}
+	
+		NOT = {
+			has_country_flag = fallen_spiritualist_capital_raided
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		set_country_flag = fallen_spiritualist_capital_raided
+		
+		random_owned_planet = {
+			limit = {
+#				is_capital = yes
+				has_planet_flag = fallen_spiritualist_capital
+			}
+			save_event_target_as = fallen_spiritualist_digsite
+		}
+	}
+	
+	option = {
+		name = CURIOUS
+		event_target:fallen_spiritualist_digsite = { 
+			create_archaeological_site = fallen_spiritualist_digsite_1
+#			root.owner = {
+#				set_country_flag = fallen_spiritualist_weapons_chain
+#			}
+		}
+		owner = {
+			if = {
+				limit = { 
+					NOT = { has_event_chain = lost_technologies_chain }
+				}
+				begin_event_chain = {
+					event_chain = "lost_technologies_chain"
+					target = this
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+     			value = @tier1researchreward
+     			min = @tier1researchmin
+     			max = @tier1researchmax
+     		}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.101
+	title = "fallen_weaponry.101.name"
+	desc = fallen_weaponry.101.desc
+	picture = GFX_evt_ancient_records
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.101.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_psi_deflector
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_psi_deflector"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_psi_deflector
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.1011
+	title = fallen_weaponry.1011.name
+	desc = fallen_weaponry.1011.desc
+	picture = GFX_evt_psionics
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.1011.a
+		root.owner = {
+			add_research_option = tech_psi_deflector
+			add_tech_progress = {
+				tech = tech_psi_deflector
+				progress = 0.80
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.102
+	title = "fallen_weaponry.102.name"
+	desc = fallen_weaponry.102.desc
+	picture = GFX_evt_hidden_door
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.102.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_psi_missile_system
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_PSI_MISSILES"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_psi_missile_system
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+
+
+planet_event = {
+	id = fallen_weaponry.1021
+	title = fallen_weaponry.1021.name
+	desc = fallen_weaponry.1021.desc
+	picture = GFX_evt_psionics
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.1021.a
+		root.owner = {
+			add_research_option = tech_psi_missile_system
+			add_tech_progress = {
+				tech = tech_psi_missile_system
+				progress = 0.40
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.103
+	title = "fallen_weaponry.103.name"
+	desc = fallen_weaponry.103.desc
+	picture = GFX_evt_engineering_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.103.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_shield_booster
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_SHIELD_BOOSTER"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_shield_booster
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.1031
+	title = fallen_weaponry.1031.name
+	desc = fallen_weaponry.1031.desc
+	picture = GFX_evt_engineering_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.1031.a
+		root.owner = {
+			add_research_option = tech_dark_energy_shield_booster
+			add_tech_progress = {
+				tech =  tech_dark_energy_shield_booster
+				progress = 0.20
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.104
+	title = "fallen_weaponry.104.name"
+	desc = fallen_weaponry.104.desc
+	picture = GFX_evt_decryption
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.104.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_omni_emitter
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_OMNI_EMITTER"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_omni_emitter
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.1041
+	title = fallen_weaponry.1041.name
+	desc = fallen_weaponry.1041.desc
+	picture = GFX_evt_decryption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.1041.a
+		root.owner = {
+			add_research_option = tech_omni_emitter
+			add_tech_progress = {
+				tech = tech_omni_emitter
+				progress = 0.10
+			}
+		}
+		
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.105
+	title = "fallen_weaponry.105.name"
+	desc = fallen_weaponry.105.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.105.a
+		great_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_portal_generator
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_PORTAL_GENERATOR"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_portal_generator
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.1051
+	title = fallen_weaponry.1051.name
+	desc = fallen_weaponry.1051.desc
+	picture = GFX_evt_dimensional_horror
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.1051.a
+		root.owner = {
+			add_research_option = tech_portal_generator
+			add_tech_progress = {
+				tech = tech_portal_generator
+				progress = 0.05
+			}
+		}
+	}
+}
+
+#Fallen Materialist
+
+#Derelict Research Facility (Materialist)
+country_event = {
+	id = fallen_weaponry.200
+	title = fallen_weaponry.200.name
+	desc = fallen_weaponry.200.desc
+	picture = GFX_evt_ancient_databank
+	location = from
+	show_sound = event_mystic_reveal
+
+	fire_only_once = yes
+
+	trigger = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+#		end_game_years_passed >= 0
+#		
+		
+		is_country_type = ascended_empire
+#		is_ai = no #For Testing
+		has_technology = tech_fallen_technologies_4
+		has_technology = tech_fallen_technologies_6
+
+		any_owned_planet = {
+			has_planet_flag = fallen_materialist_capital
+#			is_capital = yes
+		}
+	
+		NOT = {
+			has_country_flag = fallen_materialist_capital_raided
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		set_country_flag = fallen_materialist_capital_raided
+		
+		random_owned_planet = {
+			limit = {
+#				is_capital = yes
+				has_planet_flag = fallen_materialist_capital
+			}
+			save_event_target_as = fallen_materialist_digsite
+		}
+	}
+	
+	option = {
+		name = CURIOUS
+		event_target:fallen_materialist_digsite = { 
+			create_archaeological_site = fallen_materialist_digsite_1
+#			root.owner = {
+#				set_country_flag = fallen_materialist_weapons_chain
+#			}
+		}
+		owner = {
+			if = {
+				limit = { 
+					NOT = { has_event_chain = lost_technologies_chain }
+				}
+				begin_event_chain = {
+					event_chain = "lost_technologies_chain"
+					target = this
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+     			value = @tier1researchreward
+     			min = @tier1researchmin
+     			max = @tier1researchmax
+     		}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.201
+	title = "fallen_weaponry.201.name"
+	desc = fallen_weaponry.201.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.201.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_power_core
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_POWER_CORE"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_power_core
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2011
+	title = fallen_weaponry.2011.name
+	desc = fallen_weaponry.2011.desc
+	picture = GFX_evt_analyzing_artifacts
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.2011.a
+		root.owner = {
+			add_research_option = tech_dark_energy_power_core
+			add_tech_progress = {
+				tech = tech_dark_energy_power_core
+				progress = 0.80
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.202
+	title = "fallen_weaponry.202.name"
+	desc = fallen_weaponry.202.desc
+	picture = GFX_evt_ancient_artifact
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.202.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_shadow_strike_craft
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_SHADOW_STRIKE_CRAFT"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_shadow_strike_craft
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+
+
+planet_event = {
+	id = fallen_weaponry.2021
+	title = fallen_weaponry.2021.name
+	desc = fallen_weaponry.2021.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.2021.a
+		root.owner = {
+			add_research_option = tech_shadow_strike_craft
+			add_tech_progress = {
+				tech = tech_shadow_strike_craft
+				progress = 0.40
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.203
+	title = "fallen_weaponry.203.name"
+	desc = fallen_weaponry.203.desc
+	picture = GFX_evt_engineering_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.203.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_shield
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_SHIELD"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_shield
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2031
+	title = fallen_weaponry.2031.name
+	desc = fallen_weaponry.2031.desc
+	picture = GFX_evt_engineering_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.2031.a
+		root.owner = {
+			add_research_option = tech_dark_energy_shield
+			add_tech_progress = {
+				tech =  tech_dark_energy_shield
+				progress = 0.20
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.204
+	title = "fallen_weaponry.204.name"
+	desc = fallen_weaponry.204.desc
+	picture = GFX_evt_decryption
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.204.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_omni_lance
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_OMNI_LANCE"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_omni_lance
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2041
+	title = fallen_weaponry.2041.name
+	desc = fallen_weaponry.2041.desc
+	picture = GFX_evt_decryption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.2041.a
+		root.owner = {
+			add_research_option = tech_omni_lance
+			add_tech_progress = {
+				tech = tech_omni_lance
+				progress = 0.10
+			}
+		}
+		
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.205
+	title = "fallen_weaponry.205.name"
+	desc = fallen_weaponry.205.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.205.a
+		great_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dimensional_weapon
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DIMENSIONAL_WEAPON"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dimensional_weapon
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2051
+	title = fallen_weaponry.2051.name
+	desc = fallen_weaponry.2051.desc
+	picture = GFX_evt_dimensional_horror
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.2051.a
+		root.owner = {
+			add_research_option = tech_dimensional_weapon
+			add_tech_progress = {
+				tech = tech_dimensional_weapon
+				progress = 0.05
+			}
+		}
+	}
+}
+
+#Fallen Xenophile
+
+#Abandoned Enclave (Xenophile)
+country_event = {
+	id = fallen_weaponry.300
+	title = fallen_weaponry.300.name
+	desc = fallen_weaponry.300.desc
+	picture = GFX_evt_alien_ruins
+	location = from
+	show_sound = event_mystic_reveal
+
+	fire_only_once = yes
+
+	trigger = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+#		end_game_years_passed >= 0
+#		
+		
+		is_country_type = ascended_empire
+#		is_ai = no #For Testing
+		has_technology = tech_fallen_technologies_4
+		has_technology = tech_fallen_technologies_6
+
+		any_owned_planet = {
+			has_planet_flag = fallen_xenophile_capital
+#			is_capital = yes
+		}
+	
+		NOT = {
+			has_country_flag = fallen_xenophile_capital_raided
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		set_country_flag = fallen_xenophile_capital_raided
+		
+		random_owned_planet = {
+			limit = {
+#				is_capital = yes
+				has_planet_flag = fallen_xenophile_capital
+			}
+			save_event_target_as = fallen_xenophile_digsite
+		}
+	}
+	
+	option = {
+		name = CURIOUS
+		event_target:fallen_xenophile_digsite = { 
+			create_archaeological_site = fallen_xenophile_digsite_1
+#			root.owner = {
+#				set_country_flag = fallen_xenophile_weapons_chain
+#			}
+		}
+		owner = {
+			if = {
+				limit = { 
+					NOT = { has_event_chain = lost_technologies_chain }
+				}
+				begin_event_chain = {
+					event_chain = "lost_technologies_chain"
+					target = this
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+     			value = @tier1researchreward
+     			min = @tier1researchmin
+     			max = @tier1researchmax
+     		}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.301
+	title = "fallen_weaponry.301.name"
+	desc = fallen_weaponry.301.desc
+	picture = GFX_evt_collapsing_roof
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.301.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_jump_drive
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_JUMP_DRIVE"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_jump_drive
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.3011
+	title = fallen_weaponry.3011.name
+	desc = fallen_weaponry.3011.desc
+	picture = GFX_evt_physics_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.3011.a
+		root.owner = {
+			add_research_option = tech_dark_energy_jump_drive
+			add_tech_progress = {
+				tech = tech_dark_energy_jump_drive
+				progress = 0.80
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.302
+	title = "fallen_weaponry.302.name"
+	desc = fallen_weaponry.302.desc
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.302.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_hellfire_autocannons
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_HELLFIRE_AUTOCANNON"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_hellfire_autocannons
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+
+
+planet_event = {
+	id = fallen_weaponry.3021
+	title = fallen_weaponry.3021.name
+	desc = fallen_weaponry.3021.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.3021.a
+		root.owner = {
+			add_research_option = tech_hellfire_autocannons
+			add_tech_progress = {
+				tech = tech_hellfire_autocannons
+				progress = 0.40
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.303
+	title = "fallen_weaponry.303.name"
+	desc = fallen_weaponry.303.desc
+	picture = GFX_evt_society_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.303.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_afterburners
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_AFTERBURNERS"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_thruster
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_THRUSTER"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_afterburners
+					has_technology = tech_dark_energy_thruster
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.3031
+	title = fallen_weaponry.3031.name
+	desc = fallen_weaponry.3031.desc
+	picture = GFX_evt_society_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.3031.a
+		root.owner = {
+			add_research_option = tech_dark_energy_afterburners
+			add_tech_progress = {
+				tech =  tech_dark_energy_afterburners
+				progress = 0.20
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.3032
+	title = fallen_weaponry.3032.name
+	desc = fallen_weaponry.3032.desc
+	picture = GFX_evt_society_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.3032.a
+		root.owner = {
+			add_research_option = tech_dark_energy_thruster
+			add_tech_progress = {
+				tech =  tech_dark_energy_thruster
+				progress = 0.20
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.304
+	title = "fallen_weaponry.304.name"
+	desc = fallen_weaponry.304.desc
+	picture = GFX_evt_decryption
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.304.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_massive_autocannons
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_MASSIVE_AUTOCANNONS"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_massive_autocannons
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.3041
+	title = fallen_weaponry.3041.name
+	desc = fallen_weaponry.3041.desc
+	picture = GFX_evt_decryption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.3041.a
+		root.owner = {
+			add_research_option = tech_massive_autocannons
+			add_tech_progress = {
+				tech = tech_massive_autocannons
+				progress = 0.10
+			}
+		}
+		
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.305
+	title = "fallen_weaponry.305.name"
+	desc = fallen_weaponry.305.desc
+	picture = GFX_evt_space_dragon
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.305.a
+		great_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dragon_breath
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DRAGON_BREATH"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dragon_breath
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.3051
+	title = fallen_weaponry.3051.name
+	desc = fallen_weaponry.3051.desc
+	picture = GFX_evt_space_dragon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.3051.a
+		root.owner = {
+			add_research_option = tech_dragon_breath
+			add_tech_progress = {
+				tech = tech_dragon_breath
+				progress = 0.05
+			}
+		}
+	}
+}
+
+#Fallen Xenophobe
+
+#Weapons Arsenal (Xenophobe)
+country_event = {
+	id = fallen_weaponry.400
+	title = fallen_weaponry.400.name
+	desc = fallen_weaponry.400.desc
+	picture = GFX_evt_ancient_alien_temple
+	location = from
+	show_sound = event_mystic_reveal
+
+	fire_only_once = yes
+
+	trigger = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+#		end_game_years_passed >= 0
+#		
+		
+		is_country_type = ascended_empire
+#		is_ai = no #For Testing
+		has_technology = tech_fallen_technologies_4
+		has_technology = tech_fallen_technologies_6
+
+		any_owned_planet = {
+			has_planet_flag = fallen_xenophobe_capital
+#			is_capital = yes
+		}
+	
+		NOT = {
+			has_country_flag = fallen_xenophobe_capital_raided
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		set_country_flag = fallen_xenophobe_capital_raided
+		
+		random_owned_planet = {
+			limit = {
+#				is_capital = yes
+				has_planet_flag = fallen_xenophobe_capital
+			}
+			save_event_target_as = fallen_xenophobe_digsite
+		}
+	}
+	
+	option = {
+		name = CURIOUS
+		event_target:fallen_xenophobe_digsite = { 
+			create_archaeological_site = fallen_xenophobe_digsite_1
+#			root.owner = {
+#				set_country_flag = fallen_xenophobe_weapons_chain
+#			}
+		}
+		owner = {
+			if = {
+				limit = { 
+					NOT = { has_event_chain = lost_technologies_chain }
+				}
+				begin_event_chain = {
+					event_chain = "lost_technologies_chain"
+					target = this
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+     			value = @tier1researchreward
+     			min = @tier1researchmin
+     			max = @tier1researchmax
+     		}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.401
+	title = "fallen_weaponry.401.name"
+	desc = fallen_weaponry.401.desc
+	picture = GFX_evt_ancient_artifact
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.401.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_titan_armor
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_TITAN_ARMOR"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_titan_armor
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.4011
+	title = fallen_weaponry.4011.name
+	desc = fallen_weaponry.4011.desc
+	picture = GFX_evt_ancient_artifact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.4011.a
+		root.owner = {
+			add_research_option = tech_titan_armor
+			add_tech_progress = {
+				tech = tech_titan_armor
+				progress = 0.80
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.402
+	title = "fallen_weaponry.402.name"
+	desc = fallen_weaponry.402.desc
+	picture = GFX_evt_engineering_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.402.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_terror_cannon
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_TERROR_CANNON"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_terror_cannon
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+
+
+planet_event = {
+	id = fallen_weaponry.4021
+	title = fallen_weaponry.4021.name
+	desc = fallen_weaponry.4021.desc
+	picture = GFX_evt_engineering_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.4021.a
+		root.owner = {
+			add_research_option = tech_terror_cannon
+			add_tech_progress = {
+				tech = tech_terror_cannon
+				progress = 0.40
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.403
+	title = "fallen_weaponry.403.name"
+	desc = fallen_weaponry.403.desc
+	picture = GFX_evt_society_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.403.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_titan_plating
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_TITAN_PLATING"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_titan_plating
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.4031
+	title = fallen_weaponry.4031.name
+	desc = fallen_weaponry.4031.desc
+	picture = GFX_evt_society_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.4031.a
+		root.owner = {
+			add_research_option = tech_titan_plating
+			add_tech_progress = {
+				tech =  tech_titan_plating
+				progress = 0.20
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.404
+	title = "fallen_weaponry.404.name"
+	desc = fallen_weaponry.404.desc
+	picture = GFX_evt_decryption
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.404.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_omni_cannon
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_OMNI_CANNON"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_omni_cannon
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.4041
+	title = fallen_weaponry.4041.name
+	desc = fallen_weaponry.4041.desc
+	picture = GFX_evt_decryption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.4041.a
+		root.owner = {
+			add_research_option = tech_omni_cannon
+			add_tech_progress = {
+				tech = tech_omni_cannon
+				progress = 0.10
+			}
+		}
+		
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.405
+	title = "fallen_weaponry.405.name"
+	desc = fallen_weaponry.405.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.405.a
+		great_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_sensors
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_SENSORS"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_sensors
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.4051
+	title = fallen_weaponry.4051.name
+	desc = fallen_weaponry.4051.desc
+	picture = GFX_evt_physics_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.4051.a
+		root.owner = {
+			add_research_option = tech_dark_energy_sensors
+			add_tech_progress = {
+				tech = tech_dark_energy_sensors
+				progress = 0.05
+			}
+		}
+	}
+}
+
+#Fallen Machine
+
+#Empty Segment (Machine)
+country_event = {
+	id = fallen_weaponry.500
+	title = fallen_weaponry.500.name
+	desc = fallen_weaponry.500.desc
+	picture = GFX_evt_fallen_empire
+	location = from
+	show_sound = event_mystic_reveal
+
+	fire_only_once = yes
+
+	trigger = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+#		end_game_years_passed >= 0
+#		
+		
+		is_country_type = ascended_empire
+#		is_ai = no #For Testing
+		has_technology = tech_fallen_technologies_4
+		has_technology = tech_fallen_technologies_6
+
+		any_owned_planet = {
+			has_planet_flag = fallen_machine_capital
+#			is_capital = yes
+		}
+	
+		NOT = {
+			has_country_flag = fallen_machine_capital_raided
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		set_country_flag = fallen_machine_capital_raided
+		
+		random_owned_planet = {
+			limit = {
+#				is_capital = yes
+				has_planet_flag = fallen_machine_capital
+			}
+			save_event_target_as = fallen_machine_digsite
+		}
+	}
+	
+	option = {
+		name = CURIOUS
+		event_target:fallen_machine_digsite = { 
+			create_archaeological_site = fallen_machine_digsite_1
+#			root.owner = {
+#				set_country_flag = fallen_machine_weapons_chain
+#			}
+		}
+		owner = {
+			if = {
+				limit = { 
+					NOT = { has_event_chain = lost_technologies_chain }
+				}
+				begin_event_chain = {
+					event_chain = "lost_technologies_chain"
+					target = this
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+     			value = @tier1researchreward
+     			min = @tier1researchmin
+     			max = @tier1researchmax
+     		}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.501
+	title = "fallen_weaponry.501.name"
+	desc = fallen_weaponry.501.desc
+	picture = GFX_evt_derelict_interior
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.501.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_infinity_encoder
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_INFINITY_ENCODER"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_infinity_encoder
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.5011
+	title = fallen_weaponry.5011.name
+	desc = fallen_weaponry.5011.desc
+	picture = GFX_evt_technosphere
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.5011.a
+		root.owner = {
+			add_research_option = tech_infinity_encoder
+			add_tech_progress = {
+				tech = tech_infinity_encoder
+				progress = 0.80
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.502
+	title = "fallen_weaponry.502.name"
+	desc = fallen_weaponry.502.desc
+	picture = GFX_evt_engineering_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.502.a
+		medium_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_ion_disruptor
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_ION_DISRUPTOR"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_ion_disruptor
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+
+
+planet_event = {
+	id = fallen_weaponry.5021
+	title = fallen_weaponry.5021.name
+	desc = fallen_weaponry.5021.desc
+	picture = GFX_evt_engineering_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.5021.a
+		root.owner = {
+			add_research_option = tech_ion_disruptor
+			add_tech_progress = {
+				tech = tech_ion_disruptor
+				progress = 0.50
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.503
+	title = "fallen_weaponry.503.name"
+	desc = fallen_weaponry.503.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.503.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_infinity_decoder
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_INFINITY_DECODER"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_infinity_decoder
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.5031
+	title = fallen_weaponry.5031.name
+	desc = fallen_weaponry.5031.desc
+	picture = GFX_evt_technosphere
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.5031.a
+		root.owner = {
+			add_research_option = tech_infinity_decoder
+			add_tech_progress = {
+				tech =  tech_infinity_decoder
+				progress = 0.20
+			}
+		}
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.504
+	title = "fallen_weaponry.504.name"
+	desc = fallen_weaponry.504.desc
+	picture = GFX_evt_decryption
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.504.a
+		large_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_omni_titan_lance
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_OMNI_TITAN_LANCE"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_omni_titan_lance
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.5041
+	title = fallen_weaponry.5041.name
+	desc = fallen_weaponry.5041.desc
+	picture = GFX_evt_decryption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.5041.a
+		root.owner = {
+			add_research_option = tech_omni_titan_lance
+			add_tech_progress = {
+				tech = tech_omni_titan_lance
+				progress = 0.10
+			}
+		}
+		
+	}
+}
+
+fleet_event = { 
+	id = fallen_weaponry.505
+	title = "fallen_weaponry.505.name"
+	desc = fallen_weaponry.505.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = fallen_weaponry.505.a
+		great_artifact_reward = yes
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_dark_energy_power_booster
+					}
+				}
+			}
+			from = {
+				enable_special_project = {
+					name = "PROJECT_DARK_ENERGY_POWER_BOOSTER"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology = tech_dark_energy_power_booster
+				}
+			}
+			owner = {
+				add_resource = { minor_artifacts = 20 }
+			}
+		}	
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.5051
+	title = fallen_weaponry.5051.name
+	desc = fallen_weaponry.5051.desc
+	picture = GFX_evt_physics_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.5051.a
+		root.owner = {
+			add_research_option = tech_dark_energy_power_booster
+			add_tech_progress = {
+				tech = tech_dark_energy_power_booster
+				progress = 0.05
+			}
+		}
+	}
+}
+
+country_event = {
+	id = fallen_weaponry.6
+	title = fallen_weaponry.6.name
+	desc = fallen_weaponry.6.desc
+	picture = GFX_evt_decryption
+	
+	trigger = {
+		is_zofe_country = yes
+		has_technology = tech_omni_lance
+		has_technology = tech_omni_emitter
+		has_technology = tech_massive_autocannons
+		has_technology = tech_omni_cannon
+		has_technology = tech_omni_titan_lance
+		NOT = { has_country_flag = all_omni_weapons_collected }
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		set_country_flag = all_omni_weapons_collected
+	}
+	
+	option = {
+		name = fallen_weaponry.6.a
+		capital_scope = {
+			enable_special_project = {
+				name = "PROJECT_COMPACT_OMNI_WEAPONS"
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+	option = {
+		name = fallen_weaponry.6.b
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.601
+	title = fallen_weaponry.601.name
+	desc = fallen_weaponry.601.desc
+	picture = GFX_evt_decryption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fallen_weaponry.601.a
+		root.owner = {
+			add_research_option = tech_compact_omni_emitter
+			add_tech_progress = {
+				tech = tech_compact_omni_emitter
+				progress = 0.05
+			}
+			add_research_option = tech_compact_omni_lance
+			add_tech_progress = {
+				tech = tech_compact_omni_lance
+				progress = 0.05
+			}
+			add_research_option = tech_compact_massive_autocannons
+			add_tech_progress = {
+				tech = tech_compact_massive_autocannons
+				progress = 0.05
+			}
+			add_research_option = tech_compact_omni_cannon
+			add_tech_progress = {
+				tech = tech_compact_omni_cannon
+				progress = 0.05
+			}
+#			add_research_option = tech_compact_omni_titan_laser
+#			add_tech_progress = {
+#				tech = tech_compact_omni_titan_laser
+#				progress = 0.05
+#			}
+		}
+	}
+}
+	
