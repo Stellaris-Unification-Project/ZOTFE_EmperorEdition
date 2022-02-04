@@ -2,8 +2,6 @@
 # Lost Empire CB
 ##################
 
-
-
 cb_banish_ascendancy = {
 	show_in_diplomacy = yes
 	show_notification = yes
