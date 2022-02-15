@@ -1,0 +1,38 @@
+veteran_difficulty = {
+	ship_hull_mult = 5.0
+	ship_armor_mult = 2.5
+	ship_shield_mult = 2.5
+	ship_weapon_damage = 3.0
+}
+
+
+precursor_doctrine = {
+	ship_fire_rate_mult = 1.50
+	ship_evasion_mult = 1.00
+	ship_disengage_chance_mult = 0.50
+}
+
+seen_it_all_before = {
+	damage_vs_country_type_default_mult = 2.5
+}
+
+ancient_fortification = {
+	shipclass_starbase_damage_mult = 2.5
+	shipclass_starbase_hull_mult = 2.5
+	shipclass_military_station_damage_mult = 2.5
+}
+	
+ancient_enemy = {
+	ship_fire_rate_mult = 1.50
+	ship_evasion_mult = 0.50
+}
+
+stop_killing_your_own_raiders = {
+    damage_vs_country_type_marauder_raiders_mult = -50
+}
+
+marauder_raiders_fixed = {
+    damage_vs_country_type_dormant_marauders_mult = -50
+    damage_vs_country_type_awakened_marauders_mult = -50
+}
+	
