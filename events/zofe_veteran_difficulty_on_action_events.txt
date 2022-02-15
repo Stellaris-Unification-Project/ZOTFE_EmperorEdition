@@ -1,0 +1,23 @@
+
+#########################################
+#
+# on_action_events
+#
+#########################################
+
+namespace = zofe_action
+
+#Base Mod Activation Check
+event = {
+	id = zofe_action.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = zofe_veteran_difficulty_activated }
+	}
+	
+	immediate = {
+		set_global_flag = zofe_veteran_difficulty_activated
+	}
+}
