@@ -1,0 +1,296 @@
+############################
+#
+# Hard Difficulty Events
+#
+############################
+
+namespace = hard_difficulty
+
+# Apply Difficulty Modifiers for Fallen Empires
+country_event = {
+	id = hard_difficulty.1
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	trigger = {
+		
+			is_fallen_empire = yes
+		is_ai = yes
+		NOT = { has_country_flag = hard_difficulty_modifier_applied }
+	}
+	
+	immediate = {
+		set_country_flag = hard_difficulty_modifier_applied
+		
+		root = {
+			add_modifier = {
+				modifier = hard_difficulty
+				days = -1
+			}
+			add_modifier = {
+				modifier = precursor_tactics
+				days = -1
+			}
+			add_modifier = {
+				modifier = seen_it_before
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_construct
+				days = -1
+			}
+#			capital_scope = {	
+#				create_fallen_empire_fleet = yes
+#			}
+		}
+	}
+}
+
+# Fallen Empires Gets Reinforcements When At War
+country_event = {
+	id = hard_difficulty.2
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	trigger = {
+		
+			is_fallen_empire = yes
+		is_ai = yes
+		is_at_war = yes
+		NOT = { has_country_flag = fe_reinforcements_received }
+	}
+	
+	immediate = {
+		set_timed_country_flag = {
+			flag = fe_reinforcements_received
+			days = 1440
+		}
+		capital_scope = {	
+			create_fallen_empire_reinforcements = yes
+		}
+		if = {
+			limit = {
+				is_country_type = awakened_fallen_empire
+			}
+			create_fallen_empire_fleet = yes
+		}
+	}
+}
+
+
+
+#Apply Difficulty Modifiers for Crises and Marauders
+country_event = {
+	id = hard_difficulty.3
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			is_country_type = swarm
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+			is_country_type = extradimensional_3
+			is_country_type = ai_empire
+			is_country_type = dormant_marauders
+			is_country_type = awakened_marauders
+			is_country_type = shroud_spirits
+			is_country_type = cybrex_empire
+			is_country_type = sentinels
+			is_country_type = gate_builders
+		}
+		NOT = { has_country_flag = hard_difficulty_modifier_applied }
+	}
+	
+	immediate = {
+		set_country_flag = hard_difficulty_modifier_applied
+		
+		if = {
+			limit = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = ai_empire
+					is_country_type = shroud_spirits
+					is_country_type = cybrex_empire
+					is_country_type = sentinels
+					is_country_type = gate_builders
+				}
+			}
+			add_modifier = {
+				modifier = hard_difficulty
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_foe
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_construct
+				days = -1
+			}
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					is_country_type = dormant_marauders
+					is_country_type = awakened_marauders
+				}
+			}
+			add_modifier = {
+				modifier = seen_it_before
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_foe
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_construct
+				days = -1
+			}
+		}
+	}
+}
+
+#Apply Difficulty Modifiers for Guardians
+country_event = {
+	id = hard_difficulty.4
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			is_country_type = guardian
+			is_country_type = guardian_dragon
+			is_country_type = guardian_stellarite
+			is_country_type = guardian_wraith
+			is_country_type = guardian_hiver
+			is_country_type = guardian_horror
+			is_country_type = guardian_dreadnought
+			is_country_type = guardian_sphere
+			is_country_type = guardian_fortress
+			is_country_type = guardian_scavenger_bot
+			is_country_type = guardian_elderly_tiyanki
+			is_country_type = guardian_hatchling
+		}
+		NOT = { has_country_flag = hard_difficulty_modifier_applied }
+	}
+	
+	immediate = {
+		set_country_flag = hard_difficulty_modifier_applied
+		
+		if = {
+			limit = { is_country_type = guardian_fortress }
+			add_modifier = {
+				modifier = ancient_construct
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_country_type = guardian
+					is_country_type = guardian_dragon
+					is_country_type = guardian_stellarite
+					is_country_type = guardian_wraith
+					is_country_type = guardian_hiver
+					is_country_type = guardian_horror
+					is_country_type = guardian_dreadnought
+					is_country_type = guardian_sphere
+				}
+			}
+			add_modifier = {
+				modifier = seen_it_before
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_foe
+				days = -1
+			}
+		}
+	}
+}
+
+
+
+###Marauder Fixes by Spider
+
+country_event = {
+    id = hard_difficulty.998
+    title = OK
+    desc = OK
+    
+    hide_window = yes
+    
+    trigger = {
+        OR = {
+            is_country_type = dormant_marauders
+            is_country_type = awakened_marauders
+        }
+        NOT = { has_country_flag = fixed_stupid_marauders }
+    }
+    
+    immediate = {
+        set_country_flag = fixed_stupid_marauders
+        
+        if = {
+            limit = {
+                OR = {
+                    is_country_type = dormant_marauders
+                    is_country_type = awakened_marauders
+                }
+             }
+            add_modifier = {
+                modifier = stop_killing_your_own_raiders
+                days = -1
+            }
+        }
+    }
+}
+
+country_event = {
+    id = hard_difficulty.999
+    title = OK
+    desc = OK
+    
+    hide_window = yes
+    
+    trigger = {
+        is_country_type = marauder_raiders
+        NOT = { has_country_flag = raiders_fixed }
+    }
+    
+    immediate = {
+        set_country_flag = raiders_fixed
+        
+        if = {
+            limit = {
+                is_country_type = marauder_raiders
+             }
+            add_modifier = {
+                modifier = marauder_raiders_fixed
+                days = -1
+            }
+            add_modifier = {
+				modifier = seen_it_before
+				days = -1
+			}
+			add_modifier = {
+				modifier = ancient_foe
+				days = -1
+			}
+        }
+    }
+}

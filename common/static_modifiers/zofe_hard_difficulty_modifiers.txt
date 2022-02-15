@@ -1,0 +1,38 @@
+hard_difficulty = {
+	ship_hull_mult = 2.5
+	ship_armor_mult = 1.25
+	ship_shield_mult = 1.25
+	ship_weapon_damage = 1.5
+}
+
+
+precursor_tactics = {
+	ship_fire_rate_mult = 0.75
+	ship_evasion_mult = 0.50
+	ship_disengage_chance_mult = 0.25
+}
+
+seen_it_before = {
+	damage_vs_country_type_default_mult = 1.25
+}
+
+ancient_construct = {
+	shipclass_starbase_damage_mult = 1.25
+	shipclass_starbase_hull_mult = 1.25
+	shipclass_military_station_damage_mult = 1.25
+}
+	
+ancient_foe = {
+	ship_fire_rate_mult = 0.75
+	ship_evasion_mult = 0.25
+}
+
+stop_killing_your_own_raiders = {
+    damage_vs_country_type_marauder_raiders_mult = -50
+}
+
+marauder_raiders_fixed = {
+    damage_vs_country_type_dormant_marauders_mult = -50
+    damage_vs_country_type_awakened_marauders_mult = -50
+}
+	
