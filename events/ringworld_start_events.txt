@@ -97,7 +97,6 @@ planet_event = {
 	
 	trigger = {
 		mid_game_years_passed >= 0
-#		is_original_owner = root.owner
 		has_planet_flag = ringworld_start
 		owner = {
 			has_country_flag = ringworld_empire_navy_spawned
@@ -281,72 +280,3 @@ country_event = {
 		}
 	}
 }
-
-#Dark Matter Power Core
-#planet_event = {
-#	id = ringworld_empire.6
-#	title = ringworld_empire.6.name
-#	desc = ringworld_empire.6.desc
-#	picture = GFX_evt_fallen_empire
-#	show_sound = event_alien_signal
-#	
-#	trigger = {
-#		end_game_years_passed >= 0
-#		is_original_owner = root.owner
-#		has_planet_flag = ringworld_start
-#		owner = {
-#			NOT = { has_country_flag = dark_matter_power_given }
-#			NOT = { has_technology = tech_dark_matter_power_core }
-#		}
-#	}
-#	
-#	mean_time_to_happen = {
-#		years = 10
-#	}
-#	
-#	immediate = {
-#		owner = {
-#			set_country_flag = dark_matter_power_given
-#		}
-#	}
-#	
-#	option = {
-#		name = ringworld_empire.6.a
-#		root.owner = {
-#			add_research_option = tech_dark_matter_power_core
-#		}
-#		ai_chance = {
-#			factor = 10
-#		}
-#	}
-#	
-#	option = {
-#		name = ringworld_empire.6.b
-#		root.owner = { 
-#			add_resource = { minerals = 10000 }
-#		}
-#		ai_chance = {
-#			factor = 0
-#		}
-#	}
-#	
-#	option = {
-#		name = ringworld_empire.6.c
-#		root.owner = { 
-#			add_resource = { engineering_research = 5000 }
-#		}
-#		ai_chance = {
-#			factor = 0
-#		}
-#	}
-#	
-#	option = {
-#		name = ringworld_empire.6.d
-#		root.owner = { 
-#			add_resource = { influence = 1000 }
-#		}	
-#		ai_chance = {
-#			factor = 0
-#		}
-#	}
-#}

@@ -4,13 +4,8 @@
 
 renounce_ascendancy = {
 	is_ambition = yes
-	
-	resources = {
-		category = edicts
-	}
-
+	resources = { category = edicts }
 	length = 0
-
 	potential = {
 		is_country_type = ascended_empire
 		NOR = {

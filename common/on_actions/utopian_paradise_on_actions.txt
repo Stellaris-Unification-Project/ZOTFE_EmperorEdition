@@ -1,11 +1,2 @@
-on_game_start = {
-	events = {
-		zofe_action.6
-	}
-}
-
-on_single_player_save_game_load = {
-	events = {
-		zofe_action.6
-	}
-}
+on_game_start = { events = { zofe_action.6 } }
+on_single_player_save_game_load = { events = { zofe_action.6 } }

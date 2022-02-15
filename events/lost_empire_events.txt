@@ -589,16 +589,6 @@ country_event = {
 				}
 				country_event = { id = lost_empire.11 }
 			}
-#			every_owned_fleet = {
-#				limit = {
-#					OR = {
-#						is_ship_class = shipclass_military
-#						is_ship_class = shipclass_military_special
-#					}
-#				}
-#				unassign_leader = this
-#				destroy_fleet = this
-#			}
 			capital_scope = {
 				create_lost_empire_initial_fleet = yes
 			}
@@ -751,7 +741,6 @@ country_event = {
 			}
 			set_timed_country_flag = { flag = ai_no_wars days = 3650 }
 		}
-		
 	}
 	
 	option = {
@@ -3919,7 +3908,6 @@ country_event = {
 country_event = {
 	id = lost_empire.6
 	title = lost_empire.6.name
-#	desc = lost_empire.6.desc
 	picture = GFX_evt_fallen_empire_awakes
 	
 	is_triggered_only = yes
@@ -4365,7 +4353,7 @@ event = {
 		end_game_years_passed > 100
 		any_country = {
 			is_country_type = ascended_empire
-			is_gestalt = no	
+			is_gestalt = no
 			NOR = {
 				has_country_flag = new_ascended_empire
 				has_country_flag = no_decadence

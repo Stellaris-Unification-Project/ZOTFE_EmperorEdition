@@ -53,8 +53,6 @@
  district_utopian_science_rw_desc:0 "A Utopian Science Segment on a Ring World hosts the highest concentration of researchers and science enthusiasts in the galaxy, where many top facilities are open at all times for observation and learning."
  district_utopian_science_rw_plural:0 "Utopian Science Segments"
  
-
- 
  mod_pc_utopian_city_habitability:0 "Utopian City Habitability"
  mod_pc_utopian_gaia_habitability:0 "Utopian World Habitability"
  mod_pc_utopian_ringworld_habitability:0 "Utopian Ringworld Habitability"
@@ -81,8 +79,6 @@
  decision_paradise_creation_rw:0 "$decision_paradise_creation$"
  decision_paradise_creation_rw_desc:0 "$decision_paradise_creation_desc$"
  
- 
- 
  tech_paradise_creation:0 "Utopian Worlds"
  tech_paradise_creation_desc:0 "Combining our mastery in terraforming, landscaping and engineering, we can create a true wonder in the universe and a Utopian World for our citizens to live." 
  
@@ -95,8 +91,6 @@
  pm_New_Utopian_World:0 "New Utopian World"
  pm_New_Utopian_World_desc:0 "The living metal wreath on this new Utopian World is still in its infancy, making it more malleable and permissive for construction. Temporary housing and facilities are constantly being made and destroyed on an on-need basis."
  
- 
- 
  utopian_paradise.100.name:0 "A New §HUtopian World§!: [Root.GetName]"
  utopian_paradise.100.desc:0 "Upon stripping the planet of imperfections and the aged infrastructure we had built previously, our §HUtopian World§! is at last complete.\n\nOur engineers had created the perfect paradise, where lush mountains form the backdrop to sophisticated housing districts, created using Living Metal which can be shaped and repurposed as the population expands. Downtown districts are designed to support our growing automated industries and latest technologies.\n\nFrom this day forth, [Root.GetName] shall be known as a wonder of the universe."
  utopian_paradise.100.a:0 "It is...beautiful."
@@ -108,8 +102,6 @@
  utopian_paradise.300.name:0 "A New §HUtopian Ringworld Segment§!: [Root.GetName]"
  utopian_paradise.300.desc:0 "Upon stripping the planet of imperfections and the aged segments we had built previously, our §HUtopian Ringworld Segment§! is at last complete.\n\nOur engineers had created the perfect paradise, where scenic landscapes form the backdrop to utopian city segments, created using Living Metal which can be shaped and repurposed as the population expands. Downtown, leisure segments form the greatest concentration of entertainment the galaxy had ever seen, while the science segments are always open to eager citizens wanting to dabble in strange experiments.\n\nFrom this day forth, [Root.GetName] shall be known as a wonder of the universe."
  utopian_paradise.300.a:0 "It is a wonderous paradise."
- 
- 
  
  d_singing_towers:0 "Singing Towers"
  d_singing_towers_desc:0 "It was said that the wind passing through the cave systems would harmonise with the cave's crystal layers, creating interweaving melodies that seem to sing across the valley. The endless, beautiful music often attract visitors who choose to stay at the luxurious hotels nearby."
@@ -128,9 +120,5 @@
  
  d_endless_fields:0 "Forever Green Hills"
  d_endless_fields_desc:0 "The endless stretches of green hills on these segments are forever green, and beautiful."
- 
- 
- 
- 
  
  

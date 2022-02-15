@@ -90,7 +90,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_ship_part_titan_plating"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_titan_plating.dds"		
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_titan_plating.dds"
 	}
 	spriteType = {
 		name = "GFX_ship_part_improved_dragon_armor"

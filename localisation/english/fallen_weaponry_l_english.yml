@@ -1,16 +1,16 @@
 ﻿l_english:
 
  DIMENSIONAL_WEAPON:0 "Dimensional Beam"
- DIMENSIONAL_WEAPON_DESC:0 "The Dimensional Beam is a type of 5th dimensional weaponry designed to cause significant damage to enemy vessels from every dimension.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DIMENSIONAL_WEAPON_DESC:0 "The Dimensional Beam is a type of 5th dimensional weaponry designed to cause significant damage to enemy vessels from every dimension."
  
  tech_dimensional_weapon:0 "Dimensional Beam"
- tech_dimensional_weapon_desc:0 "The Dimensional Beam is a type of 5th dimensional weaponry designed to cause significant damage to enemy vessels from every dimension.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dimensional_weapon_desc:0 "The Dimensional Beam is a type of 5th dimensional weaponry designed to cause significant damage to enemy vessels from every dimension."
  
  DRAGON_BREATH:0 "Dragon Breath"
- DRAGON_BREATH_DESC:0 "Harnessing the science behind the dragon fire, this weapon simulates its effects to 100% likeness plus sound effects.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DRAGON_BREATH_DESC:0 "Harnessing the science behind the dragon fire, this weapon simulates its effects to 100% likeness plus sound effects."
  
  tech_dragon_breath:0 "Dragon Breath"
- tech_dragon_breath_desc:0 "Harnessing the science behind the dragon fire, this weapon simulates its effects to 100% likeness plus sound effects.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dragon_breath_desc:0 "Harnessing the science behind the dragon fire, this weapon simulates its effects to 100% likeness plus sound effects."
  
  STELLARITE_WEAPON:0 "Stellarite Beam"
  STELLARITE_WEAPON_DESC:0 "Harnessing the science behind the Stellarite's most feared weapon, a destructive form of pure solar energy is unleasehed upon the enemy."
@@ -39,80 +39,75 @@
  
  
  psi_deflector:0 "Psionic Deflector"
- psi_deflector_DESC:0 "A Psionic Deflector draws power from the minds its own crew.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ psi_deflector_DESC:0 "A Psionic Deflector draws power from the minds its own crew."
  
  MEDIUM_psi_deflector:0 "Medium Psionic Deflector"
- MEDIUM_psi_deflector_DESC:0 "A Psionic Deflector draws power from the minds its own crew.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ MEDIUM_psi_deflector_DESC:0 "A Psionic Deflector draws power from the minds its own crew."
  
  LARGE_psi_deflector:0 "Large Psionic Deflector"
- LARGE_psi_deflector_DESC:0 "A Psionic Deflector draws power from the minds its own crew.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ LARGE_psi_deflector_DESC:0 "A Psionic Deflector draws power from the minds its own crew."
  
  tech_psi_deflector:0 "Psionic Deflector"
- tech_psi_deflector_desc:0 "A Psionic Deflector draws power from the minds its own crew.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_psi_deflector_desc:0 "A Psionic Deflector draws power from the minds its own crew."
  
  
  DARK_ENERGY_SHIELD_BOOSTER:0 "Dark Energy Shield Booster"
- DARK_ENERGY_SHIELD_BOOSTER_DESC:0 "This shield booster uses Dark Energy to power its manipulation fields, allowing greater shield boosting capacity.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DARK_ENERGY_SHIELD_BOOSTER_DESC:0 "This shield booster uses Dark Energy to power its manipulation fields, allowing greater shield boosting capacity."
  
  tech_dark_energy_shield_booster:0 "Dark Energy Shield Booster"
- tech_dark_energy_shield_booster_desc:0 "This shield booster uses Dark Energy to power its manipulation fields, allowing greater shield boosting capacity.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
- 
+ tech_dark_energy_shield_booster_desc:0 "This shield booster uses Dark Energy to power its manipulation fields, allowing greater shield boosting capacity."
  
  DARK_ENERGY_JUMP_DRIVE:0 "Dark Energy Jump Drive"
- DARK_ENERGY_JUMP_DRIVE_DESC:0 "This Jump Drive warps Dark Energy, making immediate travel between distant star systems far safer than previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DARK_ENERGY_JUMP_DRIVE_DESC:0 "This Jump Drive warps Dark Energy, making immediate travel between distant star systems far safer than previously thought possible."
  
  tech_dark_energy_jump_drive:0 "Dark Energy Jump Drive"
- tech_dark_energy_jump_drive_desc:0 "This Jump Drive warps Dark Energy, making immediate travel between distant star systems far safer than previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dark_energy_jump_drive_desc:0 "This Jump Drive warps Dark Energy, making immediate travel between distant star systems far safer than previously thought possible."
  
  
  DARK_ENERGY_THRUSTER:0 "Dark Energy Thruster"
- DARK_ENERGY_THRUSTER_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DARK_ENERGY_THRUSTER_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible."
  
  tech_dark_energy_thruster:0 "Dark Energy Thruster"
- tech_dark_energy_thruster_desc:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dark_energy_thruster_desc:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible."
  
  DARK_ENERGY_AFTERBURNERS:0 "Dark Energy Afterburners"
- DARK_ENERGY_AFTERBURNERS_DESC:0 "The Dark Energy Afterburners are among the fastest afterburners ever created, allowing ships to charge at breakneck speed towards their targets.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DARK_ENERGY_AFTERBURNERS_DESC:0 "The Dark Energy Afterburners are among the fastest afterburners ever created, allowing ships to charge at breakneck speed towards their targets."
  
  tech_dark_energy_afterburners:0 "Dark Energy Afterburners"
- tech_dark_energy_afterburners_desc:0 "The Dark Energy Afterburners are powered by dark energy, making them among the fastest afterburners ever created, allowing ships to charge at breakneck speed towards their targets.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dark_energy_afterburners_desc:0 "The Dark Energy Afterburners are powered by dark energy, making them among the fastest afterburners ever created, allowing ships to charge at breakneck speed towards their targets."
  
  DARK_ENERGY_SENSORS:0 "Dark Energy Sensor"
- DARK_ENERGY_SENSORS_DESC:0 "The Dark Energy Sensor harnesses dark energy to amplify its scopes, making it capable to detect all movements at a far greater range.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DARK_ENERGY_SENSORS_DESC:0 "The Dark Energy Sensor harnesses dark energy to amplify its scopes, making it capable to detect all movements at a far greater range."
  
  tech_dark_energy_sensors:0 "Dark Energy Sensor"
- tech_dark_energy_sensors_desc:0 "The Dark Energy Sensor harnesses dark energy to amplify its scopes, making it capable to detect all movements at a far greater range.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dark_energy_sensors_desc:0 "The Dark Energy Sensor harnesses dark energy to amplify its scopes, making it capable to detect all movements at a far greater range."
  
  DARK_ENERGY_POWER_BOOSTER:0 "Dark Energy Reactor Booster"
- DARK_ENERGY_POWER_BOOSTER_DESC:0 "The discovery of dark energy as a form of power allows for highly advanced reactor boosters that can greatly enhance ship reactors.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ DARK_ENERGY_POWER_BOOSTER_DESC:0 "The discovery of dark energy as a form of power allows for highly advanced reactor boosters that can greatly enhance ship reactors."
  
  tech_dark_energy_power_booster:0 "Dark Energy Reactor Booster"
- tech_dark_energy_power_booster_desc:0 "The discovery of dark energy as a form of power allows for highly advanced reactor boosters that can greatly enhance ship reactors.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_dark_energy_power_booster_desc:0 "The discovery of dark energy as a form of power allows for highly advanced reactor boosters that can greatly enhance ship reactors."
  
  INFINITY_DECODER:0 "Infinity Decoder"
- INFINITY_DECODER_DESC:0 "The Infinity Decoder's algorithms can predict the flight paths of multiple targets simultaneously, giving an edge in target acquisition and weapon accuracy.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ INFINITY_DECODER_DESC:0 "The Infinity Decoder's algorithms can predict the flight paths of multiple targets simultaneously, giving an edge in target acquisition and weapon accuracy."
  
  tech_infinity_decoder:0 "Infinity Decoder"
- tech_infinity_decoder_desc:0 "The Infinity Decoder's algorithms can predict the flight paths of multiple targets simultaneously, giving an edge in target acquisition and weapon accuracy.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ tech_infinity_decoder_desc:0 "The Infinity Decoder's algorithms can predict the flight paths of multiple targets simultaneously, giving an edge in target acquisition and weapon accuracy."
 
  INFINITY_ENCODER:0 "Infinity Encoder"
- INFINITY_ENCODER_DESC:0 "The Infinity Encoder scrambles flight path data into a code that is believed to be unhackable, before feeding it back to fleet command.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ INFINITY_ENCODER_DESC:0 "The Infinity Encoder scrambles flight path data into a code that is believed to be unhackable, before feeding it back to fleet command."
  
  tech_infinity_encoder:0 "Infinity Encoder"
- tech_infinity_encoder_desc:0 "The Infinity Encoder scrambles flight path data into a code that is believed to be unhackable, before feeding it back to fleet command.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
- 
- 
- 
+ tech_infinity_encoder_desc:0 "The Infinity Encoder scrambles flight path data into a code that is believed to be unhackable, before feeding it back to fleet command."
  
  FE_ESCORT_SHIP_THRUSTER_2:0 "Dark Energy Thrusters"
- FE_ESCORT_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ FE_ESCORT_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible."
  FE_BATTLECRUISER_SHIP_THRUSTER_2:0 "Dark Energy Thrusters"
- FE_BATTLECRUISER_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ FE_BATTLECRUISER_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible."
  FE_TITAN_SHIP_THRUSTER_2:0 "Dark Energy Thrusters"
- FE_TITAN_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
+ FE_TITAN_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible."
  FE_GOLIATH_SHIP_THRUSTER_2:0 "Dark Energy Thrusters"
- FE_GOLIATH_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible.\n\n§MThis Lost Technology was once thought irrecoverably lost to history.§!"
- 
+ FE_GOLIATH_SHIP_THRUSTER_2_DESC:0 "Seemingly defying the laws of physics to a whole new level, the Dark Energy Thrusters provide greater maneuverability than was previously thought possible."
  
  IMPROVED_DRAGON_ARMOR:0 "Improved Dragon Armor"
  IMPROVED_DRAGON_ARMOR_DESC:0 "This armor seems to improve upon the unique mineral nanostructures found on the Ether Drake's scales."
@@ -246,7 +241,7 @@
  fallen_weaponry.205.name:0 "Precursor's Wonder Weapons"
  fallen_weaponry.205.desc:0 "While extracting the last files from the databanks of the derelict research facility, we have recovered a weapon design dating back to the years just after the Great Crusade: the §Y$tech_dimensional_weapon$§!.\n\nNo more than concept drawings, our scientists can not yet determine whether it is in fact possible to create this weapon, or if '§HThe Outlander§!' had gone completely mad. Some of the findings do not make sense and some vital information remains missing.\n\nIt would take significant time and resources to conduct our own research if we were ever to bring this weapon to life."
  fallen_weaponry.205.a:0 "How is this §Y$tech_dimensional_weapon$§! even possible?"
-  
+ 
  PROJECT_DIMENSIONAL_WEAPON:0 "Precursor's Wonder Weapon: §Y$tech_dimensional_weapon$§!"
  PROJECT_DIMENSIONAL_WEAPON_DESC:0 "Concept art obtained from the derelict research facility on §H[From.Planet.GetName]§! imagined this rather unusual weapon. However, this 'Wonder Weapon' was never realised and the development never truly began. It will take considerable time before our scientists can gather all datafiles before starting our own research on this project.\n\nAt this stage, our scientists have no idea how the §Y$tech_dimensional_weapon$§! works, or if it even works."
  
@@ -448,7 +443,7 @@
  fallen_weaponry.601.a:0 "Our ships could soon stock these weapons to the brim!"
  
  
- # fallen_weaponry.2011.name:0 "Precursor's Secret Technology: §Y$tech_titan_plating$§!"
+# fallen_weaponry.2011.name:0 "Precursor's Secret Technology: §Y$tech_titan_plating$§!"
 # fallen_weaponry.2011.desc:0 "The Titan Plating technology uses the dark matter that binds the galaxy together, then refines it to a molecular level so it could be used to bolster the hull integrity of warships in space. The materialist precursor, perhaps all too aware of their rival's ability to penetrate both shields and armor, turned to hull integrity as the answer to their woes.\n\nInterestingly, the '§HThe Outlander§!' was part of this project when it was cancelled for an unknown reason."
 # fallen_weaponry.2011.a:0 "The §Y$tech_titan_plating$§! shall be ours!"
  
@@ -562,7 +557,6 @@
 # PROJECT_STELLARITE_WEAPON_DESC:0 "Concept art obtained from the research facility on [Root.GetName] imagined this rather unusual weapon. However, this 'Wonder Weapon' was never realised and the development never truly began. It will take considerable time before our scientists can gather all datafiles before starting our own research on this project.\n\nAt this stage, our scientists have no idea how the §Y$tech_stellarite_weapon$§! works, or if it even works."
 # PROJECT_SCRAPPER_WEAPON:0 "Precursor's Wonder Weapon: §Y$tech_scrapper_weapon$§!"
 # PROJECT_SCRAPPER_WEAPON_DESC:0 "Concept art obtained from the research facility on [Root.GetName] imagined this rather unusual weapon. However, this 'Wonder Weapon' was never realised and the development never truly began. It will take considerable time before our scientists can gather all datafiles before starting our own research on this project.\n\nAt this stage, our scientists have no idea how the §Y$tech_scrapper_weapon$§! works, or if it even works."
- 
  
  titan_weapons.6.name:0 "Dimension Breached!"
  titan_weapons.6.desc:0 "Our scientists have suspected for some time that the wall between our dimension and the next was weakening due to our use of the Portal Generator. Luckily, we managed to correct an equipment malfunction before whatever this...thing...is, crosses completely into our dimension. We should reevaluate our use of the weapon after sending this thing back where it came from."

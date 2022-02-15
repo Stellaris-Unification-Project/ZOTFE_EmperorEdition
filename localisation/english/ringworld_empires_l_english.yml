@@ -12,7 +12,6 @@ d_ancestor_ship_graveyard_desc:0 "Remnants of what seem to be ancient starships 
 d_ancestor_archives:0 "Ancient Archive"
 d_ancestor_archives_desc:0 "The Ancient Archive seem to contain a vast amount of knowledge."
 
-
 beacon_of_infinity_system_initializer_NAME:0 "Beacon of Infinity"
 beacon_of_infinity_system_initializer_DESC:0 "Ringworld start (4) on a yellow star, with 1 Ringworld (1) neighbor and 1 broken Ringworld."
 

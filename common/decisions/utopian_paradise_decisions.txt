@@ -1,7 +1,6 @@
 # Paradise Creation (Gaia)
 decision_paradise_creation = {
-	owned_planets_only = yes
-	
+	owned_planets_only = yes	
 	enactment_time = 7200
 	resources = {
 		category = decisions
@@ -9,8 +8,7 @@ decision_paradise_creation = {
 			influence = 200
 			sr_living_metal = 10000
 		}
-	}
-	
+	}	
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -26,21 +24,8 @@ decision_paradise_creation = {
 			is_gestalt = no
 		}
 	}
-	
-	allow = {
-#		custom_tooltip = {
-#			fail_text = decision_paradise_creation_no_districts
-#			free_district_slots < 1
-#		}
-		num_uncleared_blockers < 1
-	}
-	
-	
-	prerequisites = {
-		"tech_paradise_creation"
-	}
-
-	
+	allow = { num_uncleared_blockers < 1 }
+	prerequisites = { "tech_paradise_creation" }
 	effect = {
 		custom_tooltip = decision_paradise_creation_effects
 		add_modifier = {
@@ -64,17 +49,13 @@ decision_paradise_creation = {
 			}
 		}
 	}
-	
-	ai_weight = {
-		weight = 0
-	}
+	ai_weight = { weight = 0 }
 }
 
 # Paradise Creation (City)
 decision_paradise_creation_city = {
 	owned_planets_only = yes
-	icon = decision_paradise_creation
-	
+	icon = decision_paradise_creation	
 	enactment_time = 7200
 	resources = {
 		category = decisions
@@ -82,8 +63,7 @@ decision_paradise_creation_city = {
 			influence = 200
 			sr_living_metal = 20000
 		}
-	}
-	
+	}	
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -98,22 +78,9 @@ decision_paradise_creation_city = {
 			is_zofe_country = yes
 			is_gestalt = no
 		}
-	}
-	
-	allow = {
-#		custom_tooltip = {
-#			fail_text = decision_paradise_creation_no_districts
-#			free_district_slots < 1
-#		}
-		num_uncleared_blockers < 1
-	}
-	
-	
-	prerequisites = {
-		"tech_paradise_creation"
-	}
-
-	
+	}	
+	allow = { num_uncleared_blockers < 1 }	
+	prerequisites = { "tech_paradise_creation" }
 	effect = {
 		custom_tooltip = decision_paradise_creation_effects
 		add_modifier = {
@@ -137,18 +104,13 @@ decision_paradise_creation_city = {
 			}
 		}
 	}
-	
-	ai_weight = {
-		weight = 0
-	}
+	ai_weight = { weight = 0 }
 }
-
 
 # Paradise Creation (Ringworld)
 decision_paradise_creation_rw = {
 	owned_planets_only = yes
 	icon = decision_paradise_creation
-	
 	enactment_time = 7200
 	resources = {
 		category = decisions
@@ -157,7 +119,6 @@ decision_paradise_creation_rw = {
 			sr_living_metal = 50000
 		}
 	}
-	
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
@@ -173,21 +134,8 @@ decision_paradise_creation_rw = {
 			is_gestalt = no
 		}
 	}
-	
-	allow = {
-#		custom_tooltip = {
-#			fail_text = decision_paradise_creation_no_districts
-#			free_district_slots < 1
-#		}
-		num_uncleared_blockers < 1
-	}
-	
-	
-	prerequisites = {
-		"tech_paradise_creation"
-	}
-
-	
+	allow = { num_uncleared_blockers < 1 }
+	prerequisites = { "tech_paradise_creation" }
 	effect = {
 		custom_tooltip = decision_paradise_creation_effects
 		add_modifier = {
@@ -211,9 +159,6 @@ decision_paradise_creation_rw = {
 			}
 		}
 	}
-	
-	ai_weight = {
-		weight = 0
-	}
+	ai_weight = { weight = 0 }
 }
 

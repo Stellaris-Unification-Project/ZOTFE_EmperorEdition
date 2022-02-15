@@ -1,8 +1,7 @@
-##############################
-#### 	   	ZoFE Weaponry
-####			By Kolyn
-##############################
-
+############################
+####	ZoFE Weaponry	####
+####		By Kolyn	####
+############################
 
 namespace = fallen_weaponry
 
@@ -10,9 +9,7 @@ event = {
 	id = fallen_weaponry.1000
 	hide_window = yes
 	is_triggered_only = yes
-	
 	immediate = {
-	
 		every_country = {
 			limit = { 
 				is_country_type = fallen_empire
@@ -26,7 +23,6 @@ event = {
 				set_planet_flag = fallen_spiritualist_capital
 			}
 		}
-		
 		every_country = {
 			limit = { 
 				is_country_type = fallen_empire
@@ -40,7 +36,6 @@ event = {
 				set_planet_flag = fallen_materialist_capital
 			}
 		}
-		
 		every_country = {
 			limit = { 
 				is_country_type = fallen_empire
@@ -54,7 +49,6 @@ event = {
 				set_planet_flag = fallen_xenophile_capital
 			}
 		}
-		
 		every_country = {
 			limit = { 
 				is_country_type = fallen_empire
@@ -68,7 +62,6 @@ event = {
 				set_planet_flag = fallen_xenophobe_capital
 			}
 		}
-		
 		every_country = {
 			limit = { 
 				is_country_type = fallen_empire
@@ -95,59 +88,30 @@ country_event = {
 	picture = GFX_evt_underground_city
 	location = from
 	show_sound = event_mystic_reveal
-
 	fire_only_once = yes
-
 	trigger = {
 		host_has_dlc = "Ancient Relics Story Pack"
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#		end_game_years_passed >= 0
-#		
-		
 		is_country_type = ascended_empire
-#		is_ai = no #For Testing
 		has_technology = tech_fallen_technologies_4
 		has_technology = tech_fallen_technologies_6
-
-		any_owned_planet = {
-			has_planet_flag = fallen_spiritualist_capital
-#			is_capital = yes
-		}
-	
-		NOT = {
-			has_country_flag = fallen_spiritualist_capital_raided
-		}
+		any_owned_planet = { has_planet_flag = fallen_spiritualist_capital }
+		NOT = { has_country_flag = fallen_spiritualist_capital_raided }
 	}
-	
-	mean_time_to_happen = {
-		months = 5
-	}
-	
+	mean_time_to_happen = { months = 5 }
 	immediate = {
 		set_country_flag = fallen_spiritualist_capital_raided
-		
 		random_owned_planet = {
-			limit = {
-#				is_capital = yes
-				has_planet_flag = fallen_spiritualist_capital
-			}
+			limit = { has_planet_flag = fallen_spiritualist_capital }
 			save_event_target_as = fallen_spiritualist_digsite
 		}
 	}
-	
 	option = {
 		name = CURIOUS
-		event_target:fallen_spiritualist_digsite = { 
-			create_archaeological_site = fallen_spiritualist_digsite_1
-#			root.owner = {
-#				set_country_flag = fallen_spiritualist_weapons_chain
-#			}
-		}
+		event_target:fallen_spiritualist_digsite = { create_archaeological_site = fallen_spiritualist_digsite_1 }
 		owner = {
 			if = {
-				limit = { 
-					NOT = { has_event_chain = lost_technologies_chain }
-				}
+				limit = { NOT = { has_event_chain = lost_technologies_chain } }
 				begin_event_chain = {
 					event_chain = "lost_technologies_chain"
 					target = this
@@ -172,22 +136,13 @@ fleet_event = {
 	picture = GFX_evt_ancient_records
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.101.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_psi_deflector
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_psi_deflector } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_psi_deflector"
@@ -196,16 +151,9 @@ fleet_event = {
 				}
 			}
 		}
-		
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_psi_deflector
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_psi_deflector } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -215,9 +163,7 @@ planet_event = {
 	title = fallen_weaponry.1011.name
 	desc = fallen_weaponry.1011.desc
 	picture = GFX_evt_psionics
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.1011.a
 		root.owner = {
@@ -237,22 +183,13 @@ fleet_event = {
 	picture = GFX_evt_hidden_door
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.102.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_psi_missile_system
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_psi_missile_system } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_PSI_MISSILES"
@@ -262,28 +199,18 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_psi_missile_system
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_psi_missile_system } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
-
-
 
 planet_event = {
 	id = fallen_weaponry.1021
 	title = fallen_weaponry.1021.name
 	desc = fallen_weaponry.1021.desc
 	picture = GFX_evt_psionics
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.1021.a
 		root.owner = {
@@ -303,22 +230,13 @@ fleet_event = {
 	picture = GFX_evt_engineering_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.103.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_shield_booster
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_shield_booster } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_SHIELD_BOOSTER"
@@ -328,14 +246,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dark_energy_shield_booster
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dark_energy_shield_booster } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -345,9 +257,7 @@ planet_event = {
 	title = fallen_weaponry.1031.name
 	desc = fallen_weaponry.1031.desc
 	picture = GFX_evt_engineering_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.1031.a
 		root.owner = {
@@ -367,22 +277,13 @@ fleet_event = {
 	picture = GFX_evt_decryption
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.104.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_omni_emitter
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_omni_emitter } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_OMNI_EMITTER"
@@ -392,14 +293,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_omni_emitter
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_omni_emitter } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -409,9 +304,7 @@ planet_event = {
 	title = fallen_weaponry.1041.name
 	desc = fallen_weaponry.1041.desc
 	picture = GFX_evt_decryption
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.1041.a
 		root.owner = {
@@ -421,7 +314,6 @@ planet_event = {
 				progress = 0.10
 			}
 		}
-		
 	}
 }
 
@@ -432,22 +324,13 @@ fleet_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.105.a
 		great_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_portal_generator
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_portal_generator } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_PORTAL_GENERATOR"
@@ -457,14 +340,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_portal_generator
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_portal_generator } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -474,9 +351,7 @@ planet_event = {
 	title = fallen_weaponry.1051.name
 	desc = fallen_weaponry.1051.desc
 	picture = GFX_evt_dimensional_horror
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.1051.a
 		root.owner = {
@@ -499,59 +374,30 @@ country_event = {
 	picture = GFX_evt_ancient_databank
 	location = from
 	show_sound = event_mystic_reveal
-
 	fire_only_once = yes
-
 	trigger = {
 		host_has_dlc = "Ancient Relics Story Pack"
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#		end_game_years_passed >= 0
-#		
-		
 		is_country_type = ascended_empire
-#		is_ai = no #For Testing
 		has_technology = tech_fallen_technologies_4
 		has_technology = tech_fallen_technologies_6
-
-		any_owned_planet = {
-			has_planet_flag = fallen_materialist_capital
-#			is_capital = yes
-		}
-	
-		NOT = {
-			has_country_flag = fallen_materialist_capital_raided
-		}
+		any_owned_planet = { has_planet_flag = fallen_materialist_capital }
+		NOT = { has_country_flag = fallen_materialist_capital_raided }
 	}
-	
-	mean_time_to_happen = {
-		months = 5
-	}
-	
+	mean_time_to_happen = { months = 5 }
 	immediate = {
 		set_country_flag = fallen_materialist_capital_raided
-		
 		random_owned_planet = {
-			limit = {
-#				is_capital = yes
-				has_planet_flag = fallen_materialist_capital
-			}
+			limit = { has_planet_flag = fallen_materialist_capital }
 			save_event_target_as = fallen_materialist_digsite
 		}
 	}
-	
 	option = {
 		name = CURIOUS
-		event_target:fallen_materialist_digsite = { 
-			create_archaeological_site = fallen_materialist_digsite_1
-#			root.owner = {
-#				set_country_flag = fallen_materialist_weapons_chain
-#			}
-		}
+		event_target:fallen_materialist_digsite = { create_archaeological_site = fallen_materialist_digsite_1 }
 		owner = {
 			if = {
-				limit = { 
-					NOT = { has_event_chain = lost_technologies_chain }
-				}
+				limit = { NOT = { has_event_chain = lost_technologies_chain } }
 				begin_event_chain = {
 					event_chain = "lost_technologies_chain"
 					target = this
@@ -576,22 +422,13 @@ fleet_event = {
 	picture = GFX_evt_analyzing_artifacts
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.201.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_power_core
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_power_core } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_POWER_CORE"
@@ -600,16 +437,9 @@ fleet_event = {
 				}
 			}
 		}
-		
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dark_energy_power_core
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dark_energy_power_core } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -619,9 +449,7 @@ planet_event = {
 	title = fallen_weaponry.2011.name
 	desc = fallen_weaponry.2011.desc
 	picture = GFX_evt_analyzing_artifacts
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.2011.a
 		root.owner = {
@@ -641,22 +469,13 @@ fleet_event = {
 	picture = GFX_evt_ancient_artifact
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.202.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_shadow_strike_craft
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_shadow_strike_craft } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_SHADOW_STRIKE_CRAFT"
@@ -666,28 +485,18 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_shadow_strike_craft
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_shadow_strike_craft } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
-
-
 
 planet_event = {
 	id = fallen_weaponry.2021
 	title = fallen_weaponry.2021.name
 	desc = fallen_weaponry.2021.desc
 	picture = GFX_evt_fleet_neutral
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.2021.a
 		root.owner = {
@@ -707,22 +516,13 @@ fleet_event = {
 	picture = GFX_evt_engineering_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.203.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_shield
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_shield } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_SHIELD"
@@ -732,14 +532,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dark_energy_shield
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dark_energy_shield } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -749,9 +543,7 @@ planet_event = {
 	title = fallen_weaponry.2031.name
 	desc = fallen_weaponry.2031.desc
 	picture = GFX_evt_engineering_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.2031.a
 		root.owner = {
@@ -771,22 +563,13 @@ fleet_event = {
 	picture = GFX_evt_decryption
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.204.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_omni_lance
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_omni_lance } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_OMNI_LANCE"
@@ -796,14 +579,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_omni_lance
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_omni_lance } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -813,9 +590,7 @@ planet_event = {
 	title = fallen_weaponry.2041.name
 	desc = fallen_weaponry.2041.desc
 	picture = GFX_evt_decryption
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.2041.a
 		root.owner = {
@@ -825,7 +600,6 @@ planet_event = {
 				progress = 0.10
 			}
 		}
-		
 	}
 }
 
@@ -836,22 +610,13 @@ fleet_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.205.a
 		great_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dimensional_weapon
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dimensional_weapon } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DIMENSIONAL_WEAPON"
@@ -861,14 +626,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dimensional_weapon
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dimensional_weapon } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -878,9 +637,7 @@ planet_event = {
 	title = fallen_weaponry.2051.name
 	desc = fallen_weaponry.2051.desc
 	picture = GFX_evt_dimensional_horror
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.2051.a
 		root.owner = {
@@ -903,59 +660,30 @@ country_event = {
 	picture = GFX_evt_alien_ruins
 	location = from
 	show_sound = event_mystic_reveal
-
 	fire_only_once = yes
-
 	trigger = {
 		host_has_dlc = "Ancient Relics Story Pack"
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#		end_game_years_passed >= 0
-#		
-		
 		is_country_type = ascended_empire
-#		is_ai = no #For Testing
 		has_technology = tech_fallen_technologies_4
 		has_technology = tech_fallen_technologies_6
-
-		any_owned_planet = {
-			has_planet_flag = fallen_xenophile_capital
-#			is_capital = yes
-		}
-	
-		NOT = {
-			has_country_flag = fallen_xenophile_capital_raided
-		}
+		any_owned_planet = { has_planet_flag = fallen_xenophile_capital }
+		NOT = { has_country_flag = fallen_xenophile_capital_raided }
 	}
-	
-	mean_time_to_happen = {
-		months = 5
-	}
-	
+	mean_time_to_happen = { months = 5 }
 	immediate = {
 		set_country_flag = fallen_xenophile_capital_raided
-		
 		random_owned_planet = {
-			limit = {
-#				is_capital = yes
-				has_planet_flag = fallen_xenophile_capital
-			}
+			limit = { has_planet_flag = fallen_xenophile_capital }
 			save_event_target_as = fallen_xenophile_digsite
 		}
 	}
-	
 	option = {
 		name = CURIOUS
-		event_target:fallen_xenophile_digsite = { 
-			create_archaeological_site = fallen_xenophile_digsite_1
-#			root.owner = {
-#				set_country_flag = fallen_xenophile_weapons_chain
-#			}
-		}
+		event_target:fallen_xenophile_digsite = { create_archaeological_site = fallen_xenophile_digsite_1 }
 		owner = {
 			if = {
-				limit = { 
-					NOT = { has_event_chain = lost_technologies_chain }
-				}
+				limit = { NOT = { has_event_chain = lost_technologies_chain } }
 				begin_event_chain = {
 					event_chain = "lost_technologies_chain"
 					target = this
@@ -980,22 +708,13 @@ fleet_event = {
 	picture = GFX_evt_collapsing_roof
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.301.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_jump_drive
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_jump_drive } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_JUMP_DRIVE"
@@ -1004,16 +723,9 @@ fleet_event = {
 				}
 			}
 		}
-		
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dark_energy_jump_drive
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dark_energy_jump_drive } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -1023,9 +735,7 @@ planet_event = {
 	title = fallen_weaponry.3011.name
 	desc = fallen_weaponry.3011.desc
 	picture = GFX_evt_physics_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.3011.a
 		root.owner = {
@@ -1045,22 +755,13 @@ fleet_event = {
 	picture = GFX_evt_discovered_hidden_door
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.302.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_hellfire_autocannons
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_hellfire_autocannons } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_HELLFIRE_AUTOCANNON"
@@ -1070,28 +771,18 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_hellfire_autocannons
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_hellfire_autocannons } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
-
-
 
 planet_event = {
 	id = fallen_weaponry.3021
 	title = fallen_weaponry.3021.name
 	desc = fallen_weaponry.3021.desc
 	picture = GFX_evt_small_space_battle
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.3021.a
 		root.owner = {
@@ -1111,22 +802,13 @@ fleet_event = {
 	picture = GFX_evt_society_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.303.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_afterburners
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_afterburners } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_AFTERBURNERS"
@@ -1136,13 +818,7 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_thruster
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_thruster } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_THRUSTER"
@@ -1158,9 +834,7 @@ fleet_event = {
 					has_technology = tech_dark_energy_thruster
 				}
 			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -1170,9 +844,7 @@ planet_event = {
 	title = fallen_weaponry.3031.name
 	desc = fallen_weaponry.3031.desc
 	picture = GFX_evt_society_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.3031.a
 		root.owner = {
@@ -1190,9 +862,7 @@ planet_event = {
 	title = fallen_weaponry.3032.name
 	desc = fallen_weaponry.3032.desc
 	picture = GFX_evt_society_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.3032.a
 		root.owner = {
@@ -1212,22 +882,13 @@ fleet_event = {
 	picture = GFX_evt_decryption
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.304.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_massive_autocannons
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_massive_autocannons } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_MASSIVE_AUTOCANNONS"
@@ -1237,14 +898,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_massive_autocannons
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_massive_autocannons } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -1254,9 +909,7 @@ planet_event = {
 	title = fallen_weaponry.3041.name
 	desc = fallen_weaponry.3041.desc
 	picture = GFX_evt_decryption
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.3041.a
 		root.owner = {
@@ -1266,7 +919,6 @@ planet_event = {
 				progress = 0.10
 			}
 		}
-		
 	}
 }
 
@@ -1277,22 +929,13 @@ fleet_event = {
 	picture = GFX_evt_space_dragon
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.305.a
 		great_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dragon_breath
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dragon_breath } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DRAGON_BREATH"
@@ -1302,14 +945,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dragon_breath
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dragon_breath } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -1319,9 +956,7 @@ planet_event = {
 	title = fallen_weaponry.3051.name
 	desc = fallen_weaponry.3051.desc
 	picture = GFX_evt_space_dragon
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.3051.a
 		root.owner = {
@@ -1344,59 +979,30 @@ country_event = {
 	picture = GFX_evt_ancient_alien_temple
 	location = from
 	show_sound = event_mystic_reveal
-
 	fire_only_once = yes
-
 	trigger = {
 		host_has_dlc = "Ancient Relics Story Pack"
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#		end_game_years_passed >= 0
-#		
-		
 		is_country_type = ascended_empire
-#		is_ai = no #For Testing
 		has_technology = tech_fallen_technologies_4
 		has_technology = tech_fallen_technologies_6
-
-		any_owned_planet = {
-			has_planet_flag = fallen_xenophobe_capital
-#			is_capital = yes
-		}
-	
-		NOT = {
-			has_country_flag = fallen_xenophobe_capital_raided
-		}
+		any_owned_planet = { has_planet_flag = fallen_xenophobe_capital }
+		NOT = { has_country_flag = fallen_xenophobe_capital_raided }
 	}
-	
-	mean_time_to_happen = {
-		months = 5
-	}
-	
+	mean_time_to_happen = { months = 5 }
 	immediate = {
 		set_country_flag = fallen_xenophobe_capital_raided
-		
 		random_owned_planet = {
-			limit = {
-#				is_capital = yes
-				has_planet_flag = fallen_xenophobe_capital
-			}
+			limit = { has_planet_flag = fallen_xenophobe_capital }
 			save_event_target_as = fallen_xenophobe_digsite
 		}
 	}
-	
 	option = {
 		name = CURIOUS
-		event_target:fallen_xenophobe_digsite = { 
-			create_archaeological_site = fallen_xenophobe_digsite_1
-#			root.owner = {
-#				set_country_flag = fallen_xenophobe_weapons_chain
-#			}
-		}
+		event_target:fallen_xenophobe_digsite = { create_archaeological_site = fallen_xenophobe_digsite_1 }
 		owner = {
 			if = {
-				limit = { 
-					NOT = { has_event_chain = lost_technologies_chain }
-				}
+				limit = { NOT = { has_event_chain = lost_technologies_chain } }
 				begin_event_chain = {
 					event_chain = "lost_technologies_chain"
 					target = this
@@ -1421,22 +1027,13 @@ fleet_event = {
 	picture = GFX_evt_ancient_artifact
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.401.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_titan_armor
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_titan_armor } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_TITAN_ARMOR"
@@ -1445,16 +1042,9 @@ fleet_event = {
 				}
 			}
 		}
-		
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_titan_armor
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_titan_armor } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -1464,9 +1054,7 @@ planet_event = {
 	title = fallen_weaponry.4011.name
 	desc = fallen_weaponry.4011.desc
 	picture = GFX_evt_ancient_artifact
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.4011.a
 		root.owner = {
@@ -1486,22 +1074,13 @@ fleet_event = {
 	picture = GFX_evt_engineering_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.402.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_terror_cannon
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_terror_cannon } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_TERROR_CANNON"
@@ -1511,28 +1090,18 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_terror_cannon
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_terror_cannon } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
-
-
 
 planet_event = {
 	id = fallen_weaponry.4021
 	title = fallen_weaponry.4021.name
 	desc = fallen_weaponry.4021.desc
 	picture = GFX_evt_engineering_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.4021.a
 		root.owner = {
@@ -1552,22 +1121,13 @@ fleet_event = {
 	picture = GFX_evt_society_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.403.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_titan_plating
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_titan_plating } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_TITAN_PLATING"
@@ -1577,14 +1137,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_titan_plating
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_titan_plating } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -1594,9 +1148,7 @@ planet_event = {
 	title = fallen_weaponry.4031.name
 	desc = fallen_weaponry.4031.desc
 	picture = GFX_evt_society_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.4031.a
 		root.owner = {
@@ -1616,22 +1168,13 @@ fleet_event = {
 	picture = GFX_evt_decryption
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.404.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_omni_cannon
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_omni_cannon } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_OMNI_CANNON"
@@ -1641,14 +1184,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_omni_cannon
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_omni_cannon } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -1658,9 +1195,7 @@ planet_event = {
 	title = fallen_weaponry.4041.name
 	desc = fallen_weaponry.4041.desc
 	picture = GFX_evt_decryption
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.4041.a
 		root.owner = {
@@ -1670,7 +1205,6 @@ planet_event = {
 				progress = 0.10
 			}
 		}
-		
 	}
 }
 
@@ -1681,22 +1215,13 @@ fleet_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.405.a
 		great_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_sensors
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_sensors } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_SENSORS"
@@ -1706,14 +1231,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dark_energy_sensors
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dark_energy_sensors } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -1723,9 +1242,7 @@ planet_event = {
 	title = fallen_weaponry.4051.name
 	desc = fallen_weaponry.4051.desc
 	picture = GFX_evt_physics_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.4051.a
 		root.owner = {
@@ -1748,59 +1265,30 @@ country_event = {
 	picture = GFX_evt_fallen_empire
 	location = from
 	show_sound = event_mystic_reveal
-
 	fire_only_once = yes
-
 	trigger = {
 		host_has_dlc = "Ancient Relics Story Pack"
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#		end_game_years_passed >= 0
-#		
-		
 		is_country_type = ascended_empire
-#		is_ai = no #For Testing
 		has_technology = tech_fallen_technologies_4
 		has_technology = tech_fallen_technologies_6
-
-		any_owned_planet = {
-			has_planet_flag = fallen_machine_capital
-#			is_capital = yes
-		}
-	
-		NOT = {
-			has_country_flag = fallen_machine_capital_raided
-		}
+		any_owned_planet = { has_planet_flag = fallen_machine_capital }
+		NOT = { has_country_flag = fallen_machine_capital_raided }
 	}
-	
-	mean_time_to_happen = {
-		months = 5
-	}
-	
+	mean_time_to_happen = { months = 5 }
 	immediate = {
 		set_country_flag = fallen_machine_capital_raided
-		
 		random_owned_planet = {
-			limit = {
-#				is_capital = yes
-				has_planet_flag = fallen_machine_capital
-			}
+			limit = { has_planet_flag = fallen_machine_capital }
 			save_event_target_as = fallen_machine_digsite
 		}
 	}
-	
 	option = {
 		name = CURIOUS
-		event_target:fallen_machine_digsite = { 
-			create_archaeological_site = fallen_machine_digsite_1
-#			root.owner = {
-#				set_country_flag = fallen_machine_weapons_chain
-#			}
-		}
+		event_target:fallen_machine_digsite = { create_archaeological_site = fallen_machine_digsite_1 }
 		owner = {
 			if = {
-				limit = { 
-					NOT = { has_event_chain = lost_technologies_chain }
-				}
+				limit = { NOT = { has_event_chain = lost_technologies_chain } }
 				begin_event_chain = {
 					event_chain = "lost_technologies_chain"
 					target = this
@@ -1825,22 +1313,13 @@ fleet_event = {
 	picture = GFX_evt_derelict_interior
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.501.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_infinity_encoder
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_infinity_encoder } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_INFINITY_ENCODER"
@@ -1849,16 +1328,9 @@ fleet_event = {
 				}
 			}
 		}
-		
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_infinity_encoder
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_infinity_encoder } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -1868,9 +1340,7 @@ planet_event = {
 	title = fallen_weaponry.5011.name
 	desc = fallen_weaponry.5011.desc
 	picture = GFX_evt_technosphere
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.5011.a
 		root.owner = {
@@ -1890,22 +1360,13 @@ fleet_event = {
 	picture = GFX_evt_engineering_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.502.a
 		medium_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_ion_disruptor
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_ion_disruptor } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_ION_DISRUPTOR"
@@ -1915,28 +1376,18 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_ion_disruptor
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_ion_disruptor } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
-
-
 
 planet_event = {
 	id = fallen_weaponry.5021
 	title = fallen_weaponry.5021.name
 	desc = fallen_weaponry.5021.desc
 	picture = GFX_evt_engineering_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.5021.a
 		root.owner = {
@@ -1956,22 +1407,13 @@ fleet_event = {
 	picture = GFX_evt_analyzing_artifacts
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.503.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_infinity_decoder
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_infinity_decoder } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_INFINITY_DECODER"
@@ -1981,14 +1423,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_infinity_decoder
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_infinity_decoder } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}
 	}
 }
@@ -1998,9 +1434,7 @@ planet_event = {
 	title = fallen_weaponry.5031.name
 	desc = fallen_weaponry.5031.desc
 	picture = GFX_evt_technosphere
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.5031.a
 		root.owner = {
@@ -2020,22 +1454,13 @@ fleet_event = {
 	picture = GFX_evt_decryption
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.504.a
 		large_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_omni_titan_lance
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_omni_titan_lance } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_OMNI_TITAN_LANCE"
@@ -2045,14 +1470,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_omni_titan_lance
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_omni_titan_lance } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -2062,9 +1481,7 @@ planet_event = {
 	title = fallen_weaponry.5041.name
 	desc = fallen_weaponry.5041.desc
 	picture = GFX_evt_decryption
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.5041.a
 		root.owner = {
@@ -2074,7 +1491,6 @@ planet_event = {
 				progress = 0.10
 			}
 		}
-		
 	}
 }
 
@@ -2085,22 +1501,13 @@ fleet_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_mystic_reveal
 	location = from
-
 	archaeology = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = fallen_weaponry.505.a
 		great_artifact_reward = yes
 		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_technology = tech_dark_energy_power_booster
-					}
-				}
-			}
+			limit = { owner = { NOT = { has_technology = tech_dark_energy_power_booster } } }
 			from = {
 				enable_special_project = {
 					name = "PROJECT_DARK_ENERGY_POWER_BOOSTER"
@@ -2110,14 +1517,8 @@ fleet_event = {
 			}
 		}
 		if = {
-			limit = {
-				owner = {
-					has_technology = tech_dark_energy_power_booster
-				}
-			}
-			owner = {
-				add_resource = { minor_artifacts = 20 }
-			}
+			limit = { owner = { has_technology = tech_dark_energy_power_booster } }
+			owner = { add_resource = { minor_artifacts = 20 } }
 		}	
 	}
 }
@@ -2127,9 +1528,7 @@ planet_event = {
 	title = fallen_weaponry.5051.name
 	desc = fallen_weaponry.5051.desc
 	picture = GFX_evt_physics_research
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.5051.a
 		root.owner = {
@@ -2147,7 +1546,6 @@ country_event = {
 	title = fallen_weaponry.6.name
 	desc = fallen_weaponry.6.desc
 	picture = GFX_evt_decryption
-	
 	trigger = {
 		is_zofe_country = yes
 		has_technology = tech_omni_lance
@@ -2157,15 +1555,8 @@ country_event = {
 		has_technology = tech_omni_titan_lance
 		NOT = { has_country_flag = all_omni_weapons_collected }
 	}
-	
-	mean_time_to_happen = {
-		months = 5
-	}
-	
-	immediate = {
-		set_country_flag = all_omni_weapons_collected
-	}
-	
+	mean_time_to_happen = { months = 5 }
+	immediate = { set_country_flag = all_omni_weapons_collected }
 	option = {
 		name = fallen_weaponry.6.a
 		capital_scope = {
@@ -2176,9 +1567,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = fallen_weaponry.6.b
-	}
+	option = { name = fallen_weaponry.6.b }
 }
 
 planet_event = {
@@ -2186,9 +1575,7 @@ planet_event = {
 	title = fallen_weaponry.601.name
 	desc = fallen_weaponry.601.desc
 	picture = GFX_evt_decryption
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = fallen_weaponry.601.a
 		root.owner = {
@@ -2212,11 +1599,6 @@ planet_event = {
 				tech = tech_compact_omni_cannon
 				progress = 0.05
 			}
-#			add_research_option = tech_compact_omni_titan_laser
-#			add_tech_progress = {
-#				tech = tech_compact_omni_titan_laser
-#				progress = 0.05
-#			}
 		}
 	}
 }

@@ -47,11 +47,11 @@
 @tier5weight2 = 25
 @tier5weight3 = 20
 
-##################
-##Ancient Weapons
-##################
+#######################
+###	Ancient Weapons	###
+#######################
 
-#Spiritualist: Psi Missiles
+#	Spiritualist: Psi Missiles
 tech_psi_missile_system = {
 	area = engineering
 	cost = 200000
@@ -59,20 +59,15 @@ tech_psi_missile_system = {
 	category = { propulsion }
 	ai_update_type = military
 	weight = 0
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-		
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-#Materialist: Shadow Strike Craft
+#	Materialist: Shadow Strike Craft
 tech_shadow_strike_craft = {
 	cost = 200000
 	area = engineering
@@ -80,20 +75,15 @@ tech_shadow_strike_craft = {
 	category = { voidcraft }
 	ai_update_type = military
 	weight = 0
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-#Xenophile: Hellfire Autocannons
+#	Xenophile: Hellfire Autocannons
 tech_hellfire_autocannons = {
 	area = engineering
 	cost = 200000
@@ -101,20 +91,15 @@ tech_hellfire_autocannons = {
 	category = { propulsion }
 	ai_update_type = military
 	weight = 0
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-#Xenophobe: Terror Cannon
+#	Xenophobe: Terror Cannon
 tech_terror_cannon = {
 	area = engineering
 	cost = 200000
@@ -122,20 +107,15 @@ tech_terror_cannon = {
 	category = { propulsion }
 	ai_update_type = military
 	weight = 0
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-#Machine: Ion Disruptor
+#	Machine: Ion Disruptor
 tech_ion_disruptor = {
 	area = physics
 	cost = 200000
@@ -143,86 +123,36 @@ tech_ion_disruptor = {
 	category = { particles }
 	ai_update_type = military
 	weight = 0
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-####################
-##Ancient Utilities
-####################
+################################
+####	Ancient Utilities	####
+################################
 
-tech_titan_armor = {
+#	Dark Energy Afterburners
+tech_dark_energy_afterburners = {
 	area = engineering
 	cost = 200000
 	tier = 7
-	category = { materials }
+	category = { propulsion }
 	ai_update_type = all
-	weight = 0	
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-tech_dark_energy_shield = {
-	area = physics
-	cost = 200000
-	tier = 7
-	category = { field_manipulation }
-	ai_update_type = all
 	weight = 0
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#important component
 }
 
-tech_dark_energy_shield_booster = {
-	area = physics
-	cost = 200000
-	tier = 7
-	category = { field_manipulation }
-	ai_update_type = all
-	weight = 0
-	is_rare = yes
-
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-
-	ai_weight = {
-		factor = 20 #good component
-	}
-}
-
+#	Dark Energy Jump Drive
 tech_dark_energy_jump_drive = {
 	cost = 200000
 	area = physics
@@ -234,224 +164,15 @@ tech_dark_energy_jump_drive = {
 #	is_dangerous = yes
 	weight = 0
 	prerequisites = { "tech_lost_technologies_2" }
-
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-
-	feature_flags = {
-		jump_method
-	}
-
-	ai_weight = {
-		factor = 20 #FTL techs are good
-	}
+	feature_flags = { jump_method }
+	ai_weight = { factor = 20 }		#FTL techs are good
 }
 
-
-# Dark Energy Thrusters
-tech_dark_energy_thruster = {
-	cost = 200000
-	area = engineering
-	tier = 7
-	category = { propulsion }
-	ai_update_type = all
-	weight = 0
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
-}
-
-#Dark Energy Afterburners
-tech_dark_energy_afterburners = {
-	area = engineering
-	cost = 200000
-	tier = 7
-	category = { propulsion }
-	ai_update_type = all
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-
-	weight = 0
-
-	ai_weight = {
-		factor = 20 #important component
-	}
-}
-
-tech_dark_energy_sensors = {
-	area = physics
-	cost = 200000
-	tier = 7
-	category = { computing }
-	ai_update_type = all
-	is_rare = yes
-	weight = 0
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-
-	prerequisites = { "tech_lost_technologies_2" }
-
-	ai_weight = {
-		factor = 20 #good component
-	}
-
-}
-
-
-
-tech_titan_plating = {
-	area = engineering
-	cost = 200000
-	tier = 7
-	category = { materials }
-	ai_update_type = all
-	weight = 0	
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-
-	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-tech_psi_deflector = {
-	area = physics
-	cost = 200000
-	tier = 7
-	category = { field_manipulation }
-	ai_update_type = all
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	weight = 0
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-#Infinity Encoder
-tech_infinity_encoder = {
-	cost = 200000
-	area = physics
-	tier = 7
-	category = { computing }
-	ai_update_type = all
-	weight = 0
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-
-}
-
-#Infinity Encoder
-tech_infinity_decoder = {
-	cost = 200000
-	area = physics
-	tier = 7
-	category = { computing }
-	ai_update_type = all
-	weight = 0
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-#Dark Energy Reactor Booster
-tech_dark_energy_power_booster = {
-	area = physics
-	cost = 200000
-	tier = 7
-	is_rare = yes
-	category = { particles }
-	ai_update_type = military
-	weight = 0
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-
-
-
-#tech_improved_dragon_armor = {
-#	area = engineering
-#	cost = 25000
-#	tier = 5
-#	category = { materials }
-#	ai_update_type = all	
-#	is_rare = yes
-#	
-#	potential = {
-#		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#	}
-#	
-#	weight = 100
-#	
-#	weight_modifier = {
-#		factor = 100
-#	}
-#	
-#	ai_weight = {
-#		factor = 20		#weapons are good
-#	}
-#}
-
+#	Dark Energy Power Core
 tech_dark_energy_power_core = {
 	area = physics
 	cost = 200000
@@ -460,219 +181,201 @@ tech_dark_energy_power_core = {
 	ai_update_type = all
 	weight = 0
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-
-
-##################
-##Omni Weapons
-##################
-
-##Omni Lance
-
-tech_omni_lance = {
+#	Dark Energy Reactor Booster
+tech_dark_energy_power_booster = {
 	area = physics
 	cost = 200000
 	tier = 7
+	is_rare = yes
 	category = { particles }
 	ai_update_type = military
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
 	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-##Compact Omni Lance
-
-tech_compact_omni_lance = {
-	area = physics
-	cost = 200000
-	tier = 7
-	category = { particles }
-	ai_update_type = military
-	weight = @tier5weight2
-	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-
-	prerequisites = { "tech_omni_lance" }
-
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				is_country_type = ascended_empire
-			}
-		}
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}	
-	}
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}
-	}
-}
-
-##Omni Emitter
-
-tech_omni_emitter = {
-	area = physics
-	cost = 200000
-	tier = 7
-	category = { particles }
-	ai_update_type = military
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-##Compact Omni Emitter
-
-tech_compact_omni_emitter = {
+#	Dark Energy Sensors
+tech_dark_energy_sensors = {
 	area = physics
 	cost = 200000
 	tier = 7
-	category = { particles }
-	ai_update_type = military
-	weight = @tier5weight2
+	category = { computing }
+	ai_update_type = all
 	is_rare = yes
-	
+	weight = 0
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#good component
+}
+
+#	Dark Energy Shield
+tech_dark_energy_shield = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = 0
+	is_rare = yes
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-
-	prerequisites = { "tech_omni_emitter" }
-	
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				is_country_type = ascended_empire
-			}
-		}
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}	
-	}
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-		modifier = {
-			factor = 1.25
-			has_ethic = ethic_militarist
-		}
-		modifier = {
-			factor = 1.5
-			has_ethic = ethic_fanatic_militarist
-		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}
-	}
+	prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-tech_massive_autocannons = {
+#	Dark Energy Shield Booster
+tech_dark_energy_shield_booster = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = 0
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#good component
+}
+
+#	Dark Energy Thrusters
+tech_dark_energy_thruster = {
+	cost = 200000
+	area = engineering
+	tier = 7
+	category = { propulsion }
+	ai_update_type = all
+	weight = 0
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+}
+
+#	Improved Dragon Armor
+tech_improved_dragon_armor = {
+	area = engineering
+	cost = 25000
+	tier = 5
+	category = { materials }
+	ai_update_type = all	
+	is_rare = yes
+	potential = { has_global_flag = zofe_secrets_of_the_fallen_empires_activated }
+	weight = 100
+	weight_modifier = { factor = 100 }
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Infinity Decoder
+tech_infinity_decoder = {
+	cost = 200000
+	area = physics
+	tier = 7
+	category = { computing }
+	ai_update_type = all
+	weight = 0
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Infinity Encoder
+tech_infinity_encoder = {
+	cost = 200000
+	area = physics
+	tier = 7
+	category = { computing }
+	ai_update_type = all
+	weight = 0
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Psi Deflector
+tech_psi_deflector = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { field_manipulation }
+	ai_update_type = all
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	weight = 0
+	prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Titan Armor
+tech_titan_armor = {
 	area = engineering
 	cost = 200000
 	tier = 7
-	category = { propulsion }
-	ai_update_type = military
+	category = { materials }
+	ai_update_type = all
+	weight = 0	
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
-	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
+#	Titan Plating
+tech_titan_plating = {
+	area = engineering
+	cost = 200000
+	tier = 7
+	category = { materials }
+	ai_update_type = all
+	weight = 0	
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+############################
+####	Omni Weapons	####
+############################
+
+#	Compact Massive Autocannons
 tech_compact_massive_autocannons = {
 	area = engineering
 	cost = 200000
@@ -680,43 +383,16 @@ tech_compact_massive_autocannons = {
 	category = { propulsion }
 	ai_update_type = military
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_massive_autocannons" }
-	
 	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-tech_omni_cannon = {
-	area = engineering
-	cost = 200000
-	tier = 7
-	category = { propulsion }
-	ai_update_type = military
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	prerequisites = { "tech_lost_technologies_2" }
-	
-	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
+#	Compact Omni Cannon
 tech_compact_omni_cannon = {
 	area = engineering
 	cost = 200000
@@ -724,22 +400,16 @@ tech_compact_omni_cannon = {
 	category = { propulsion }
 	ai_update_type = military
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_omni_cannon" }
-	
 	weight = @tier5weight2
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				is_country_type = ascended_empire
-			}
+			NOT = { is_country_type = ascended_empire }
 		}
 		modifier = {
 			factor = 1.25
@@ -757,7 +427,6 @@ tech_compact_omni_cannon = {
 			}
 		}
 	}
-	
 	ai_weight = {
 		factor = 2		#weapons are good
 		modifier = {
@@ -776,14 +445,273 @@ tech_compact_omni_cannon = {
 			}
 		}
 	}
-	
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Compact Omni Emitter
+tech_compact_omni_emitter = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { particles }
+	ai_update_type = military
+	weight = @tier5weight2
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_omni_emitter" }
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { is_country_type = ascended_empire }
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}	
+	}
 	ai_weight = {
 		factor = 20		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
 	}
 }
 
-##Omni Titan Lance
+#	Compact Omni Lance
+tech_compact_omni_lance = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { particles }
+	ai_update_type = military
+	weight = @tier5weight2
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_omni_lance" }
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { is_country_type = ascended_empire }
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 20		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}
 
+#	Compact Omni Titan Lance
+tech_compact_omni_titan_lance = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_omni_titan_lance" }
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Dimensional Weapon
+tech_dimensional_weapon = {
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Dragon Breath
+tech_dragon_breath = {
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Elder Tiyanki Weapon
+tech_elder_tiyanki_weapon = {
+	area = physics
+	cost = 25000
+	tier = 5
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	weight = @tier5weight3
+	prerequisites = { "tech_titans" }
+	weight_modifier = {
+		factor = 100
+		modifier = {
+			factor = 100
+			NOT = { has_country_flag = encountered_elderly_tiyanki }
+		}
+	}
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Gray Goo Beam
+tech_gray_goo_beam = {
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Massive Autocannons
+tech_massive_autocannons = {
+	area = engineering
+	cost = 200000
+	tier = 7
+	category = { propulsion }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Omni Cannon
+tech_omni_cannon = {
+	area = engineering
+	cost = 200000
+	tier = 7
+	category = { propulsion }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Omni Emitter
+tech_omni_emitter = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Omni Lance
+tech_omni_lance = {
+	area = physics
+	cost = 200000
+	tier = 7
+	category = { particles }
+	ai_update_type = military
+	is_rare = yes
+	potential = {
+		is_zofe_country = yes
+		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
+	}
+	prerequisites = { "tech_lost_technologies_2" }
+	weight = 0
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Omni Titan Lance
 tech_omni_titan_lance = {
 	area = physics
 	cost = 200000
@@ -791,44 +719,16 @@ tech_omni_titan_lance = {
 	category = { particles }
 	ai_update_type = military
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	prerequisites = { "tech_lost_technologies_2" }
-	
 	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-#tech_compact_omni_titan_lance = {
-#	area = physics
-#	cost = 200000
-#	tier = 7
-#	category = { particles }
-#	ai_update_type = military
-#	is_rare = yes
-#	
-#	potential = {
-#		is_zofe_country = yes
-#		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#	}
-#	
-#	prerequisites = { "tech_omni_titan_lance" }
-#	
-#	weight = 0
-#	
-#	ai_weight = {
-#		factor = 20		#weapons are good
-#	}
-#}
-
-
+#	Portal Generator
 tech_portal_generator = {
 	area = physics
 	cost = @fallentechcost
@@ -837,142 +737,39 @@ tech_portal_generator = {
 	ai_update_type = military
 	is_rare = yes
 	is_dangerous = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
 
-tech_dragon_breath = {
+#	Scrapper Weapon
+tech_scrapper_weapon = {
+	area = engineering
+	cost = 25000
+	tier = 5
+	category = { propulsion }
+	ai_update_type = military
+	is_rare = yes
+	weight = 100
+	weight_modifier = { factor = 100 }
+	ai_weight = { factor = 20 }		#weapons are good
+}
+
+#	Stellarite Weapon
+tech_stellarite_weapon = {
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
 	category = { particles }
 	ai_update_type = military
 	is_rare = yes
-	
 	potential = {
 		is_zofe_country = yes
 		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
 	}
-	
 	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
+	ai_weight = { factor = 20 }		#weapons are good
 }
-
-#tech_stellarite_weapon = {
-#	area = physics
-#	cost = @fallentechcost
-#	tier = @fallentechtier
-#	category = { particles }
-#	ai_update_type = military
-#	is_rare = yes
-#	
-#	potential = {
-#		is_zofe_country = yes
-#		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#	}
-#	
-#	weight = 0
-#	
-#	
-#	ai_weight = {
-#		factor = 20		#weapons are good
-#	}
-#}
-
-tech_dimensional_weapon = {
-	area = physics
-	cost = @fallentechcost
-	tier = @fallentechtier
-	category = { particles }
-	ai_update_type = military
-	is_rare = yes
-	
-	potential = {
-		is_zofe_country = yes
-		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-	}
-	
-	weight = 0
-	
-	ai_weight = {
-		factor = 20		#weapons are good
-	}
-}
-
-#tech_scrapper_weapon = {
-#	area = engineering
-#	cost = 25000
-#	tier = 5
-#	category = { propulsion }
-#	ai_update_type = military
-#	is_rare = yes
-#	
-#	weight = 100
-#	
-#	weight_modifier = {
-#		factor = 100
-#	}	
-#	
-#	ai_weight = {
-#		factor = 20		#weapons are good
-#	}
-#}
-
-#tech_elder_tiyanki_weapon = {
-#	area = physics
-#	cost = 25000
-#	tier = 5
-#	category = { particles }
-#	ai_update_type = military
-#	is_rare = yes
-#	
-#	weight = @tier5weight3
-#	
-#	prerequisites = { "tech_titans" }
-#	
-#	weight_modifier = {
-#		factor = 100
-#		modifier = {
-#			factor = 100
-#			NOT = {
-#				has_country_flag = encountered_elderly_tiyanki
-#			}
-#		}
-#	}
-#	
-#	ai_weight = {
-#		factor = 20		#weapons are good
-#	}
-#}
-
-#tech_gray_goo_beam = {
-#	area = physics
-#	cost = @fallentechcost
-#	tier = @fallentechtier
-#	category = { particles }
-#	ai_update_type = military
-#	is_rare = yes
-#	
-#	potential = {
-#		is_zofe_country = yes
-#		has_global_flag = zofe_secrets_of_the_fallen_empires_activated
-#	}
-#	
-#	weight = 0
-#	
-#	ai_weight = {
-#		factor = 20		#weapons are good
-#	}
-#}

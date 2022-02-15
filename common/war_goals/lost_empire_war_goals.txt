@@ -110,9 +110,7 @@ wg_total_annihilation = {
 			}
 		}
 	}
-	
 	on_accept  = {
-			
 		hidden_effect = {
 			every_country = {
 				if = {
@@ -127,23 +125,14 @@ wg_total_annihilation = {
 				}
 			}
 		}
-
-	
-#		
 		country_event = { id = lost_empire.16 }
 		remove_country_flag = ae_crusader
 		save_event_target_as = Annihilator
-		
 		from = {
-#			save_event_target_as = Annihilated
-			
 			country_event = { id = lost_empire.13 }
 			remove_country_flag = ae_crusader
-			
 			every_subject = {
-
 				country_event = { id = lost_empire.14 }
-				
 				every_owned_planet = {
 					destroy_colony = yes
 				}
@@ -172,7 +161,6 @@ wg_total_annihilation = {
 	on_status_quo = {
 	
 		hidden_effect = {
-						
 			every_country = {
 				if = {
 					limit = {
@@ -196,7 +184,6 @@ wg_total_annihilation = {
 				}
 			}
 		}
-
 		save_event_target_as = Annihilator
 		every_planet_within_border = {
 			limit = {
@@ -496,7 +483,6 @@ wg_dismantle_ascendancy = {
 	}	
 	
 	on_status_quo = {
-		
 	}
 	
 	ai_weight = {

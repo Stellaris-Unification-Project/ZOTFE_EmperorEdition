@@ -3,27 +3,21 @@
 
 district_generator = {
 	base_buildtime = 240
-
 	min_for_deposits_on_planet = 3
 	max_for_deposits_on_planet = 15
-
 	show_on_uncolonized = {
 		uses_district_set = standard
 	}
-
 	potential = {
 		uses_district_set = standard
 	}
-
 	allow = {
 		NOT = { has_modifier = resort_colony }
 	}
-
 	conversion_ratio = 1
 	convert_to = {
 		district_generator_uncapped
 	}
-
 	resources = {
 		category = planet_districts
 		cost = {
@@ -37,7 +31,7 @@ district_generator = {
 				}
 				planet = {
 					has_planet_flag = automated_districts_online
-				}	
+				}
 			}
 			minerals = 800
 			sr_living_metal = 100
@@ -53,7 +47,7 @@ district_generator = {
 				}
 				planet = {
 					has_planet_flag = automated_districts_online
-				}	
+				}
 			}
 			sr_dark_matter = 2
 		}
@@ -65,7 +59,7 @@ district_generator = {
 				}
 				planet = {
 					has_planet_flag = automated_districts_online
-				}	
+				}
 			}
 			energy = 500
 		}
@@ -78,7 +72,7 @@ district_generator = {
 				}
 				planet = {
 					has_planet_flag = automated_districts_online
-				}	
+				}
 			}
 			energy = 100
 		}
@@ -91,12 +85,11 @@ district_generator = {
 				planet = {
 					has_active_building = building_fe_automated_production
 					has_planet_flag = automated_districts_online
-				}	
+				}
 			}
 			energy = 150
 		}
 	}
-	
 	triggered_desc = {
 		trigger = {
 			owner = {
@@ -109,11 +102,9 @@ district_generator = {
 		}
 		text = fe_automated_generator_district_desc
 	}
-
 	planet_modifier = {
 		planet_housing_add = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -125,7 +116,6 @@ district_generator = {
 			planet_housing_add = 1
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -135,7 +125,6 @@ district_generator = {
 			job_technician_drone_add = 3
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -146,7 +135,6 @@ district_generator = {
 			planet_housing_add = 1
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -169,7 +157,6 @@ district_generator = {
 			job_fe_acolyte_generator_add = 2
 		}
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -194,7 +181,6 @@ district_generator = {
 		}
 		text = job_fe_acolyte_generator_effect_desc
 	}
-
 	prerequisites = {
 		tech_power_plant_1
 	}

@@ -1,3 +1,7 @@
+#######################
+###	Resized	Weapons	###
+#######################
+
 # Dark Energy Power: 
 @destroyer_power_7 = 1100
 @battleship_power_7 = 4000
@@ -11,117 +15,18 @@
 @titan_cost_7 = 1184
 @platform_cost_7 = 152
 
-
-
-# ## Dragon Breath
-weapon_component_template = {
-	key = "DRAGON_BREATH"
-	size = titanic
-	entity = "invisible_turret_entity"
-	type = instant
-	prio_projectile = yes
-	
-	icon = "GFX_ship_part_dragon_breath"
-	icon_frame = 1
-	
-	firing_arc = 25.0
-	min_range = 10.0
-	use_ship_kill_target = no
-
-	damage = { min = 19792 max = 48492 }
-	windup = { min = 30 max = 45 }
-	total_fire_time = 180
-	range = 150.0
-	accuracy = 0.85
-	hull_damage = 2.0
-	shield_damage = 0.75
-	armor_penetration = 2.0
-	tracking = 0
-	power = -1000
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 2372
-			rare_crystals = 35.16
-		}		
-		upkeep = {
-			energy = 23.72
-			alloys = 4.744
-		}
-	}
-	
-	prerequisites = { "tech_dragon_breath" }
-	component_set = "DRAGON_BREATH"
-	projectile_gfx = "dragon_weapon"
-	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_artillery }
-	
-	ai_tag_weight = 0
-}
-
-#Stellarite Weapon
-
-#weapon_component_template = {
-#	key = "STELLARITE_WEAPON"
-#	size = titanic
-#	entity = "invisible_turret_entity"
-#	type = instant
-#	prio_projectile = yes
-#	
-#	icon = "GFX_ship_part_stellarite_weapon"
-#	icon_frame = 1
-#
-#	firing_arc = 25.0
-#	min_range = 10.0
-#	use_ship_kill_target = no
-#
-#	damage = { min = 4948 max = 12123 }
-#	windup = { min = 1 max = 19 }
-#	total_fire_time = 70
-#	range = 100.0
-#	accuracy = 0.85
-#	hull_damage = 2.0
-#	shield_damage = 0.75
-#	armor_penetration = 2.0
-#	tracking = 0
-#	power = -500
-#	resources = {
-#		category = ship_components
-#		cost = {
-#			alloys = @titanic_t7_cost
-#			rare_crystals = @titanic_t7_rare
-#		}		
-#		upkeep = {
-#			energy = @titanic_t7_upkeep_energy
-#			alloys = @titanic_t7_upkeep_alloys
-#		}
-#	}
-#	
-#	prerequisites = { "tech_stellarite_weapon" }
-#	component_set = "STELLARITE_WEAPON"
-#	projectile_gfx = "stellarite_weapon"
-#	tags = { weapon_type_energy }
-#	ai_tags = { weapon_role_artillery }
-#
-#	ai_tag_weight = 0
-#}
-
-#Dimensional Weapon
-
+#	Dimensional Weapon
 weapon_component_template = {
 	key = "DIMENSIONAL_WEAPON"
 	size = titanic
 	entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
-	
 	icon = "GFX_ship_part_dimensional_weapon"
 	icon_frame = 1
-
 	firing_arc = 25.0
 	min_range = 10.0
 	use_ship_kill_target = no
-
 	damage = { min = 5000 max = 50000 }
 	windup = { min = 20 max = 30 }
 	total_fire_time = 150
@@ -143,167 +48,227 @@ weapon_component_template = {
 			alloys = 4.744
 		}
 	}
-	
 	prerequisites = { "tech_dimensional_weapon" }
 	component_set = "DIMENSIONAL_WEAPON"
 	projectile_gfx = "dimensional_weapon"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery }
-
 	ai_tag_weight = 0
 }
 
-#Scrapper Weapon
+#	Dragon Breath
+weapon_component_template = {
+	key = "DRAGON_BREATH"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	icon = "GFX_ship_part_dragon_breath"
+	icon_frame = 1
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	damage = { min = 19792 max = 48492 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 150.0
+	accuracy = 0.85
+	hull_damage = 2.0
+	shield_damage = 0.75
+	armor_penetration = 2.0
+	tracking = 0
+	power = -1000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2372
+			rare_crystals = 35.16
+		}		
+		upkeep = {
+			energy = 23.72
+			alloys = 4.744
+		}
+	}
+	prerequisites = { "tech_dragon_breath" }
+	component_set = "DRAGON_BREATH"
+	projectile_gfx = "dragon_weapon"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+}
 
-#weapon_component_template = {
-#	key = "SCRAPPER_WEAPON"
-#	size = titanic
-#	entity = "invisible_turret_entity"
-#	type = instant
-#	prio_projectile = yes
-#	
-#	icon = "GFX_ship_part_scrapper_weapon"
-#	icon_frame = 1
-#	
-#	firing_arc = 25.0
-#	min_range = 10.0
-#	use_ship_kill_target = no
-#	
-#	damage = { min = 5000 max = 10000 }
-#	windup = { min = 30 max = 45 }
-#	total_fire_time = 180
-#	range = 150.0
-#	accuracy = 0.85
-#	hull_damage = 2.0
-#	shield_damage = 2.0
-#	armor_damage = 0.8
-#	tracking = 0
-#	power = -500
-#	resources = {
-#		category = ship_components
-#		cost = {
-#			alloys = @titanic_t7_cost
-#			rare_crystals = @titanic_t7_rare
-#		}		
-#		upkeep = {
-#			energy = @titanic_t7_upkeep_energy
-#			alloys = @titanic_t7_upkeep_alloys
-#		}
-#	}
-#	
-#	prerequisites = { "tech_scrapper_weapon" }
-#	component_set = "SCRAPPER_WEAPON"
-#	projectile_gfx = "scavenger_bot_main_weapon"
-#	tags = { weapon_type_kinetic }
-#	ai_tags = { weapon_role_artillery }
-#	
-#	ai_tag_weight = 0
-#}
+#	Elder Tiyanki Weapon
+weapon_component_template = {
+	key = "ELDER_TIYANKI_WEAPON"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	icon = "GFX_ship_part_elder_tiyanki_weapon"
+	icon_frame = 1
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	damage = { min = 4948 max = 12123 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 150.0
+	accuracy = 0.85
+	hull_damage = 1.0
+	shield_damage = 2.0
+	armor_penetration = 0
+	armor_damage = 2.0
+	tracking = 0
+	power = -500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			rare_crystals = @titanic_t7_rare
+		}		
+		upkeep = {
+			energy = @titanic_t7_upkeep_energy
+			alloys = @titanic_t7_upkeep_alloys
+		}
+	}
+	prerequisites = { "tech_elder_tiyanki_weapon" }
+	component_set = "ELDER_TIYANKI_WEAPON"
+	projectile_gfx = "elder_tiyanki_weapon"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+}
 
-#Elder Tiyanki Weapon
+#	Gray Goo Beam
+weapon_component_template = {
+	key = "GRAY_GOO_BEAM"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	icon = "GFX_ship_part_gray_goo_beam"
+	icon_frame = 1
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	damage = { min = 1 max = 9999 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 115
+	range = 200.0
+	accuracy = 1.0
+	hull_damage = 1.0
+	shield_damage = 1.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	armor_damage = 1.0
+	tracking = 0.2
+	power = -500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			rare_crystals = @titanic_t7_rare
+		}		
+		upkeep = {
+			energy = @titanic_t7_upkeep_energy
+			alloys = @titanic_t7_upkeep_alloys
+		}
+	}
+	prerequisites = { "tech_gray_goo_beam" }
+	component_set = "GRAY_GOO_BEAM"
+	projectile_gfx = "gatebuilder_titan_weapon"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+}
 
-#weapon_component_template = {
-#	key = "ELDER_TIYANKI_WEAPON"
-#	size = titanic
-#	entity = "invisible_turret_entity"
-#	type = instant
-#	prio_projectile = yes
-#	
-#	icon = "GFX_ship_part_elder_tiyanki_weapon"
-#	icon_frame = 1
-#
-#	firing_arc = 25.0
-#	min_range = 10.0
-#	use_ship_kill_target = no
-#
-#	damage = { min = 4948 max = 12123 }
-#	windup = { min = 30 max = 45 }
-#	total_fire_time = 180
-#	range = 150.0
-#	accuracy = 0.85
-#	hull_damage = 1.0
-#	shield_damage = 2.0
-#	armor_penetration = 0
-#	armor_damage = 2.0
-#	tracking = 0
-#	power = -500
-#	resources = {
-#		category = ship_components
-#		cost = {
-#			alloys = @titanic_t7_cost
-#			rare_crystals = @titanic_t7_rare
-#		}		
-#		upkeep = {
-#			energy = @titanic_t7_upkeep_energy
-#			alloys = @titanic_t7_upkeep_alloys
-#		}
-#	}
-#	
-#	prerequisites = { "tech_elder_tiyanki_weapon" }
-#	component_set = "ELDER_TIYANKI_WEAPON"
-#	projectile_gfx = "elder_tiyanki_weapon"
-#	tags = { weapon_type_energy }
-#	ai_tags = { weapon_role_artillery }
-#
-#	ai_tag_weight = 0
-#}
+#	Scrapper Weapon
+weapon_component_template = {
+	key = "SCRAPPER_WEAPON"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	icon = "GFX_ship_part_scrapper_weapon"
+	icon_frame = 1
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	damage = { min = 5000 max = 10000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 180
+	range = 150.0
+	accuracy = 0.85
+	hull_damage = 2.0
+	shield_damage = 2.0
+	armor_damage = 0.8
+	tracking = 0
+	power = -500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			rare_crystals = @titanic_t7_rare
+		}		
+		upkeep = {
+			energy = @titanic_t7_upkeep_energy
+			alloys = @titanic_t7_upkeep_alloys
+		}
+	}
+	prerequisites = { "tech_scrapper_weapon" }
+	component_set = "SCRAPPER_WEAPON"
+	projectile_gfx = "scavenger_bot_main_weapon"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+}
 
-#Gray Goo Beam
+#	Stellarite Weapon
+weapon_component_template = {
+	key = "STELLARITE_WEAPON"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	icon = "GFX_ship_part_stellarite_weapon"
+	icon_frame = 1
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	damage = { min = 4948 max = 12123 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 70
+	range = 100.0
+	accuracy = 0.85
+	hull_damage = 2.0
+	shield_damage = 0.75
+	armor_penetration = 2.0
+	tracking = 0
+	power = -500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			rare_crystals = @titanic_t7_rare
+		}		
+		upkeep = {
+			energy = @titanic_t7_upkeep_energy
+			alloys = @titanic_t7_upkeep_alloys
+		}
+	}
+	prerequisites = { "tech_stellarite_weapon" }
+	component_set = "STELLARITE_WEAPON"
+	projectile_gfx = "stellarite_weapon"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+}
 
-#weapon_component_template = {
-#	key = "GRAY_GOO_BEAM"
-#	size = titanic
-#	entity = "invisible_turret_entity"
-#	type = instant
-#	prio_projectile = yes
-#	
-#	icon = "GFX_ship_part_gray_goo_beam"
-#	icon_frame = 1
-#
-#	firing_arc = 25.0
-#	min_range = 10.0
-#	use_ship_kill_target = no
-#
-#	damage = { min = 1 max = 9999 }
-#	windup = { min = 2 max = 20 }
-#	total_fire_time = 115
-#	range = 200.0
-#	accuracy = 1.0
-#	hull_damage = 1.0
-#	shield_damage = 1.0
-#	shield_penetration = 1.0
-#	armor_penetration = 1.0
-#	armor_damage = 1.0
-#	tracking = 0.2
-#	power = -500
-#	resources = {
-#		category = ship_components
-#		cost = {
-#			alloys = @titanic_t7_cost
-#			rare_crystals = @titanic_t7_rare
-#		}		
-#		upkeep = {
-#			energy = @titanic_t7_upkeep_energy
-#			alloys = @titanic_t7_upkeep_alloys
-#		}
-#	}
-#	
-#	prerequisites = { "tech_gray_goo_beam" }
-#	component_set = "GRAY_GOO_BEAM"
-#	projectile_gfx = "gatebuilder_titan_weapon"
-#	tags = { weapon_type_energy }
-#	ai_tags = { weapon_role_artillery }
-#
-#	ai_tag_weight = 0
-#}
+#####################
+#####	Shields	#####
+#####################
 
-
-
-# ####################
-#  Shields
-# ####################
-
-
+#	Medium Dark Energy Shield
 utility_component_template = {
 	key = "MEDIUM_DARK_ENERGY_SHIELD"
 	size = medium
@@ -330,6 +295,33 @@ utility_component_template = {
 	upgrades_to = "MEDIUM_ORIGINAL_EMPIRE_SHIELD"
 }
 
+#	Medium Psi Deflector
+utility_component_template = {
+	key = "MEDIUM_psi_deflector"
+	size = medium
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+	power = -300
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 152
+			sr_zro = 0.888
+		}		
+		upkeep = {
+			energy = 1.52
+			alloys = 0.304
+		}
+	}
+	modifier = {
+		ship_shield_add = 2400
+		ship_shield_regen_add_static = 20
+	}
+	prerequisites = { "tech_psi_deflector" }
+	component_set = "psi_deflector"
+}
+
+#	Large Dark Energy Shield
 utility_component_template = {
 	key = "LARGE_DARK_ENERGY_SHIELD"
 	size = large
@@ -356,31 +348,7 @@ utility_component_template = {
 	upgrades_to = "LARGE_ORIGINAL_EMPIRE_SHIELD"
 }
 
-utility_component_template = {
-	key = "MEDIUM_psi_deflector"
-	size = medium
-	icon = "GFX_ship_part_psi_shield"
-	icon_frame = 1
-	power = -300
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 152
-			sr_zro = 0.888
-		}		
-		upkeep = {
-			energy = 1.52
-			alloys = 0.304
-		}
-	}
-	modifier = {
-		ship_shield_add = 2400
-		ship_shield_regen_add_static = 20
-	}
-	prerequisites = { "tech_psi_deflector" }
-	component_set = "psi_deflector"
-}
-
+#	Large Psi Deflector
 utility_component_template = {
 	key = "LARGE_psi_deflector"
 	size = large
@@ -406,10 +374,31 @@ utility_component_template = {
 	component_set = "psi_deflector"
 }
 
-# ####################
-#  Armor
-# ####################
+#####################
+#####	Armor	#####
+#####################
 
+#	Medium Improved Dragon Armor
+utility_component_template = {
+	key = "MEDIUM_IMPROVED_DRAGON_ARMOR"
+	size = medium
+	icon = "GFX_ship_part_improved_dragon_armor"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = { alloys = @m_t7_cost }		
+		upkeep = {
+			energy = @m_t7_upkeep_energy
+			alloys = @m_t7_upkeep_alloys
+		}
+	}
+	modifier = { ship_armor_add = 552 }
+	prerequisites = { "tech_improved_dragon_armor" }
+	component_set = "IMPROVED_DRAGON_ARMOR"
+}
+
+#	Medium Titan Armor
 utility_component_template = {
 	key = "MEDIUM_TITAN_ARMOR"
 	size = medium
@@ -427,10 +416,8 @@ utility_component_template = {
 			alloys = 0.352
 		}
 	}
-	
 	prerequisites = { "tech_titan_armor" }
-	component_set = "TITAN_ARMOR"
-	
+	component_set = "TITAN_ARMOR"	
 	modifier = {
 		ship_armor_add = 1860
 		ship_armor_regen_add_static = 18.60
@@ -438,34 +425,7 @@ utility_component_template = {
 	upgrades_to = "MEDIUM_CELESTIAL_ARMOR"
 }
 
-utility_component_template = {
-	key = "LARGE_TITAN_ARMOR"
-	size = large
-	icon = "GFX_ship_part_titan_armor"
-	icon_frame = 1
-	power = 0
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 352
-			sr_living_metal = 4
-		}		
-		upkeep = {
-			energy = 3.52
-			alloys = 0.704
-		}
-	}
-	
-	prerequisites = { "tech_titan_armor" }
-	component_set = "TITAN_ARMOR"
-	
-	modifier = {
-		ship_armor_add = 4440
-		ship_armor_regen_add_static = 44.4
-	}	
-	upgrades_to = "LARGE_CELESTIAL_ARMOR"
-}
-
+#	Medium Titan Plating
 utility_component_template = {
 	key = "MEDIUM_TITAN_PLATING"
 	size = medium
@@ -482,11 +442,9 @@ utility_component_template = {
 			energy = 1.76
 			alloys = 0.352
 		}
-	}
-	
+	}	
 	prerequisites = { "tech_titan_plating" }
-	component_set = "TITAN_PLATING"
-	
+	component_set = "TITAN_PLATING"	
 	modifier = {
 		ship_hull_add = 1860
 		ship_hull_regen_add_static = 18.60
@@ -494,6 +452,54 @@ utility_component_template = {
 	upgrades_to = "MEDIUM_CELESTIAL_PLATING"
 }
 
+#	Large Improved Dragon Armor
+utility_component_template = {
+	key = "LARGE_IMPROVED_DRAGON_ARMOR"
+	size = large
+	icon = "GFX_ship_part_improved_dragon_armor"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = { alloys = @l_t7_cost }		
+		upkeep = {
+			energy = @l_t7_upkeep_energy
+			alloys = @l_t7_upkeep_alloys
+		}
+	}
+	modifier = { ship_armor_add = 1380 }
+	prerequisites = { "tech_improved_dragon_armor" }
+	component_set = "IMPROVED_DRAGON_ARMOR"
+}
+
+#	Large Titan Armor
+utility_component_template = {
+	key = "LARGE_TITAN_ARMOR"
+	size = large
+	icon = "GFX_ship_part_titan_armor"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 352
+			sr_living_metal = 4
+		}		
+		upkeep = {
+			energy = 3.52
+			alloys = 0.704
+		}
+	}	
+	prerequisites = { "tech_titan_armor" }
+	component_set = "TITAN_ARMOR"	
+	modifier = {
+		ship_armor_add = 4440
+		ship_armor_regen_add_static = 44.4
+	}	
+	upgrades_to = "LARGE_CELESTIAL_ARMOR"
+}
+
+#	Large Titan Plating
 utility_component_template = {
 	key = "LARGE_TITAN_PLATING"
 	size = large
@@ -511,10 +517,8 @@ utility_component_template = {
 			alloys = 0.704
 		}
 	}
-	
 	prerequisites = { "tech_titan_plating" }
-	component_set = "TITAN_PLATING"
-	
+	component_set = "TITAN_PLATING"	
 	modifier = {
 		ship_hull_add = 4440
 		ship_hull_regen_add_static = 44.4
@@ -522,91 +526,11 @@ utility_component_template = {
 	upgrades_to = "LARGE_CELESTIAL_PLATING"
 }
 
-#utility_component_template = {
-#	key = "MEDIUM_IMPROVED_DRAGON_ARMOR"
-#	size = medium
-#	icon = "GFX_ship_part_improved_dragon_armor"
-#	icon_frame = 1
-#	power = 0
-#	resources = {
-#		category = ship_components
-#		cost = {
-#			alloys = @m_t7_cost
-#		}		
-#		upkeep = {
-#			energy = @m_t7_upkeep_energy
-#			alloys = @m_t7_upkeep_alloys
-#		}
-#	}
-#	modifier = {
-#		ship_armor_add = 552
-#	}
-#	
-#	prerequisites = { "tech_improved_dragon_armor" }
-#	component_set = "IMPROVED_DRAGON_ARMOR"
-#}
+########################
+####	Utilities	####
+########################
 
-#utility_component_template = {
-#	key = "LARGE_IMPROVED_DRAGON_ARMOR"
-#	size = large
-#	icon = "GFX_ship_part_improved_dragon_armor"
-#	icon_frame = 1
-#	power = 0
-#	resources = {
-#		category = ship_components
-#		cost = {
-#			alloys = @l_t7_cost
-#		}		
-#		upkeep = {
-#			energy = @l_t7_upkeep_energy
-#			alloys = @l_t7_upkeep_alloys
-#		}
-#	}
-#	modifier = {
-#		ship_armor_add = 1380
-#	}
-#	
-#	prerequisites = { "tech_improved_dragon_armor" }
-#	component_set = "IMPROVED_DRAGON_ARMOR"
-#}
-
-
-
-##Utilities
-
-utility_component_template = {
-	key = "FE_ESCORT_DARK_ENERGY_REACTOR"
-	size = small
-	icon = "GFX_ship_part_dark_energy_power_core"
-	icon_frame = 1
-	power = 2500
-	
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 148
-			sr_dark_matter = 4
-		}
-		upkeep = {
-			energy = 1.48
-			alloys = 0.148
-		}
-	}
-	
-	prerequisites = { "tech_dark_energy_power_core" }
-	component_set = "power_core"
-	size_restriction = { fe_escort }
-	upgrades_to = "FE_ESCORT_ORIGINAL_EMPIRE_REACTOR"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
-}
-
+#	FE Battlecruiser Dark Energy Reactor
 utility_component_template = {
 	key = "FE_BATTLECRUISER_DARK_ENERGY_REACTOR"
 	size = small
@@ -624,53 +548,39 @@ utility_component_template = {
 			alloys = 0.596
 		}
 	}
-	
 	prerequisites = { "tech_dark_energy_power_core" }
 	component_set = "power_core"
 	size_restriction = { fe_battlecruiser }
 	upgrades_to = "FE_BATTLECRUISER_ORIGINAL_EMPIRE_REACTOR"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	ai_weight = { weight = 100 }
 }
 
+#	FE Escort Dark Energy Reactor
 utility_component_template = {
-	key = "FE_TITAN_DARK_ENERGY_REACTOR"
+	key = "FE_ESCORT_DARK_ENERGY_REACTOR"
 	size = small
 	icon = "GFX_ship_part_dark_energy_power_core"
 	icon_frame = 1
-	power = 10000
+	power = 2500
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 1184
-			sr_dark_matter = 32
+			alloys = 148
+			sr_dark_matter = 4
 		}
 		upkeep = {
-			energy = 11.86
-			alloys = 1.186
+			energy = 1.48
+			alloys = 0.148
 		}
 	}
-	
 	prerequisites = { "tech_dark_energy_power_core" }
 	component_set = "power_core"
-	size_restriction = { fe_titan }
-	upgrades_to = "FE_TITAN_ORIGINAL_EMPIRE_REACTOR"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	size_restriction = { fe_escort }
+	upgrades_to = "FE_ESCORT_ORIGINAL_EMPIRE_REACTOR"
+	ai_weight = { weight = 100 }
 }
 
+#	FE Goliath Dark Energy Reactor
 utility_component_template = {
 	key = "FE_GOLIATH_DARK_ENERGY_REACTOR"
 	size = small
@@ -687,8 +597,7 @@ utility_component_template = {
 			energy = 23.72
 			alloys = 2.372
 		}
-	}
-	
+	}	
 	prerequisites = { "tech_dark_energy_power_core" }
 	component_set = "power_core"
 	size_restriction = { 
@@ -702,17 +611,36 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 	}
-	upgrades_to = "FE_GOLIATH_ORIGINAL_EMPIRE_REACTOR"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	upgrades_to = "FE_GOLIATH_ORIGINAL_EMPIRE_REACTOR"	
+	ai_weight = { weight = 100 }
 }
 
+#	FE Large Stations Dark Energy Reactor
+utility_component_template = {
+	key = "FE_LARGE_STATIONS_DARK_ENERGY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_energy_power_core"
+	icon_frame = 1
+	power = 10000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 596
+			sr_dark_matter = 16
+		}
+		upkeep = {
+			energy = 5.96
+			alloys = 0.596
+		}
+	}	
+	prerequisites = { "tech_dark_energy_power_core" }
+	component_set = "power_core"
+	size_restriction = { fe_large_station }
+	upgrades_to = "FE_LARGE_STATIONS_ORIGINAL_EMPIRE_REACTOR"	
+	ai_weight = { weight = 100 }
+}
+
+#	FE Stations Dark Energy Reactor
 utility_component_template = {
 	key = "FE_STATIONS_DARK_ENERGY_REACTOR"
 	size = small
@@ -730,23 +658,16 @@ utility_component_template = {
 			alloys = 0.148
 		}
 	}
-	
 	prerequisites = { "tech_dark_energy_power_core" }
 	component_set = "power_core"
 	size_restriction = { fe_small_station ion_cannon }
 	upgrades_to = "FE_STATIONS_ORIGINAL_EMPIRE_REACTOR"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	ai_weight = { weight = 100 }
 }
 
+#	FE Titan Dark Energy Reactor
 utility_component_template = {
-	key = "FE_LARGE_STATIONS_DARK_ENERGY_REACTOR"
+	key = "FE_TITAN_DARK_ENERGY_REACTOR"
 	size = small
 	icon = "GFX_ship_part_dark_energy_power_core"
 	icon_frame = 1
@@ -754,89 +675,26 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 596
-			sr_dark_matter = 16
+			alloys = 1184
+			sr_dark_matter = 32
 		}
 		upkeep = {
-			energy = 5.96
-			alloys = 0.596
+			energy = 11.86
+			alloys = 1.186
 		}
 	}
-	
 	prerequisites = { "tech_dark_energy_power_core" }
 	component_set = "power_core"
-	size_restriction = { fe_large_station }
-	upgrades_to = "FE_LARGE_STATIONS_ORIGINAL_EMPIRE_REACTOR"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	size_restriction = { fe_titan }
+	upgrades_to = "FE_TITAN_ORIGINAL_EMPIRE_REACTOR"	
+	ai_weight = { weight = 100 }
 }
 
 ####################
 # Shield Recharger #
 ####################
 
-utility_component_template = {
-	key = "DARK_ENERGY_SHIELD_BOOSTER"
-	size = aux
-	icon = "GFX_ship_part_dark_energy_shield_booster"
-	icon_frame = 1
-	power = -80
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 40
-			sr_dark_matter = 4
-		}
-	}
-	
-	prerequisites = { "tech_dark_energy_shield_booster" }
-	component_set = "DARK_ENERGY_SHIELD_BOOSTER"
-	
-	modifier = {
-		ship_shield_mult = 0.4
-	}
-	
-	ai_weight = {
-		weight = 20
-	}
-}
-
-### Jump drives
-utility_component_template = {
-	key = "DARK_ENERGY_JUMP_DRIVE"
-	size = small
-	icon = "GFX_ship_part_dark_energy_jump_drive"
-	icon_frame = 1
-	power = -60
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 40
-		}
-	}
-	ftl = yes
-	jumpdrive = yes
-	ship_modifier = {
-		ship_windup_mult = -1.5
-		ship_ftl_jumpdrive_range_mult = 1.00
-	}
-	
-	ai_weight = {
-		weight = 4
-	}
-
-	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
-	prerequisites = { "tech_dark_energy_jump_drive" }
-	component_set = "ftl_components"
-	upgrades_to = "ORIGINAL_EMPIRE_JUMP_DRIVE"
-}
-
+#	Dark Energy Afterburners
 utility_component_template = {
 	key = "DARK_ENERGY_AFTERBURNERS"
 	size = aux
@@ -857,7 +715,6 @@ utility_component_template = {
 	class_restriction = { shipclass_military }
 	prerequisites = { "tech_dark_energy_afterburners" }
 	component_set = "DARK_ENERGY_AFTERBURNERS"
-	
 	ai_weight = {
 		weight = 15
 		modifier = {
@@ -871,100 +728,7 @@ utility_component_template = {
 	}
 }
 
-utility_component_template = {
-	key = "DARK_ENERGY_SENSORS"
-	size = medium
-	icon = "GFX_ship_part_dark_energy_sensors"
-	icon_frame = 1
-	power = -40
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 16
-		}
-	}
-	sensor_range = 8
-	hyperlane_range = 10
-
-	ship_modifier = {
-		ship_tracking_add = 30
-	}
-
-	prerequisites = { "tech_dark_energy_sensors" }
-	component_set = "sensor_components"
-
-	ai_weight = {
-		weight = 1000
-	}
-}
-
-
-utility_component_template = {
-	key = "INFINITY_DECODER"
-	size = aux
-	icon = "GFX_ship_part_infinity_decoder"
-	icon_frame = 1
-	power = -40
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 40
-		}
-	}
-	
-	prerequisites = { tech_infinity_decoder }
-	component_set = "INFINITY_DECODER"
-
-	ship_modifier = {
-		ship_tracking_add = 10
-		ship_accuracy_add = 10
-	}
-	
-	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 2
-			OR = {
-				is_preferred_weapons = weapon_type_energy
-				is_preferred_weapons = weapon_type_kinetic
-			}		
-		}
-	}
-}
-
-utility_component_template = {
-	key = "INFINITY_ENCODER"
-	size = aux
-	icon = "GFX_ship_part_infinity_encoder"
-	icon_frame = 1
-	power = -40
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 40
-		}
-	}
-	
-	prerequisites = { tech_infinity_encoder }
-	component_set = "INFINITY_ENCODER"
-
-	modifier = {
-		ship_evasion_mult = 0.40
-	}
-	
-	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 2
-			OR = {
-				is_preferred_weapons = weapon_type_explosive
-				is_preferred_weapons = weapon_type_strike_craft
-			}		
-		}
-	}
-}
-
-
+#	Dark Energy Power Booster
 utility_component_template = {
 	key = "DARK_ENERGY_POWER_BOOSTER"
 	size = aux
@@ -978,52 +742,51 @@ utility_component_template = {
 			sr_dark_matter = 1
 		}
 	}
-	
 	prerequisites = { "tech_dark_energy_power_booster" }
 	component_set = "DARK_ENERGY_POWER_BOOSTER"
-
-	ai_weight = {
-		weight = 5
-	}
+	ai_weight = { weight = 5 }
 }
 
-
-
-
-
-
+#	Dark Energy Sensors
 utility_component_template = {
-	key = "FE_ESCORT_SHIP_THRUSTER_2"
-	size = small
-	icon = "GFX_ship_part_dark_energy_thruster"
+	key = "DARK_ENERGY_SENSORS"
+	size = medium
+	icon = "GFX_ship_part_dark_energy_sensors"
 	icon_frame = 1
-	power = -120
+	power = -40
+	resources = {
+		category = ship_components
+		cost = { alloys = 16 }
+	}
+	sensor_range = 8
+	hyperlane_range = 10
+	ship_modifier = { ship_tracking_add = 30 }
+	prerequisites = { "tech_dark_energy_sensors" }
+	component_set = "sensor_components"
+	ai_weight = { weight = 1000 }
+}
+
+#	Dark Energy Shield Booster
+utility_component_template = {
+	key = "DARK_ENERGY_SHIELD_BOOSTER"
+	size = aux
+	icon = "GFX_ship_part_dark_energy_shield_booster"
+	icon_frame = 1
+	power = -80
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 28.8
-			sr_dark_matter = 2.2
+			alloys = 40
+			sr_dark_matter = 4
 		}
-	}
-	modifier = {
-		ship_base_speed_mult = 1.5
-		ship_evasion_add = 20
-	}
-
-	prerequisites = { "tech_dark_energy_thruster" }
-	component_set = "thruster_components"
-	size_restriction = { fe_escort }
-	upgrades_to = "FE_ESCORT_SHIP_THRUSTER_3"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	}	
+	prerequisites = { "tech_dark_energy_shield_booster" }
+	component_set = "DARK_ENERGY_SHIELD_BOOSTER"	
+	modifier = { ship_shield_mult = 0.4 }	
+	ai_weight = { weight = 20 }
 }
 
+#	FE Battlecruiser Ship Thruster 2
 utility_component_template = {
 	key = "FE_BATTLECRUISER_SHIP_THRUSTER_2"
 	size = small
@@ -1041,21 +804,61 @@ utility_component_template = {
 		ship_base_speed_mult = 1.5
 		ship_evasion_add = 10
 	}
-
 	prerequisites = { "tech_dark_energy_thruster" }
 	component_set = "thruster_components"
 	size_restriction = { fe_battlecruiser }
-	upgrades_to = "FE_BATTLECRUISER_SHIP_THRUSTER_3"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	upgrades_to = "FE_BATTLECRUISER_SHIP_THRUSTER_3"	
+	ai_weight = { weight = 100 }
 }
 
+#	FE Escort Ship Thruster 2
+utility_component_template = {
+	key = "FE_ESCORT_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_dark_energy_thruster"
+	icon_frame = 1
+	power = -120
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 28.8
+			sr_dark_matter = 2.2
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.5
+		ship_evasion_add = 20
+	}
+	prerequisites = { "tech_dark_energy_thruster" }
+	component_set = "thruster_components"
+	size_restriction = { fe_escort }
+	upgrades_to = "FE_ESCORT_SHIP_THRUSTER_3"
+	ai_weight = { weight = 100 }
+}
+
+#	FE Goliath Ship Thruster 2
+utility_component_template = {
+	key = "FE_GOLIATH_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_dark_energy_thruster"
+	icon_frame = 1
+	power = -1200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 360
+			sr_dark_matter = 38
+		}
+	}
+	modifier = { ship_base_speed_mult = 1.5 }
+	prerequisites = { "tech_dark_energy_thruster" }
+	component_set = "thruster_components"
+	size_restriction = { fe_goliath }
+	upgrades_to = "FE_GOLIATH_SHIP_THRUSTER_3"	
+	ai_weight = { weight = 100 }
+}
+
+#	FE Titan Ship Thruster 2
 utility_component_template = {
 	key = "FE_TITAN_SHIP_THRUSTER_2"
 	size = small
@@ -1073,50 +876,88 @@ utility_component_template = {
 		ship_base_speed_mult = 1.5
 		ship_evasion_add = 5
 	}
-
 	prerequisites = { "tech_dark_energy_thruster" }
 	component_set = "thruster_components"
 	size_restriction = { fe_titan }
 	upgrades_to = "FE_TITAN_SHIP_THRUSTER_3"
-	
-	ai_weight = {
-		weight = 100
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
-	}
+	ai_weight = { weight = 100 }
 }
 
+#	Infinity Encoder
 utility_component_template = {
-	key = "FE_GOLIATH_SHIP_THRUSTER_2"
-	size = small
-	icon = "GFX_ship_part_dark_energy_thruster"
+	key = "INFINITY_ENCODER"
+	size = aux
+	icon = "GFX_ship_part_infinity_encoder"
 	icon_frame = 1
-	power = -1200
+	power = -40
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = 360
-			sr_dark_matter = 38
-		}
+		cost = { alloys = 40 }
 	}
-	modifier = {
-		ship_base_speed_mult = 1.5
-	}
-
-	prerequisites = { "tech_dark_energy_thruster" }
-	component_set = "thruster_components"
-	size_restriction = { fe_goliath }
-	upgrades_to = "FE_GOLIATH_SHIP_THRUSTER_3"
-	
+	prerequisites = { tech_infinity_encoder }
+	component_set = "INFINITY_ENCODER"
+	modifier = { ship_evasion_mult = 0.40 }
 	ai_weight = {
-		weight = 100
-
-#		modifier = {
-#			factor = 0.0
-#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
-#		}
+		weight = 10
+		modifier = {
+			factor = 2
+			OR = {
+				is_preferred_weapons = weapon_type_explosive
+				is_preferred_weapons = weapon_type_strike_craft
+			}		
+		}
 	}
 }
 
+#	Infinity Decoder
+utility_component_template = {
+	key = "INFINITY_DECODER"
+	size = aux
+	icon = "GFX_ship_part_infinity_decoder"
+	icon_frame = 1
+	power = -40
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+	}
+	prerequisites = { tech_infinity_decoder }
+	component_set = "INFINITY_DECODER"
+	ship_modifier = {
+		ship_tracking_add = 10
+		ship_accuracy_add = 10
+	}
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			OR = {
+				is_preferred_weapons = weapon_type_energy
+				is_preferred_weapons = weapon_type_kinetic
+			}		
+		}
+	}
+}
+
+#	Jump drives
+utility_component_template = {
+	key = "DARK_ENERGY_JUMP_DRIVE"
+	size = small
+	icon = "GFX_ship_part_dark_energy_jump_drive"
+	icon_frame = 1
+	power = -60
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+	}
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_windup_mult = -1.5
+		ship_ftl_jumpdrive_range_mult = 1.00
+	}	
+	ai_weight = { weight = 4 }
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { "tech_dark_energy_jump_drive" }
+	component_set = "ftl_components"
+	upgrades_to = "ORIGINAL_EMPIRE_JUMP_DRIVE"
+}
